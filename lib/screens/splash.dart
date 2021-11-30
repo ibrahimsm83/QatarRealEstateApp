@@ -1,8 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-
+import 'package:sizer/sizer.dart';
 import 'login.dart';
 
 class Splash extends StatefulWidget {
@@ -15,7 +14,7 @@ class _SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
     Timer(
-      const Duration(milliseconds: 500),
+      const Duration(seconds: 3),
       () => Navigator.of(context).pushReplacement(
         MaterialPageRoute(
           builder: (BuildContext context) => const LoginScreen(),
@@ -23,28 +22,27 @@ class _SplashState extends State<Splash> {
       ),
     );
 
-    var imagebg = const DecorationImage(
-      fit: BoxFit.fitHeight,
-      image: AssetImage('assets/images/Slpace_Screen.jpg'),
-    );
-
     var logoImg = Image.asset(
       'assets/images/logo.png',
     );
-    return Scaffold(
-      body: AnnotatedRegion(
-        value: const SystemUiOverlayStyle(statusBarColor: Colors.transparent),
-        child: Container(
-          decoration: BoxDecoration(
-            image: imagebg,
-          ),
-          child: Container(
-            padding:  EdgeInsets.only(top: 120.0),
-            alignment: Alignment.center,
-            child: Column(
-              children: [
-                logoImg,
-              ],
+    return SafeArea(
+      child: Scaffold(
+        body: Scaffold(
+          body: Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/images/Slpace_Screen.jpg"),
+                fit: BoxFit.cover,
+              ),
+            ),
+            child: Container(
+              width: double.infinity,
+              padding: EdgeInsets.only(top: 20.h),
+              child: Column(
+                children: [
+                  logoImg,
+                ],
+              ),
             ),
           ),
         ),
