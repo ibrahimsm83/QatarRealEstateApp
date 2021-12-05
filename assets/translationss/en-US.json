@@ -4,7 +4,7 @@
   "forgotpassword": "Forgot Password?",
   "Rememberme": "RememberMe",
   "Email_Address":"Email Address",
-  "loginNow": "LoginNow",
+  "loginNow": "Login Now",
   "or":"OR",
   "continue_w_g":"Continue With Google",
   "continue_W_F":"Continue With Facebook",
@@ -19,7 +19,8 @@
   "select-your-Account-Type":"Select Your Account Type",
   "registerNow":"Register Now",
   "already_have_an_account":"Already Have an Account? ",
-  "login":"Login"
+  "login":"Login",
+  "send_now":"SEND NOW"
 }
 
 

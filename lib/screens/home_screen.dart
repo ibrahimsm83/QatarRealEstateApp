@@ -39,15 +39,15 @@ List<String> addresses = [
   '24019 Doverwick Dr Tomball,Tx'
 ];
 List<String> cityImg = [
-  'assets/images/city1.jpg',
   'assets/images/city2.jpg',
+  'assets/images/city5.jpg',
   'assets/images/city3.jpg',
-  'assets/images/city4.jpg',
+  'assets/images/city1.jpg',
   'assets/images/city5.jpg',
   'assets/images/city6.jpg',
   'assets/images/city1.jpg',
   'assets/images/city2.jpg',
-  'assets/images/city5.jpg',
+  'assets/images/city4.jpg',
   'assets/images/city3.jpg'
 ];
 
@@ -68,9 +68,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10),
-                  boxShadow: const [
+                  boxShadow: [
                     BoxShadow(
-                      color: Colors.grey,
+                      color: Colors.grey.withOpacity(0.3),
                       blurRadius: 2,
                       offset: Offset(0, 5), // Shadow position
                     ),
@@ -147,8 +147,8 @@ class _HomeScreenState extends State<HomeScreen> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
-                  height: sizeheight(context) * 0.36,
-                  // width: sizeWidth(context),
+                  height: sizeheight(context) * 0.35,
+                  //  width: sizeWidth(context),
                   child: ListView.builder(
                     shrinkWrap: true,
                     scrollDirection: Axis.horizontal,

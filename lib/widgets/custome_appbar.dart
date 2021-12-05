@@ -13,6 +13,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: Colors.white,
+      elevation: 2.5,
       title: Text(
         "Home",
         style: TextStyle(
@@ -26,9 +27,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(10.0),
-            boxShadow: const [
+            boxShadow: [
               BoxShadow(
-                color: Colors.grey,
+                color: Colors.grey.withOpacity(0.3),
                 blurRadius: 2,
                 offset: Offset(0, 5), // Shadow position
               ),

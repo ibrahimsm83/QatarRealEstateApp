@@ -1,5 +1,6 @@
 import 'package:bonyanaldoha/screens/forgot_password.dart';
 import 'package:bonyanaldoha/screens/home_screen.dart';
+import 'package:bonyanaldoha/services/helper.dart';
 import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/gestures.dart';
 import 'package:bonyanaldoha/utils/color_schemes.dart';
@@ -17,6 +18,9 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passController = TextEditingController();
+
   bool rememberMe = false;
 
   bool _pwShow = true;
@@ -49,29 +53,29 @@ class _LoginScreenState extends State<LoginScreen> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   SizedBox(
-                    height: 2.h,
+                    height: 5.h,
                   ),
-                  Container(
-                    padding: EdgeInsets.all(10.0),
-                    alignment: Alignment.centerLeft,
-                    child: TextButton(
-                        onPressed: () {
-                          // setState(() {
-                          //   flag = !flag;
-                          // });
-                          // flag
-                          //     ? context.locale = Locale('en', 'US')
-                          //     : context.locale = Locale('ar', 'DZ');
+                  // Container(
+                  //   padding: EdgeInsets.all(10.0),
+                  //   alignment: Alignment.centerLeft,
+                  //   child: TextButton(
+                  //       onPressed: () {
+                  //         // setState(() {
+                  //         //   flag = !flag;
+                  //         // });
+                  //         // flag
+                  //         //     ? context.locale = Locale('en', 'US')
+                  //         //     : context.locale = Locale('ar', 'DZ');
 
-                          // // print(context.locale.toString());
-                          // print("language changer");
-                          // // context.locale = Locale('Us', 'ar');
-                        },
-                        child: Text(
-                          flag ? "عربي" : "English",
-                          style: TextStyle(color: Colors.black),
-                        )),
-                  ),
+                  //         // // print(context.locale.toString());
+                  //         // print("language changer");
+                  //         // // context.locale = Locale('Us', 'ar');
+                  //       },
+                  //       child: Text(
+                  //         flag ? "عربي" : "English",
+                  //         style: TextStyle(color: Colors.black),
+                  //       )),
+                  // ),
                   SizedBox(
                     height: 5.h,
                   ),
@@ -105,7 +109,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     margin:
                         EdgeInsets.symmetric(horizontal: 10.0, vertical: 3.0),
                     child: TextField(
-                      // controller: nameController,
+                      controller: _emailController,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10.0),
@@ -140,7 +144,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     margin:
                         EdgeInsets.symmetric(horizontal: 10.0, vertical: 3.0),
                     child: TextField(
-                      // controller: nameController,
+                      controller: _passController,
                       textAlign: TextAlign.left,
                       obscureText: _pwShow,
                       decoration: InputDecoration(
@@ -206,12 +210,20 @@ class _LoginScreenState extends State<LoginScreen> {
                         'loginNow',
                         style: TextStyle(color: Colors.black),
                       ).tr(),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (BuildContext context) =>
-                                    HomeScreen()));
+                      onPressed: () async {
+                        var res = await Helper.login(
+                            email: _emailController.text.toString(),
+                            password: _passController.text.toString());
+
+                        if (res['error'] == false && res['code'] == 200) {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      HomeScreen()));
+                        } else {
+                          print("errror");
+                        }
                       },
                       style: ElevatedButton.styleFrom(
                         primary: primaryColor,
