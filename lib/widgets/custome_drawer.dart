@@ -103,13 +103,14 @@ class _CustomDrawerState extends State<CustomDrawer> {
               ),
               drawerTile(
                   title: 'Home',
-                  // svgIconLoc: 'assets/icons/home_drawer.svg',
+                  pnglogo: 'assets/icons/home.png',
                   routeName: 'Dashboard'),
               // Divider(
               //   color: dividerColor,
               // ),
               drawerTile(
                   title: 'Buy',
+                  pnglogo: 'assets/icons/buy.png',
                   // svgIconLoc: 'assets/icons/add_property.svg',
                   routeName: 'AddProperty'),
               // Divider(
@@ -117,6 +118,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
               // ),
               drawerTile(
                   title: 'Rent',
+                  pnglogo: 'assets/icons/rent.png',
                   // svgIconLoc: 'assets/icons/search_property.svg',
                   routeName: 'SearchProperty'),
               // Divider(
@@ -148,6 +150,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
               /// Divider(color: dividerColor,),
               drawerTile(
                   title: 'Sell',
+                  pnglogo: 'assets/icons/sell.png',
                   //svgIconLoc: 'assets/icons/saved_searches.svg',
                   routeName: 'SavedSearches'),
 
@@ -186,6 +189,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
               // ),
               drawerTile(
                   title: 'Help',
+                  pnglogo: 'assets/icons/help.png',
                   //   svgIconLoc: 'assets/icons/news_and_blog.svg',
                   routeName: 'NewsAndBlog'),
               // Divider(
@@ -193,6 +197,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
               // ),
               drawerTile(
                   title: 'Create a Listing',
+                  pnglogo: 'assets/icons/create.png',
                   //svgIconLoc: 'assets/icons/about_us.svg',
                   routeName: 'AboutUs'),
               // Divider(
@@ -200,6 +205,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
               // ),
               drawerTile(
                   title: 'Blog',
+                  pnglogo: 'assets/icons/blog.png',
                   //svgIconLoc: 'assets/icons/contact_us.svg',
                   routeName: 'ContactUs'),
               // Divider(
@@ -207,6 +213,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
               // ),
               drawerTile(
                   title: 'About',
+                  pnglogo: 'assets/icons/about.png',
                   // svgIconLoc: 'assets/icons/terms_and_privacy.svg',
                   routeName: 'TermsAndConditions'),
               // Divider(
@@ -214,6 +221,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
               // ),
               drawerTile(
                   title: 'Terms of Use',
+                  pnglogo: 'assets/icons/terms.png',
                   // svgIconLoc: 'assets/icons/setting.svg',
                   routeName: 'Settings'),
               // Divider(
@@ -221,12 +229,13 @@ class _CustomDrawerState extends State<CustomDrawer> {
               // ),
               drawerTile(
                   title: 'Contact Us',
+                  pnglogo: 'assets/icons/contact.png',
                   // svgIconLoc: 'assets/icons/setting.svg',
                   routeName: 'Settings'),
-              drawerTile(
-                  title: 'Log Out',
-                  // svgIconLoc: 'assets/icons/logout.svg',
-                  routeName: 'LogOut'),
+              // drawerTile(
+              //     title: 'Log Out',
+              //     // svgIconLoc: 'assets/icons/logout.svg',
+              //     routeName: 'LogOut'),
               // Divider(
               //   color: dividerColor,
               // ),
@@ -241,7 +250,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
     );
   }
 
-  drawerTile({String? title, /*String svgIconLoc,*/ String? routeName}) {
+  drawerTile({String? title, String? pnglogo, String? routeName}) {
     return GestureDetector(
       onTap: () {
         // if (routeName == 'Dashboard') {
@@ -265,6 +274,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
             SizedBox(
               width: 10,
             ),
+            Image.asset(pnglogo ?? ""),
             // SvgPicture.asset(
             //   svgIconLoc,
             //   color: Colors.black,

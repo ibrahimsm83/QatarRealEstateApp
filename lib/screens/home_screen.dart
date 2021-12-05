@@ -89,7 +89,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     Container(
-                      width: sizeWidth(context) * 0.7,
+                      width: sizeWidth(context) * 0.68,
                       child: TextField(
                         //showCursor: false,
                         decoration: InputDecoration(
@@ -103,7 +103,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     Container(
-                      height: 40,
+                      height: 30,
                       width: 35,
                       margin: EdgeInsets.all(5.0),
                       decoration: BoxDecoration(
@@ -144,20 +144,24 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-              Container(
-                height: sizeheight(context) * 0.32,
-                width: sizeWidth(context),
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: cityImg.length,
-                  itemBuilder: (context, index) {
-                    return ProtertyList(
-                      index: index,
-                      btntext: "BUY",
-                      address: addresses[0],
-                      imagepath: cityImg[index],
-                    );
-                  },
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  height: sizeheight(context) * 0.36,
+                  // width: sizeWidth(context),
+                  child: ListView.builder(
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    itemCount: cityImg.length,
+                    itemBuilder: (context, index) {
+                      return ProtertyList(
+                        index: index,
+                        btntext: "BUY",
+                        address: addresses[0],
+                        imagepath: cityImg[index],
+                      );
+                    },
+                  ),
                 ),
               ),
               Padding(
