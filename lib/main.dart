@@ -1,4 +1,4 @@
-import 'package:bonyanaldoha/screens/login.dart';
+import 'package:bonyanaldoha/screens/login_screen.dart';
 import 'package:bonyanaldoha/screens/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';

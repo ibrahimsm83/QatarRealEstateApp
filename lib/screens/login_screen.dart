@@ -1,4 +1,5 @@
-import 'package:bonyanaldoha/screens/forgotpassword.dart';
+import 'package:bonyanaldoha/screens/forgot_password.dart';
+import 'package:bonyanaldoha/screens/home_screen.dart';
 import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/gestures.dart';
 import 'package:bonyanaldoha/utils/color_schemes.dart';
@@ -6,7 +7,7 @@ import 'package:sizer/sizer.dart';
 import 'package:bonyanaldoha/utils/constants.dart';
 import 'package:flutter/material.dart';
 
-import 'signUpScreen.dart';
+import 'sign_up_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -23,7 +24,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    String accountText = "dont_have_an_account";
     var imagebg = const DecorationImage(
       fit: BoxFit.contain,
       image: AssetImage('assets/images/Login_screen.jpg'),
@@ -56,16 +56,16 @@ class _LoginScreenState extends State<LoginScreen> {
                     alignment: Alignment.centerLeft,
                     child: TextButton(
                         onPressed: () {
-                          setState(() {
-                            flag = !flag;
-                          });
-                          flag
-                              ? context.locale = Locale('en', 'US')
-                              : context.locale = Locale('ar', 'DZ');
+                          // setState(() {
+                          //   flag = !flag;
+                          // });
+                          // flag
+                          //     ? context.locale = Locale('en', 'US')
+                          //     : context.locale = Locale('ar', 'DZ');
 
-                          // print(context.locale.toString());
-                          print("language changer");
-                          // context.locale = Locale('Us', 'ar');
+                          // // print(context.locale.toString());
+                          // print("language changer");
+                          // // context.locale = Locale('Us', 'ar');
                         },
                         child: Text(
                           flag ? "عربي" : "English",
@@ -206,7 +206,13 @@ class _LoginScreenState extends State<LoginScreen> {
                         'loginNow',
                         style: TextStyle(color: Colors.black),
                       ).tr(),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (BuildContext context) =>
+                                    HomeScreen()));
+                      },
                       style: ElevatedButton.styleFrom(
                         primary: primaryColor,
                         textStyle: TextStyle(

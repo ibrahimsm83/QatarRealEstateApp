@@ -1,4 +1,4 @@
-import 'package:bonyanaldoha/screens/forgotpassword.dart';
+
 import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/gestures.dart';
 import 'package:bonyanaldoha/utils/color_schemes.dart';
@@ -6,7 +6,7 @@ import 'package:sizer/sizer.dart';
 import 'package:bonyanaldoha/utils/constants.dart';
 import 'package:flutter/material.dart';
 
-import 'login.dart';
+import 'login_screen.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({Key? key}) : super(key: key);
