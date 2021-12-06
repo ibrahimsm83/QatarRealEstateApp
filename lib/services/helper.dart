@@ -15,31 +15,16 @@ class Helper {
       SharedPreferences _prefs = await SharedPreferences.getInstance();
       print("2");
 
-      var _response = await dio.post(
-          "https://www.onmascota.thevistech.com/api/login?",
-          data: {"email": email, "password": password});
-      // var _response = await Api.post(
-      //   "/login",
-      //   body: {"email": email, "password": password},
-      // );
-      print("response");
-      // print(_response);
-      return _response.data;
-      // var _user = LoginModel.fromJson(_response.);
-      //print(_user.data);
-      //await _prefs.setString(PreferencesKeys.token, _user.data.token);
-      // var _contacts = await ContactsCorba.getContacts(downloadMedia: true);
-      // var _templates = await TemplateCorba.getTemplates(downloadMedia: true);
-      // var _inspections = await InspectionCorba.getInspections(
-      //   downloadMedia: true,
-      // );
-
-      // await Boxes.addPeople(_contacts);
-      // Boxes.addAllTemplate(_templates);
-      // Boxes.addAllInspection(_inspections);
-      // Boxes.addUser(_user);
+      // var _response = await dio.post(
+      //     "https://www.onmascota.thevistech.com/api/login?",
+      //     data: {"email": email, "password": password});
+      var _response = await Api.post(
+        "https://www.onmascota.thevistech.com/api/login?",
+        body: {"email": email, "password": password},
+      );
+      var _user = LoginModel.fromJson(_response);
+      await _prefs.setString(PreferencesKeys.token, _user.data.token);
     } catch (error) {
-      //Boxes.clean();
       throw error;
     }
   }

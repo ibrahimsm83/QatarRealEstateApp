@@ -18,6 +18,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  bool _loading = false;
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passController = TextEditingController();
 
@@ -210,21 +211,43 @@ class _LoginScreenState extends State<LoginScreen> {
                         'loginNow',
                         style: TextStyle(color: Colors.black),
                       ).tr(),
-                      onPressed: () async {
-                        var res = await Helper.login(
-                            email: _emailController.text.toString(),
-                            password: _passController.text.toString());
+                      onPressed: () => Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) => HomeScreen())),
+                      // async {
+                      //   setState(() => _loading = true);
+                      //   try {
+                      //     await Helper.login(
+                      //       email: _emailController.text.toString(),
+                      //       password: _passController.text.toString(),
+                      //     );
+                      //     Navigator.pushReplacement(
+                      //         context,
+                      //         MaterialPageRoute(
+                      //             builder: (BuildContext context) =>
+                      //                 HomeScreen()));
+                      //   } catch (error) {
+                      //     print(error);
+                      //     //ErrorHelper.toaster(context, error);
+                      //   } finally {
+                      //     setState(() => _loading = false);
+                      //   }
 
-                        if (res['error'] == false && res['code'] == 200) {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (BuildContext context) =>
-                                      HomeScreen()));
-                        } else {
-                          print("errror");
-                        }
-                      },
+                      // var res = await Helper.login(
+                      //     email: _emailController.text.toString(),
+                      //     password: _passController.text.toString());
+
+                      // if (res['error'] == false && res['code'] == 200) {
+                      //   Navigator.push(
+                      //       context,
+                      //       MaterialPageRoute(
+                      //           builder: (BuildContext context) =>
+                      //               HomeScreen()));
+                      // } else {
+                      //   print("errror");
+                      // }
+                      //},
                       style: ElevatedButton.styleFrom(
                         primary: primaryColor,
                         textStyle: TextStyle(

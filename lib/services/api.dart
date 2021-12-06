@@ -5,7 +5,6 @@ import 'dart:convert';
 import 'dart:async';
 import 'dart:io';
 
-
 Future<Dio> dio() async {
   SharedPreferences _prefs = await SharedPreferences.getInstance();
 

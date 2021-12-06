@@ -52,12 +52,73 @@ List<String> cityImg = [
 ];
 
 class _HomeScreenState extends State<HomeScreen> {
+  int index = 0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: CustomAppBar("Home"),
         drawer: CustomDrawer(),
+        bottomNavigationBar: BottomNavigationBar(
+            elevation: 2.0,
+            selectedItemColor: primaryColor,
+            unselectedItemColor: Colors.grey,
+            currentIndex: index,
+            onTap: (int index) {
+              setState(() {
+                this.index = index;
+              });
+              print(index);
+              //_navigateToScreens(index);
+            },
+            type: BottomNavigationBarType.fixed,
+            items: [
+              BottomNavigationBarItem(
+                  backgroundColor: Colors.white,
+                  icon: Image.asset(
+                    'assets/icons/footerhome.png',
+                    color: index == 0 ? primaryColor : Colors.grey,
+                    height: 30,
+                    width: 30,
+                  ),
+                  label: "Home"),
+              BottomNavigationBarItem(
+                icon: Image.asset(
+                  'assets/icons/footerbuy.png',
+                  color: index == 1 ? primaryColor : Colors.grey,
+                  height: 30,
+                  width: 30,
+                ),
+                label: "Buy",
+              ),
+              BottomNavigationBarItem(
+                icon: Image.asset(
+                  'assets/icons/footersell.png',
+                  color: index == 2 ? primaryColor : Colors.grey,
+                  height: 30,
+                  width: 30,
+                ),
+                label: "Sell",
+              ),
+              BottomNavigationBarItem(
+                icon: Image.asset(
+                  'assets/icons/footerrent.png',
+                  color: index == 3 ? primaryColor : Colors.grey,
+                  height: 32,
+                  width: 32,
+                ),
+                label: "Rent",
+              ),
+              BottomNavigationBarItem(
+                icon: Image.asset(
+                  'assets/icons/footerlocation.png',
+                  color: index == 4 ? primaryColor : Colors.grey,
+                  height: 30,
+                  width: 30,
+                ),
+                label: "Location",
+              ),
+            ]),
         body: SingleChildScrollView(
           child: Column(
             children: [
