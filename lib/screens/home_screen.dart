@@ -68,7 +68,6 @@ class _HomeScreenState extends State<HomeScreen> {
               setState(() {
                 this.index = index;
               });
-              print(index);
               //_navigateToScreens(index);
             },
             type: BottomNavigationBarType.fixed,
@@ -208,7 +207,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
-                  height: sizeheight(context) * 0.35,
+                  height: sizeheight(context) * 0.34,
                   //  width: sizeWidth(context),
                   child: ListView.builder(
                     shrinkWrap: true,

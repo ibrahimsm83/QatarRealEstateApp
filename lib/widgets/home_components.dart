@@ -22,18 +22,16 @@ class ProtertyList extends StatefulWidget {
 class _ProtertyListState extends State<ProtertyList> {
   @override
   Widget build(BuildContext context) {
-    return
-        GestureDetector(
+    return GestureDetector(
       onTap: () {
         // Navigator.pushNamed(context, 'HouseDetails');
       },
       child: Card(
         elevation: 2.5,
-        //   margin: index==prices.length?EdgeInsets.only(right: 8.0,top: 0.0,bottom: 0.0):null,
         shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
         child: Container(
-          width: sizeWidth(context) * 0.8,
+          width: sizeWidth(context) * 0.9,
           margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
           decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.0)),
           child: Column(
