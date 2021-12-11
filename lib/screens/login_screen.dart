@@ -45,12 +45,7 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        body: Container(
-          margin: EdgeInsets.only(
-            top: sizeheight(context) * 0.1,
-            left: sizeWidth(context) * 0.06,
-            right: sizeWidth(context) * 0.06,
-          ),
+        body: SafeArea(
           child: SingleChildScrollView(
             child: Form(
               key: formKey,
@@ -84,7 +79,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     // ),
 
                     SizedBox(
-                      height: 5.h,
+                      height: 8.h,
                     ),
                     Container(
                       alignment: Alignment.center,
@@ -115,25 +110,29 @@ class _LoginScreenState extends State<LoginScreen> {
                       hintText: 'Email_Address'.tr(),
                       validator: (String? val) {
                         if (val == null || val.isEmpty) {
-                          return 'Please Enter Email address';
+                          return '';
                         }
                         return null;
                       },
                     ),
-                    Container(
-                      alignment: Alignment.topRight,
-                      child: TextButton(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (BuildContext context) =>
-                                      ForgetPassword()));
-                        },
-                        child: Text(
-                          'forgotpassword',
-                          style: TextStyle(fontSize: 15, color: primaryColor),
-                        ).tr(),
+                    Padding(
+                      padding:
+                          EdgeInsets.only(right: sizeWidth(context) * 0.05),
+                      child: Container(
+                        alignment: Alignment.topRight,
+                        child: TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        ForgetPassword()));
+                          },
+                          child: Text(
+                            'forgotpassword',
+                            style: TextStyle(fontSize: 15, color: primaryColor),
+                          ).tr(),
+                        ),
                       ),
                     ),
 
@@ -142,42 +141,47 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     CustomeTextFormField(
                       obscureText: true,
-                      hintText: '********',
+                      hintText: 'Password',
                       validator: (String? val) {
                         if (val == null || val.isEmpty) {
-                          return 'Please Enter Password';
+                          return '';
                         }
                         return null;
                       },
                     ),
 
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          height: 40.0,
-                          width: 40.0,
-                          child: Checkbox(
-                            materialTapTargetSize:
-                                MaterialTapTargetSize.shrinkWrap,
-                            value: rememberMe,
-                            activeColor: primaryColor,
-                            onChanged: (value) => setState(
-                              () => rememberMe = value!,
+                    Padding(
+                      padding: EdgeInsets.only(left: sizeWidth(context) * 0.04),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            height: 40.0,
+                            width: 40.0,
+                            child: Checkbox(
+                              materialTapTargetSize:
+                                  MaterialTapTargetSize.shrinkWrap,
+                              value: rememberMe,
+                              activeColor: primaryColor,
+                              onChanged: (value) => setState(
+                                () => rememberMe = value!,
+                              ),
                             ),
                           ),
-                        ),
-                        Text(
-                          'Rememberme',
-                          style: TextStyle(color: Colors.grey[700]),
-                        ).tr(),
-                      ],
+                          Text(
+                            'Rememberme',
+                            style: TextStyle(color: Colors.grey[700]),
+                          ).tr(),
+                        ],
+                      ),
                     ),
                     SizedBox(
                       height: 10.0,
                     ),
                     Container(
                       width: sizeWidth(context),
+                      margin: EdgeInsets.symmetric(
+                          horizontal: sizeWidth(context) * 0.06),
                       height: 45,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(30.0)),
@@ -264,7 +268,9 @@ class _LoginScreenState extends State<LoginScreen> {
 
                     //Google Button
                     Padding(
-                      padding: EdgeInsets.symmetric(vertical: 10.0),
+                      padding: EdgeInsets.symmetric(
+                          vertical: 10.0,
+                          horizontal: sizeWidth(context) * 0.06),
                       child: InkWell(
                         onTap: () {},
                         child: Container(
@@ -306,7 +312,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     //Facebook Button
                     Padding(
-                      padding: EdgeInsets.symmetric(vertical: 10.0),
+                      padding: EdgeInsets.symmetric(
+                          vertical: 10.0,
+                          horizontal: sizeWidth(context) * 0.06),
                       child: GestureDetector(
                         onTap: () => null,
                         child: Container(

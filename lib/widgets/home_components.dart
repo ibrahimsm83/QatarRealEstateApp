@@ -31,7 +31,7 @@ class _ProtertyListState extends State<ProtertyList> {
         shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
         child: Container(
-          width: sizeWidth(context) * 0.9,
+          width: sizeWidth(context) * 0.8,
           margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
           decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.0)),
           child: Column(

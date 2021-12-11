@@ -1,44 +1,41 @@
+import 'package:bonyanaldoha/screens/home_screen.dart';
 import 'package:bonyanaldoha/utils/color_schemes.dart';
 import 'package:bonyanaldoha/utils/constants.dart';
+import 'package:bonyanaldoha/widgets/text_form_field.dart';
 import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 class ForgetPassword extends StatelessWidget {
-  const ForgetPassword({Key? key}) : super(key: key);
+  ForgetPassword({Key? key}) : super(key: key);
+
+  final formKeyFw = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     var logoImg = Image.asset(
       'assets/images/logo.png',
     );
     return Material(
-      child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: primaryColor,
-          title: Text(
-            "FORGOT PASSWORD",
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+      child: Container(
+        height: MediaQuery.of(context).size.height,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/Login_screen.jpg"),
+            fit: BoxFit.cover,
           ),
         ),
-        body: Stack(
-          children: [
-            Container(
-              height: sizeheight(context),
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/images/Login_screen.jpg'),
-                  fit: BoxFit.cover,
-                ),
-              ),
-              child: SingleChildScrollView(
+        child: Scaffold(
+          backgroundColor: Colors.transparent,
+          body: SingleChildScrollView(
+            child: Form(
+              key: formKeyFw,
+              child: Padding(
+                padding: EdgeInsets.only(top: sizeheight(context) * 0.15),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    SizedBox(
-                      height: 4.h,
-                    ),
                     Container(
                       alignment: Alignment.center,
                       child: logoImg,
@@ -74,44 +71,18 @@ class ForgetPassword extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(10, 40, 10.0, 10),
-                      child: Container(
-                        height: 45,
-                        color: Colors.white,
-                        margin: EdgeInsets.symmetric(
-                            horizontal: 15.0, vertical: 10.0),
-                        child: TextField(
-                          // controller: nameController,
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10.0),
-                                borderSide: BorderSide(color: primaryColor)),
-                            hintText: 'Email Address',
-                          ),
-                        ),
-                      ),
+                    SizedBox(
+                      height: 20.0,
                     ),
-                    // Container(
-                    //   width: sizeWidth(context),
-                    //   margin: EdgeInsets.only(
-                    //       top: 40,
-                    //       left: sizeWidth(context) * 0.08,
-                    //       right: sizeWidth(context) * 0.08),
-                    //   child: TextField(
-                    //     //controller: Controller_sales,
-
-                    //     decoration: InputDecoration(
-                    //       hintText: "Email Address",
-                    //       border: OutlineInputBorder(),
-                    //       hintStyle: TextStyle(color: Colors.grey),
-                    //     ),
-                    //     onChanged: (value) => () {},
-                    //   ),
-                    // ),
+                    CustomeTextFormField(
+                      hintText: 'Email Address',
+                      validator: (String? val) {
+                        if (val == null || val.isEmpty) {
+                          return '';
+                        }
+                        return null;
+                      },
+                    ),
                     //pw
                     SizedBox(
                       height: 40,
@@ -132,6 +103,15 @@ class ForgetPassword extends StatelessWidget {
                           style: TextStyle(color: Colors.black),
                         ).tr(),
                         onPressed: () {
+                          if (formKeyFw.currentState!.validate()) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(content: Text('Processing ')));
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        HomeScreen()));
+                          }
                           // Navigator.push(
                           //     context,
                           //     MaterialPageRoute(
@@ -196,7 +176,7 @@ class ForgetPassword extends StatelessWidget {
                 ),
               ),
             ),
-          ],
+          ),
         ),
       ),
     );
