@@ -5,6 +5,7 @@ import 'package:bonyanaldoha/screens/contact_us_screen.dart';
 import 'package:bonyanaldoha/screens/create_listing_screen.dart';
 import 'package:bonyanaldoha/screens/deshboard_screen.dart';
 import 'package:bonyanaldoha/screens/help_screen.dart';
+import 'package:bonyanaldoha/screens/location_screen.dart';
 import 'package:bonyanaldoha/screens/rent_screen.dart';
 import 'package:bonyanaldoha/screens/sell_screen.dart';
 import 'package:bonyanaldoha/screens/term_of_use_screen.dart';
@@ -38,124 +39,163 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final List<Widget> screenList = <Widget>[
+    DeshboardPg(),
+    BuyPage(),
+    SellPg(),
+    RentPg(),
+    Location(),
+  ];
+  String apptitle = 'Home';
+  int _currentSelected = 0;
   GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   var currentPage = DrawerSections.home;
 
-  int index = 0;
+  dynamic container;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _currentSelected = index;
+      print(index);
+      switch (index) {
+        case 0:
+          {
+            apptitle = 'Home';
+          }
+          break;
+        case 1:
+          {
+            apptitle = 'Buy';
+          }
+          break;
+        case 2:
+          {
+            apptitle = 'Sell';
+          }
+          break;
+        case 3:
+          {
+            apptitle = 'Rent';
+          }
+          break;
+        case 4:
+          {
+            apptitle = 'Location';
+          }
+          break;
+      }
+      //  _currentScreen
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    dynamic container;
-    if (currentPage == DrawerSections.home) {
-      container = DeshboardPg();
-    } else if (currentPage == DrawerSections.buy) {
-      container = BuyPage();
-    } else if (currentPage == DrawerSections.rent) {
-      container = RentPg();
-    } else if (currentPage == DrawerSections.sell) {
-      container = SellPg();
-    } else if (currentPage == DrawerSections.help) {
-      container = HelpPg();
-    } else if (currentPage == DrawerSections.createAListing) {
-      container = CreateListigPg();
-    } else if (currentPage == DrawerSections.blog) {
-      container = BlogPg();
-    } else if (currentPage == DrawerSections.about) {
-      container = AboutPg();
-    } else if (currentPage == DrawerSections.termOfUse) {
-      container = TermOfUsePg();
-    } else if (currentPage == DrawerSections.contactUs) {
-      container = ContactUsPg();
-    }
+    // if (currentPage == DrawerSections.home) {
+    //   container = DeshboardPg();
+    // } else if (currentPage == DrawerSections.buy) {
+    //   container = BuyPage();
+    // } else if (currentPage == DrawerSections.rent) {
+    //   container = RentPg();
+    // } else if (currentPage == DrawerSections.sell) {
+    //   container = SellPg();
+    // } else if (currentPage == DrawerSections.help) {
+    //   container = HelpPg();
+    // } else if (currentPage == DrawerSections.createAListing) {
+    //   container = CreateListigPg();
+    // } else if (currentPage == DrawerSections.blog) {
+    //   container = BlogPg();
+    // } else if (currentPage == DrawerSections.about) {
+    //   container = AboutPg();
+    // } else if (currentPage == DrawerSections.termOfUse) {
+    //   container = TermOfUsePg();
+    // } else if (currentPage == DrawerSections.contactUs) {
+    //   container = ContactUsPg();
+    // }
     return MaterialApp(
       home: Scaffold(
-        key: _scaffoldKey,
-        appBar: CustomAppBar("Home"),
+          key: _scaffoldKey,
+          appBar: CustomAppBar(apptitle),
 // CustomDrawer(),
-        drawer: Container(
-          width: 200,
-          child: Drawer(
-            child: Container(
-              color: Color(0xff202020),
-              child: ListView(
-                children: [
-                  MyDrawerHeader(),
-                  DrawerList(),
-                ],
+          drawer: Container(
+            width: 200,
+            child: Drawer(
+              child: Container(
+                color: Color(0xff202020),
+                child: ListView(
+                  children: [
+                    MyDrawerHeader(),
+                    DrawerList(),
+                  ],
+                ),
               ),
             ),
           ),
-        ),
-
-        bottomNavigationBar: BottomNavigationBar(
-            elevation: 2.0,
-            selectedItemColor: primaryColor,
-            unselectedItemColor: Colors.grey,
-            currentIndex: index,
-            onTap: (int index) {
-              setState(() {
-                this.index = index;
-              });
-              //_navigateToScreens(index);
-            },
-            type: BottomNavigationBarType.fixed,
-            items: [
-              BottomNavigationBarItem(
-                  backgroundColor: Colors.white,
+          bottomNavigationBar: BottomNavigationBar(
+              elevation: 2.0,
+              onTap: _onItemTapped,
+              currentIndex: _currentSelected,
+              selectedItemColor: primaryColor,
+              unselectedItemColor: Colors.grey,
+              type: BottomNavigationBarType.fixed,
+              items: [
+                BottomNavigationBarItem(
+                    backgroundColor: Colors.white,
+                    icon: Image.asset(
+                      'assets/icons/footerhome.png',
+                      color: _currentSelected == 0 ? primaryColor : Colors.grey,
+                      height: 30,
+                      width: 30,
+                    ),
+                    label: "Home"),
+                BottomNavigationBarItem(
                   icon: Image.asset(
-                    'assets/icons/footerhome.png',
-                    color: index == 0 ? primaryColor : Colors.grey,
+                    'assets/icons/footerbuy.png',
+                    color: _currentSelected == 1 ? primaryColor : Colors.grey,
                     height: 30,
                     width: 30,
                   ),
-                  label: "Home"),
-              BottomNavigationBarItem(
-                icon: Image.asset(
-                  'assets/icons/footerbuy.png',
-                  color: index == 1 ? primaryColor : Colors.grey,
-                  height: 30,
-                  width: 30,
+                  label: "Buy",
                 ),
-                label: "Buy",
-              ),
-              BottomNavigationBarItem(
-                icon: Image.asset(
-                  'assets/icons/footersell.png',
-                  color: index == 2 ? primaryColor : Colors.grey,
-                  height: 30,
-                  width: 30,
+                BottomNavigationBarItem(
+                  icon: Image.asset(
+                    'assets/icons/footersell.png',
+                    color: _currentSelected == 2 ? primaryColor : Colors.grey,
+                    height: 30,
+                    width: 30,
+                  ),
+                  label: "Sell",
                 ),
-                label: "Sell",
-              ),
-              BottomNavigationBarItem(
-                icon: Image.asset(
-                  'assets/icons/footerrent.png',
-                  color: index == 3 ? primaryColor : Colors.grey,
-                  height: 32,
-                  width: 32,
+                BottomNavigationBarItem(
+                  icon: Image.asset(
+                    'assets/icons/footerrent.png',
+                    color: _currentSelected == 3 ? primaryColor : Colors.grey,
+                    height: 32,
+                    width: 32,
+                  ),
+                  label: "Rent",
                 ),
-                label: "Rent",
-              ),
-              BottomNavigationBarItem(
-                icon: Image.asset(
-                  'assets/icons/footerlocation.png',
-                  color: index == 4 ? primaryColor : Colors.grey,
-                  height: 30,
-                  width: 30,
+                BottomNavigationBarItem(
+                  icon: Image.asset(
+                    'assets/icons/footerlocation.png',
+                    color: _currentSelected == 4 ? primaryColor : Colors.grey,
+                    height: 30,
+                    width: 30,
+                  ),
+                  label: "Location",
                 ),
-                label: "Location",
-              ),
-            ]),
-        body: container,
-      ),
+              ]),
+          body: IndexedStack(
+            index: _currentSelected,
+            children: screenList,
+          ) //_widgetOptions.elementAt(_currentSelected),
+          //container,
+          ),
     );
   }
 //}
 
   Widget DrawerList() {
     return Container(
-      // padding: EdgeInsets.only(
-      //   top: 15,
-      // ),
       child: Column(
         // shows the list of menu drawer
         children: [
@@ -163,15 +203,20 @@ class _HomeScreenState extends State<HomeScreen> {
             color: dividerColor,
           ),
           drawerItem(
-              id: 1,
+              id: 0,
               title: "Home",
               pnglogo: 'assets/icons/home.png',
               selected: currentPage == DrawerSections.home ? true : false),
           drawerItem(
-              id: 2,
+              id: 1,
               title: "Buy",
               pnglogo: 'assets/icons/buy.png',
               selected: currentPage == DrawerSections.buy ? true : false),
+          drawerItem(
+              id: 2,
+              title: "Sell",
+              pnglogo: 'assets/icons/sell.png',
+              selected: currentPage == DrawerSections.sell ? true : false),
           drawerItem(
               id: 3,
               title: "Rent",
@@ -179,11 +224,6 @@ class _HomeScreenState extends State<HomeScreen> {
               selected: currentPage == DrawerSections.rent ? true : false),
           drawerItem(
               id: 4,
-              title: "Sell",
-              pnglogo: 'assets/icons/sell.png',
-              selected: currentPage == DrawerSections.sell ? true : false),
-          drawerItem(
-              id: 5,
               title: "Help",
               pnglogo: 'assets/icons/help.png',
               selected: currentPage == DrawerSections.help ? true : false),
@@ -221,19 +261,25 @@ class _HomeScreenState extends State<HomeScreen> {
   drawerItem({int? id, String? title, String? pnglogo, bool? selected}) {
     return InkWell(
       onTap: () {
-        // Navigator.pop(context, true);
-
         setState(() {
-          if (id == 1) {
-            currentPage = DrawerSections.home;
+          if (id == 0) {
+            _currentSelected = 0;
+            apptitle = "Home";
+            //currentPage = DrawerSections.home;
+          } else if (id == 1) {
+            // currentPage = DrawerSections.buy;
+            _currentSelected = 1;
+            apptitle = "Buy";
           } else if (id == 2) {
-            currentPage = DrawerSections.buy;
+            // currentPage = DrawerSections.rent;
+            _currentSelected = 2;
+            apptitle = "Sell";
           } else if (id == 3) {
-            currentPage = DrawerSections.rent;
-          } else if (id == 4) {
-            currentPage = DrawerSections.sell;
+            // currentPage = DrawerSections.sell;
+            _currentSelected = 3;
+            apptitle = "Rent";
           } else if (id == 5) {
-            currentPage = DrawerSections.help;
+            // currentPage = DrawerSections.help;
           } else if (id == 6) {
             currentPage = DrawerSections.createAListing;
           } else if (id == 7) {
@@ -249,11 +295,9 @@ class _HomeScreenState extends State<HomeScreen> {
         if (_scaffoldKey.currentState!.isDrawerOpen) {
           _scaffoldKey.currentState!.openEndDrawer();
         }
-        //Navigator.pop(context);
       },
       child: Container(
         height: 40,
-        // color: Colors.white,
         child: Row(
           children: [
             SizedBox(

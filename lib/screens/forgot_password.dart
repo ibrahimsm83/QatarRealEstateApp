@@ -1,4 +1,5 @@
 import 'package:bonyanaldoha/screens/home_screen.dart';
+import 'package:bonyanaldoha/screens/verification_screen.dart';
 import 'package:bonyanaldoha/utils/color_schemes.dart';
 import 'package:bonyanaldoha/utils/constants.dart';
 import 'package:bonyanaldoha/widgets/text_form_field.dart';
@@ -104,13 +105,13 @@ class ForgetPassword extends StatelessWidget {
                         ).tr(),
                         onPressed: () {
                           if (formKeyFw.currentState!.validate()) {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(content: Text('Processing ')));
-                            Navigator.pushReplacement(
+                            // ScaffoldMessenger.of(context).showSnackBar(
+                            //     const SnackBar(content: Text('Processing ')));
+                            Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                     builder: (BuildContext context) =>
-                                        HomeScreen()));
+                                        VerificationScreen()));
                           }
                           // Navigator.push(
                           //     context,

@@ -3,6 +3,8 @@
    <application
         android:label="Bonyan Al Doha"
         android:icon="@mipmap/ic_launcher">
+         <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCSIFvepgZUstSBmyLgFXiyxd3nx2zOoBY"/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

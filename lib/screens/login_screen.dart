@@ -191,7 +191,9 @@ class _LoginScreenState extends State<LoginScreen> {
                           'loginNow',
                           style: TextStyle(color: Colors.black),
                         ).tr(),
-                        onPressed: () {
+                        onPressed: () 
+                        
+                        {
                           if (formKey.currentState!.validate()) {
                             ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(content: Text('Processing ')));

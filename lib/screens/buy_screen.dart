@@ -60,7 +60,7 @@ class _BuyPageState extends State<BuyPage> {
                 ),
                 Container(
                   height: 30,
-                  width: 35,
+                 width: sizeWidth(context) * 0.09,
                   margin: EdgeInsets.all(5.0),
                   decoration: BoxDecoration(
                     color: primaryColor,

@@ -6,7 +6,6 @@ import 'package:flutter_svg/svg.dart';
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   @override
-  // TODO: implement preferredSize
   Size get preferredSize => const Size.fromHeight(56);
   CustomAppBar(this.title);
   @override
@@ -15,7 +14,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: Colors.white,
       elevation: 2.5,
       title: Text(
-        "Home",
+        title,
         style: TextStyle(
           color: Colors.black,
         ),

@@ -6,9 +6,14 @@ import 'package:flutter/material.dart';
 class CustomeTextFormField extends StatefulWidget {
   String? hintText;
   bool obscureText;
+  TextInputType? keyboardType;
   String? Function(String?)? validator;
   CustomeTextFormField(
-      {Key? key, this.hintText, this.validator, this.obscureText = false})
+      {Key? key,
+      this.hintText,
+      this.validator,
+      this.obscureText = false,
+      this.keyboardType})
       : super(key: key);
 
   @override
@@ -28,6 +33,7 @@ class _CustomeTextFormFieldState extends State<CustomeTextFormField> {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: sizeWidth(context) * 0.06),
       child: TextFormField(
+        keyboardType: widget.keyboardType,
         validator: widget.validator,
         obscureText: _pwShow,
         decoration: InputDecoration(
