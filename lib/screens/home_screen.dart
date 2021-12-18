@@ -12,8 +12,9 @@ import 'package:bonyanaldoha/screens/term_of_use_screen.dart';
 import 'package:bonyanaldoha/services/api_data.dart';
 import 'package:bonyanaldoha/utils/color_schemes.dart';
 import 'package:bonyanaldoha/utils/constants.dart';
+import 'package:bonyanaldoha/widgets/custom_drawer.dart';
 import 'package:bonyanaldoha/widgets/custome_appbar.dart';
-import 'package:bonyanaldoha/widgets/custome_drawer.dart';
+import 'package:bonyanaldoha/widgets/custome_drawer_header.dart';
 import 'package:bonyanaldoha/widgets/home_components.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -32,7 +33,10 @@ enum DrawerSections {
 }
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  final int currrentid;
+  final String title;
+  const HomeScreen({Key? key, this.currrentid = 0, this.title = "Home"})
+      : super(key: key);
 
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -47,6 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
     Location(),
   ];
   String apptitle = 'Home';
+
   int _currentSelected = 0;
   GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   var currentPage = DrawerSections.home;
@@ -56,7 +61,6 @@ class _HomeScreenState extends State<HomeScreen> {
   void _onItemTapped(int index) {
     setState(() {
       _currentSelected = index;
-      print(index);
       switch (index) {
         case 0:
           {
@@ -89,47 +93,25 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   @override
+  void initState() {
+    _currentSelected = widget.currrentid;
+    apptitle = widget.title;
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    // if (currentPage == DrawerSections.home) {
-    //   container = DeshboardPg();
-    // } else if (currentPage == DrawerSections.buy) {
-    //   container = BuyPage();
-    // } else if (currentPage == DrawerSections.rent) {
-    //   container = RentPg();
-    // } else if (currentPage == DrawerSections.sell) {
-    //   container = SellPg();
-    // } else if (currentPage == DrawerSections.help) {
-    //   container = HelpPg();
-    // } else if (currentPage == DrawerSections.createAListing) {
-    //   container = CreateListigPg();
-    // } else if (currentPage == DrawerSections.blog) {
-    //   container = BlogPg();
-    // } else if (currentPage == DrawerSections.about) {
-    //   container = AboutPg();
-    // } else if (currentPage == DrawerSections.termOfUse) {
-    //   container = TermOfUsePg();
-    // } else if (currentPage == DrawerSections.contactUs) {
-    //   container = ContactUsPg();
-    // }
     return MaterialApp(
       home: Scaffold(
           key: _scaffoldKey,
-          appBar: CustomAppBar(apptitle),
-// CustomDrawer(),
-          drawer: Container(
-            width: 200,
-            child: Drawer(
-              child: Container(
-                color: Color(0xff202020),
-                child: ListView(
-                  children: [
-                    MyDrawerHeader(),
-                    DrawerList(),
-                  ],
-                ),
-              ),
-            ),
+          appBar: CustomAppBar(
+            abtitle: apptitle,
+            bgcolor: Colors.white,
           ),
+          drawer: CustomeDrower(
+            drawerlist: DrawerList(),
+          ),
+         
           bottomNavigationBar: BottomNavigationBar(
               elevation: 2.0,
               onTap: _onItemTapped,
@@ -228,7 +210,7 @@ class _HomeScreenState extends State<HomeScreen> {
               pnglogo: 'assets/icons/help.png',
               selected: currentPage == DrawerSections.help ? true : false),
           drawerItem(
-              id: 6,
+              id: 5,
               title: "Create a Listing",
               pnglogo: 'assets/icons/create.png',
               selected:
@@ -261,6 +243,7 @@ class _HomeScreenState extends State<HomeScreen> {
   drawerItem({int? id, String? title, String? pnglogo, bool? selected}) {
     return InkWell(
       onTap: () {
+      
         setState(() {
           if (id == 0) {
             _currentSelected = 0;
@@ -278,10 +261,19 @@ class _HomeScreenState extends State<HomeScreen> {
             // currentPage = DrawerSections.sell;
             _currentSelected = 3;
             apptitle = "Rent";
-          } else if (id == 5) {
+          } else if (id == 4) {
+            // _currentSelected = 4;
+            // apptitle = "Help";
+            Navigator.push(context,
+                MaterialPageRoute(builder: (BuildContext context) => HelpPg()));
+
             // currentPage = DrawerSections.help;
-          } else if (id == 6) {
-            currentPage = DrawerSections.createAListing;
+          } else if (id == 5) {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (BuildContext context) => CreateListigPg()));
+            // currentPage = DrawerSections.createAListing;
           } else if (id == 7) {
             currentPage = DrawerSections.blog;
           } else if (id == 8) {
