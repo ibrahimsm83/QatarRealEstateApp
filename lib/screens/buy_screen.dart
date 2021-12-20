@@ -60,7 +60,7 @@ class _BuyPageState extends State<BuyPage> {
                 ),
                 Container(
                   height: 30,
-                 width: sizeWidth(context) * 0.09,
+                  width: sizeWidth(context) * 0.09,
                   margin: EdgeInsets.all(5.0),
                   decoration: BoxDecoration(
                     color: primaryColor,
@@ -103,7 +103,7 @@ class _BuyPageState extends State<BuyPage> {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0),
             child: Container(
-              height: sizeheight(context) * 0.34,
+              height: sizeheight(context) * 0.36,
               //  width: sizeWidth(context),
               child: ListView.builder(
                 shrinkWrap: true,

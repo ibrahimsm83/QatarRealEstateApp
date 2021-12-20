@@ -1,5 +1,7 @@
+import 'package:bonyanaldoha/screens/about_screen.dart';
 import 'package:bonyanaldoha/screens/create_listing_screen.dart';
 import 'package:bonyanaldoha/screens/home_screen.dart';
+import 'package:bonyanaldoha/screens/term_of_use_screen.dart';
 import 'package:bonyanaldoha/services/api_data.dart';
 import 'package:bonyanaldoha/utils/color_schemes.dart';
 import 'package:bonyanaldoha/utils/constants.dart';
@@ -162,19 +164,19 @@ class _HelpPgState extends State<HelpPg> {
             //   currentPage == DrawerSections.createAListing ? true : false
           ),
           drawerItem(
-            id: 7,
+            id: 6,
             title: "Blog",
             pnglogo: 'assets/icons/blog.png',
             // selected: currentPage == DrawerSections.blog ? true : false
           ),
           drawerItem(
-            id: 8,
+            id: 7,
             title: "About",
             pnglogo: 'assets/icons/about.png',
             // selected: currentPage == DrawerSections.about ? true : false
           ),
           drawerItem(
-            id: 9,
+            id: 8,
             title: "Term of Use",
             pnglogo: 'assets/icons/terms.png',
             // selected: currentPage == DrawerSections.termOfUse ? true : false
@@ -251,11 +253,20 @@ class _HelpPgState extends State<HelpPg> {
                 MaterialPageRoute(
                     builder: (BuildContext context) => CreateListigPg()));
             // currentPage = DrawerSections.createAListing;
-          } else if (id == 7) {
+          } else if (id == 6) {
             // currentPage = DrawerSections.blog;
-          } else if (id == 8) {
+          } else if (id == 7) {
+            Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                    builder: (BuildContext context) => AboutPg()));
             //currentPage = DrawerSections.about;
-          } else if (id == 9) {
+          } else if (id == 8) {
+            Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                    builder: (BuildContext context) => TermOfUsePg()));
+
             // currentPage = DrawerSections.termOfUse;
           } else if (id == 10) {
             // currentPage = DrawerSections.contactUs;

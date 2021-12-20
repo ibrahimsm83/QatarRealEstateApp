@@ -17,7 +17,7 @@ class Location extends StatefulWidget {
 class _LocationState extends State<Location> {
   late BitmapDescriptor pinLocationIcon;
   final Set<Marker> _markers = {};
-  static const LatLng _center = LatLng(45.521563, -122.677433);
+  static const LatLng _center = LatLng(25.3548, 51.1839);
   final LatLng _lastMapPosition = _center;
 
   late GoogleMapController _controller;
@@ -50,13 +50,12 @@ class _LocationState extends State<Location> {
             SizedBox(
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
-              
               child: GoogleMap(
                   zoomGesturesEnabled: true,
                   markers: _markers,
                   //    initialCameraPosition: _initialPosition,
                   initialCameraPosition:
-                      CameraPosition(target: _center, zoom: 11.0),
+                      CameraPosition(target: _center, zoom: 8.0),
                   mapType: MapType.terrain,
                   onMapCreated: (controller) {
                     setState(() {
@@ -137,7 +136,7 @@ class _LocationState extends State<Location> {
                   bottom: 10.0,
                 ),
                 child: SizedBox(
-                  height: sizeheight(context) * 0.34,
+                  height: sizeheight(context) * 0.36,
                   //  width: sizeWidth(context),
                   child: ListView.builder(
                     shrinkWrap: true,

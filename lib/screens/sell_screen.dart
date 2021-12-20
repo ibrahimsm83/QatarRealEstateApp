@@ -1,4 +1,3 @@
-
 import 'package:bonyanaldoha/services/api_data.dart';
 import 'package:bonyanaldoha/utils/color_schemes.dart';
 import 'package:bonyanaldoha/utils/constants.dart';
@@ -104,7 +103,7 @@ class _SellPgState extends State<SellPg> {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0),
             child: Container(
-              height: sizeheight(context) * 0.34,
+              height: sizeheight(context) * 0.36,
               //  width: sizeWidth(context),
               child: ListView.builder(
                 shrinkWrap: true,
@@ -113,7 +112,7 @@ class _SellPgState extends State<SellPg> {
                 itemBuilder: (context, index) {
                   return ProtertyList(
                     index: index,
-                    btntext: "SELL",
+                    btntext: "COMMERCIAL",
                     address: addresses[0],
                     imagepath: cityImg[index],
                   );
@@ -145,7 +144,7 @@ class _SellPgState extends State<SellPg> {
                 itemBuilder: (context, index) {
                   return ProtertyList(
                     index: index,
-                    btntext: "SELL",
+                    btntext: "COMMERCIAL",
                     address: addresses[0],
                     imagepath: cityImg[index],
                   );

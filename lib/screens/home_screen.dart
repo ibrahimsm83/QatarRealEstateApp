@@ -46,8 +46,8 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<Widget> screenList = <Widget>[
     DeshboardPg(),
     BuyPage(),
-    SellPg(),
     RentPg(),
+    SellPg(),
     Location(),
   ];
   String apptitle = 'Home';
@@ -74,12 +74,12 @@ class _HomeScreenState extends State<HomeScreen> {
           break;
         case 2:
           {
-            apptitle = 'Sell';
+            apptitle = 'Rent';
           }
           break;
         case 3:
           {
-            apptitle = 'Rent';
+            apptitle = 'Commercial';
           }
           break;
         case 4:
@@ -111,7 +111,6 @@ class _HomeScreenState extends State<HomeScreen> {
           drawer: CustomeDrower(
             drawerlist: DrawerList(),
           ),
-         
           bottomNavigationBar: BottomNavigationBar(
               elevation: 2.0,
               onTap: _onItemTapped,
@@ -140,21 +139,21 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 BottomNavigationBarItem(
                   icon: Image.asset(
-                    'assets/icons/footersell.png',
-                    color: _currentSelected == 2 ? primaryColor : Colors.grey,
-                    height: 30,
-                    width: 30,
-                  ),
-                  label: "Sell",
-                ),
-                BottomNavigationBarItem(
-                  icon: Image.asset(
                     'assets/icons/footerrent.png',
-                    color: _currentSelected == 3 ? primaryColor : Colors.grey,
+                    color: _currentSelected == 2 ? primaryColor : Colors.grey,
                     height: 32,
                     width: 32,
                   ),
                   label: "Rent",
+                ),
+                BottomNavigationBarItem(
+                  icon: Image.asset(
+                    'assets/icons/footersell.png',
+                    color: _currentSelected == 3 ? primaryColor : Colors.grey,
+                    height: 30,
+                    width: 30,
+                  ),
+                  label: "Commercial",
                 ),
                 BottomNavigationBarItem(
                   icon: Image.asset(
@@ -196,14 +195,14 @@ class _HomeScreenState extends State<HomeScreen> {
               selected: currentPage == DrawerSections.buy ? true : false),
           drawerItem(
               id: 2,
-              title: "Sell",
-              pnglogo: 'assets/icons/sell.png',
-              selected: currentPage == DrawerSections.sell ? true : false),
-          drawerItem(
-              id: 3,
               title: "Rent",
               pnglogo: 'assets/icons/rent.png',
               selected: currentPage == DrawerSections.rent ? true : false),
+          drawerItem(
+              id: 3,
+              title: "Commercial",
+              pnglogo: 'assets/icons/sell.png',
+              selected: currentPage == DrawerSections.sell ? true : false),
           drawerItem(
               id: 4,
               title: "Help",
@@ -216,17 +215,17 @@ class _HomeScreenState extends State<HomeScreen> {
               selected:
                   currentPage == DrawerSections.createAListing ? true : false),
           drawerItem(
-              id: 7,
+              id: 6,
               title: "Blog",
               pnglogo: 'assets/icons/blog.png',
               selected: currentPage == DrawerSections.blog ? true : false),
           drawerItem(
-              id: 8,
+              id: 7,
               title: "About",
               pnglogo: 'assets/icons/about.png',
               selected: currentPage == DrawerSections.about ? true : false),
           drawerItem(
-              id: 9,
+              id: 8,
               title: "Term of Use",
               pnglogo: 'assets/icons/terms.png',
               selected: currentPage == DrawerSections.termOfUse ? true : false),
@@ -243,7 +242,6 @@ class _HomeScreenState extends State<HomeScreen> {
   drawerItem({int? id, String? title, String? pnglogo, bool? selected}) {
     return InkWell(
       onTap: () {
-      
         setState(() {
           if (id == 0) {
             _currentSelected = 0;
@@ -256,11 +254,11 @@ class _HomeScreenState extends State<HomeScreen> {
           } else if (id == 2) {
             // currentPage = DrawerSections.rent;
             _currentSelected = 2;
-            apptitle = "Sell";
+            apptitle = "Rent";
           } else if (id == 3) {
             // currentPage = DrawerSections.sell;
             _currentSelected = 3;
-            apptitle = "Rent";
+            apptitle = "Commerical";
           } else if (id == 4) {
             // _currentSelected = 4;
             // apptitle = "Help";
@@ -274,12 +272,19 @@ class _HomeScreenState extends State<HomeScreen> {
                 MaterialPageRoute(
                     builder: (BuildContext context) => CreateListigPg()));
             // currentPage = DrawerSections.createAListing;
-          } else if (id == 7) {
+          } else if (id == 6) {
             currentPage = DrawerSections.blog;
+          } else if (id == 7) {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (BuildContext context) => AboutPg()));
           } else if (id == 8) {
-            currentPage = DrawerSections.about;
-          } else if (id == 9) {
-            currentPage = DrawerSections.termOfUse;
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (BuildContext context) => TermOfUsePg()));
+            // currentPage = DrawerSections.termOfUse;
           } else if (id == 10) {
             currentPage = DrawerSections.contactUs;
           }

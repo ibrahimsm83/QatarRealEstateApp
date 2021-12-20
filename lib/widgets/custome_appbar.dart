@@ -16,7 +16,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       {this.abtitle,
       this.bgcolor,
       this.abCtitle,
-      this.imageno=0,
+      this.imageno = 0,
       this.showPreferedSize = false,
       this.apbarheight = 56.0});
 
@@ -76,6 +76,32 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 ),
               ),
               actions: [
+                SizedBox(
+                  width: 10,
+                ),
+                Padding(
+                 padding:
+                    const EdgeInsets.symmetric(vertical: 10.0, horizontal: 8.0),
+                  child: Container(
+                    width: 50.0,
+                    padding: const EdgeInsets.all(4.0),
+                    decoration: BoxDecoration(
+                      // color: primaryColor,
+                      border: Border.all(color: primaryColor),
+
+                      borderRadius: BorderRadius.circular(5.0),
+                    ),
+                    child: Center(
+                      child: Text(
+                        "Add",
+                        style: TextStyle(
+                            fontSize: 12,
+                            color: primaryColor,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ),
+                ),
                 SizedBox(
                   width: 10,
                 ),
@@ -141,6 +167,30 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               ),
             ),
             actions: [
+              SizedBox(
+                width: 10,
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10.0, horizontal: 8.0),
+                child: Container(
+                  width: 50,
+                  padding: const EdgeInsets.all(4.0),
+                  decoration: BoxDecoration(
+                    border: Border.all(color: primaryColor),
+                    borderRadius: BorderRadius.circular(5.0),
+                  ),
+                  child: Center(
+                    child: Text(
+                      "Add",
+                      style: TextStyle(
+                          fontSize: 12,
+                          color: primaryColor,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
+              ),
               SizedBox(
                 width: 10,
               ),

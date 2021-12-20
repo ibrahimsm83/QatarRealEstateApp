@@ -1,13 +1,14 @@
 import 'package:bonyanaldoha/utils/color_schemes.dart';
 import 'package:bonyanaldoha/utils/constants.dart';
 import 'package:flutter/material.dart';
+import 'dart:math' as math;
 
 class ProtertyList extends StatefulWidget {
   int index;
   String address;
   String imagepath;
   String btntext;
-  
+
   ProtertyList({
     Key? key,
     this.index = 0,
@@ -48,6 +49,8 @@ class _ProtertyListState extends State<ProtertyList> {
                         bottomRight: Radius.circular(10.0),
                         topRight: Radius.circular(10.0)),
                     image: DecorationImage(
+                        colorFilter:
+                            ColorFilter.mode(Colors.black26, BlendMode.darken),
                         fit: BoxFit.cover,
                         image: AssetImage(
                           widget.imagepath,
@@ -61,25 +64,6 @@ class _ProtertyListState extends State<ProtertyList> {
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: const [
-                          Text("FEATURED",
-                              style: TextStyle(
-                                  fontSize: 14,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold)),
-                          CircleAvatar(
-                            maxRadius: 10,
-                            backgroundColor: Colors.transparent,
-                            child: Icon(
-                              Icons.favorite_border_outlined,
-                              size: 20,
-                              color: Colors.white,
-                            ),
-                          )
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           GestureDetector(
                             onTap: () {},
@@ -87,25 +71,139 @@ class _ProtertyListState extends State<ProtertyList> {
                               padding: EdgeInsets.all(5.0),
                               height: 25,
                               decoration: BoxDecoration(
-                                color: primaryColor,
-                                borderRadius: BorderRadius.circular(5.0),
+                                color: Color(0xff7498d3),
+                                borderRadius: BorderRadius.circular(1.0),
                               ),
                               child: Center(
                                 child: Text(
-                                  widget.btntext,
+                                  "FEATURED",
+                                  // widget.btntext,
                                   style: TextStyle(
-                                      fontSize: 14,
-                                      color: Colors.black,
+                                      fontSize: 12,
+                                      color: Colors.white,
                                       fontWeight: FontWeight.bold),
                                 ),
                               ),
                             ),
                           ),
-                          Text("QR3,600",
+                          Row(
+                            children: [
+                              GestureDetector(
+                                onTap: () {},
+                                child: Container(
+                                  padding: EdgeInsets.all(5.0),
+                                  height: 25,
+                                  decoration: BoxDecoration(
+                                    color: Colors.grey.shade600,
+                                    borderRadius: BorderRadius.circular(1.0),
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      widget.btntext,
+                                      style: TextStyle(
+                                          fontSize: 12,
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 5.0,
+                              ),
+                              GestureDetector(
+                                onTap: () {},
+                                child: Container(
+                                  padding: EdgeInsets.all(5.0),
+                                  height: 25,
+                                  decoration: BoxDecoration(
+                                    color: Colors.grey.shade600,
+                                    borderRadius: BorderRadius.circular(1.0),
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      "HOT OFFER",
+                                      // widget.btntext,
+                                      style: TextStyle(
+                                          fontSize: 12,
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text("QR4,475,300",
                               style: TextStyle(
                                   fontSize: 16,
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold)),
+                          Row(
+                            children: [
+                              Transform.rotate(
+                                angle: 130 * math.pi / 180,
+                                child: Row(
+                                  children: const [
+                                    CircleAvatar(
+                                      maxRadius: 10,
+                                      backgroundColor: Colors.transparent,
+                                      child: Icon(
+                                        Icons.arrow_back,
+                                        size: 18,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    CircleAvatar(
+                                      maxRadius: 10,
+                                      backgroundColor: Colors.transparent,
+                                      child: Icon(
+                                        Icons.arrow_forward,
+                                        size: 18,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              SizedBox(
+                                width: 10.0,
+                              ),
+                              CircleAvatar(
+                                maxRadius: 10,
+                                backgroundColor: Colors.transparent,
+                                child: Icon(
+                                  Icons.favorite_border_outlined,
+                                  size: 20,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 10.0,
+                              ),
+                              Container(
+                                  child: CircleAvatar(
+                                    maxRadius: 10,
+                                    child: Icon(
+                                      Icons.add,
+                                      size: 16,
+                                      color: Colors.white,
+                                    ),
+                                    backgroundColor: Colors.transparent,
+                                  ),
+                                  width: 20.0,
+                                  height: 20.0,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(color: Colors.white),
+                                    shape: BoxShape.circle,
+                                  )),
+                            ],
+                          ),
                         ],
                       ),
                     ],
@@ -136,24 +234,109 @@ class _ProtertyListState extends State<ProtertyList> {
                     SizedBox(
                       height: 5,
                     ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              Container(
+                                height: 25,
+                                width: 25,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      fit: BoxFit.cover,
+                                      image: AssetImage('assets/icons/bed.jpg'
+                                          //houseImg[index - 1]
+                                          )),
+                                ),
+                              ),
+                              SizedBox(width: 2.0),
+                              Text(
+                                '2',
+                                style:
+                                    TextStyle(color: Colors.grey, fontSize: 13),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Container(
+                                height: 25,
+                                width: 25,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      fit: BoxFit.cover,
+                                      image:
+                                          AssetImage('assets/icons/bathtap.png'
+                                              //houseImg[index - 1]
+                                              )),
+                                ),
+                              ),
+                              SizedBox(width: 2.0),
+                              Text(
+                                '1',
+                                style:
+                                    TextStyle(color: Colors.grey, fontSize: 13),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Container(
+                                height: 25,
+                                width: 25,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      fit: BoxFit.cover,
+                                      image: AssetImage('assets/icons/car.png'
+                                          //houseImg[index - 1]
+                                          )),
+                                ),
+                              ),
+                              SizedBox(width: 2.0),
+                              Text(
+                                '1',
+                                style:
+                                    TextStyle(color: Colors.grey, fontSize: 13),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Container(
+                                height: 25,
+                                width: 25,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      fit: BoxFit.cover,
+                                      image:
+                                          AssetImage('assets/icons/triangle.png'
+                                              //houseImg[index - 1]
+                                              )),
+                                ),
+                              ),
+                              SizedBox(width: 2.0),
+                              Text(
+                                '2,16 Sq m',
+                                style:
+                                    TextStyle(color: Colors.grey, fontSize: 13),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'Area: 2350',
-                          style: TextStyle(color: Colors.grey, fontSize: 13),
-                        ),
-                        CircleAvatar(
-                          maxRadius: 2,
-                          backgroundColor: Colors.grey,
-                          child: SizedBox(),
-                        ),
-                        Text(
-                          'Type: Commerical',
-                          style: TextStyle(color: Colors.grey, fontSize: 13),
-                        ),
-                        SizedBox(
-                          width: 5,
+                          'COMMERCIAL',
+                          style: TextStyle(color: Colors.black, fontSize: 13),
                         ),
                         Container(
                           padding: const EdgeInsets.all(4.0),
