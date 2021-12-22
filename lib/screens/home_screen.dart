@@ -273,7 +273,12 @@ class _HomeScreenState extends State<HomeScreen> {
                     builder: (BuildContext context) => CreateListigPg()));
             // currentPage = DrawerSections.createAListing;
           } else if (id == 6) {
-            currentPage = DrawerSections.blog;
+           // BlogPg
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (BuildContext context) => BlogPg()));
+           // currentPage = DrawerSections.blog;
           } else if (id == 7) {
             Navigator.push(
                 context,

@@ -1,4 +1,5 @@
 import 'package:bonyanaldoha/screens/about_screen.dart';
+import 'package:bonyanaldoha/screens/blog_screen.dart';
 import 'package:bonyanaldoha/screens/create_listing_screen.dart';
 import 'package:bonyanaldoha/screens/home_screen.dart';
 import 'package:bonyanaldoha/screens/term_of_use_screen.dart';
@@ -254,7 +255,10 @@ class _HelpPgState extends State<HelpPg> {
                     builder: (BuildContext context) => CreateListigPg()));
             // currentPage = DrawerSections.createAListing;
           } else if (id == 6) {
-            // currentPage = DrawerSections.blog;
+           Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                    builder: (BuildContext context) => BlogPg()));
           } else if (id == 7) {
             Navigator.pushReplacement(
                 context,

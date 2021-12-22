@@ -1,3 +1,4 @@
+import 'package:bonyanaldoha/screens/blog_screen.dart';
 import 'package:bonyanaldoha/screens/create_listing_screen.dart';
 import 'package:bonyanaldoha/screens/help_screen.dart';
 import 'package:bonyanaldoha/screens/home_screen.dart';
@@ -375,7 +376,8 @@ class _AboutPgState extends State<AboutPg> {
                     builder: (BuildContext context) => CreateListigPg()));
             // currentPage = DrawerSections.createAListing;
           } else if (id == 6) {
-            // currentPage = DrawerSections.blog;
+            Navigator.pushReplacement(context,
+                MaterialPageRoute(builder: (BuildContext context) => BlogPg()));
           } else if (id == 7) {
             Navigator.pushReplacement(
                 context,
