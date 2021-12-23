@@ -8,9 +8,14 @@ sizeheight(BuildContext context) {
 sizeWidth(BuildContext context) {
   return MediaQuery.of(context).size.width;
 }
+
+const String imgpath = 'assets/images';
+const String iconpath = 'assets/svgicons';
+
 class PreferencesKeys {
   static String token = "token";
 }
+
 class ResponseCodes {
   static String unknown = "UN8656696";
   static String timeout = "TOE8463688";
@@ -25,5 +30,3 @@ class ResponseCodes {
 class Constants {
   static String baseUrl = "https://www.onmascota.thevistech.com";
 }
-
-

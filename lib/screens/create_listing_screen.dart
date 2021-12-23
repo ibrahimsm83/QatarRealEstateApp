@@ -1,4 +1,5 @@
 import 'package:bonyanaldoha/screens/blog_screen.dart';
+import 'package:bonyanaldoha/screens/contact_us_screen.dart';
 import 'package:bonyanaldoha/screens/help_screen.dart';
 import 'package:bonyanaldoha/screens/home_screen.dart';
 import 'package:bonyanaldoha/screens/term_of_use_screen.dart';
@@ -216,7 +217,7 @@ class _CreateListigPgState extends State<CreateListigPg> {
             // selected: currentPage == DrawerSections.termOfUse ? true : false
           ),
           drawerItem(
-            id: 10,
+            id: 9,
             title: "Contact Us",
             pnglogo: 'assets/icons/contact.png',
             //  selected: currentPage == DrawerSections.contactUs ? true : false
@@ -254,24 +255,24 @@ class _CreateListigPgState extends State<CreateListigPg> {
           } else if (id == 2) {
             // currentPage = DrawerSections.rent;
             _currentSelected = 2;
-            apptitle = "Sell";
-            Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                    builder: (BuildContext context) => HomeScreen(
-                          currrentid: 2,
-                          title: "Sell",
-                        )));
-          } else if (id == 3) {
-            // currentPage = DrawerSections.sell;
-            _currentSelected = 3;
             apptitle = "Rent";
             Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
                     builder: (BuildContext context) => HomeScreen(
-                          currrentid: 3,
+                          currrentid: 2,
                           title: "Rent",
+                        )));
+          } else if (id == 3) {
+            // currentPage = DrawerSections.sell;
+            _currentSelected = 3;
+            apptitle = "Commercial";
+            Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                    builder: (BuildContext context) => HomeScreen(
+                          currrentid: 3,
+                          title: "Commercial",
                         )));
           } else if (id == 4) {
             // _currentSelected = 4;
@@ -302,8 +303,11 @@ class _CreateListigPgState extends State<CreateListigPg> {
                 MaterialPageRoute(
                     builder: (BuildContext context) => TermOfUsePg()));
             // currentPage = DrawerSections.termOfUse;
-          } else if (id == 10) {
-            // currentPage = DrawerSections.contactUs;
+          } else if (id == 9) {
+            Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                    builder: (BuildContext context) => ContactUsPg()));
           }
         });
         if (_scaffoldKey.currentState!.isDrawerOpen) {

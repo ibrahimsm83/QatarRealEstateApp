@@ -103,7 +103,7 @@ class _RentPgState extends State<RentPg> {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0),
             child: Container(
-              height: sizeheight(context) * 0.36,
+               height: 310,
               //  width: sizeWidth(context),
               child: ListView.builder(
                 shrinkWrap: true,

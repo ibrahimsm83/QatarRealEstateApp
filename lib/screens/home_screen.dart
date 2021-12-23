@@ -121,16 +121,21 @@ class _HomeScreenState extends State<HomeScreen> {
               items: [
                 BottomNavigationBarItem(
                     backgroundColor: Colors.white,
-                    icon: Image.asset(
-                      'assets/icons/footerhome.png',
+                    icon: SvgPicture.asset(
+                      "$iconpath/Home.svg",
+                      // icon: Image.asset(
+                      //   'assets/icons/footerhome.png',
                       color: _currentSelected == 0 ? primaryColor : Colors.grey,
                       height: 30,
                       width: 30,
                     ),
                     label: "Home"),
                 BottomNavigationBarItem(
-                  icon: Image.asset(
-                    'assets/icons/footerbuy.png',
+                  icon: SvgPicture.asset(
+                    "$iconpath/Buy.svg",
+                    //icon:
+                    // Image.asset(
+                    //   'assets/icons/footerbuy.png',
                     color: _currentSelected == 1 ? primaryColor : Colors.grey,
                     height: 30,
                     width: 30,
@@ -138,8 +143,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   label: "Buy",
                 ),
                 BottomNavigationBarItem(
-                  icon: Image.asset(
-                    'assets/icons/footerrent.png',
+                  icon: SvgPicture.asset(
+                    "$iconpath/Rent.svg",
+                    // icon: Image.asset(
+                    //   'assets/icons/footerrent.png',
                     color: _currentSelected == 2 ? primaryColor : Colors.grey,
                     height: 32,
                     width: 32,
@@ -147,8 +154,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   label: "Rent",
                 ),
                 BottomNavigationBarItem(
-                  icon: Image.asset(
-                    'assets/icons/footersell.png',
+                  icon: SvgPicture.asset(
+                    "$iconpath/Sell.svg",
+                    // icon: Image.asset(
+                    //   'assets/icons/footersell.png',
                     color: _currentSelected == 3 ? primaryColor : Colors.grey,
                     height: 30,
                     width: 30,
@@ -156,8 +165,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   label: "Commercial",
                 ),
                 BottomNavigationBarItem(
-                  icon: Image.asset(
-                    'assets/icons/footerlocation.png',
+                  icon: SvgPicture.asset(
+                    "$iconpath/Location.svg",
+                    //color: Colors.black,
+                    // ),
+                    // Image.asset(
+                    //   'assets/icons/footerlocation.png',
                     color: _currentSelected == 4 ? primaryColor : Colors.grey,
                     height: 30,
                     width: 30,
@@ -186,54 +199,55 @@ class _HomeScreenState extends State<HomeScreen> {
           drawerItem(
               id: 0,
               title: "Home",
-              pnglogo: 'assets/icons/home.png',
+              pnglogo: "$iconpath/Home.svg", //'assets/icons/home.png',
               selected: currentPage == DrawerSections.home ? true : false),
           drawerItem(
               id: 1,
               title: "Buy",
-              pnglogo: 'assets/icons/buy.png',
+              pnglogo: "$iconpath/Buy.svg", //'assets/icons/buy.png',
               selected: currentPage == DrawerSections.buy ? true : false),
           drawerItem(
               id: 2,
               title: "Rent",
-              pnglogo: 'assets/icons/rent.png',
+              pnglogo: "$iconpath/Rent.svg", //'assets/icons/rent.png',
               selected: currentPage == DrawerSections.rent ? true : false),
           drawerItem(
               id: 3,
               title: "Commercial",
-              pnglogo: 'assets/icons/sell.png',
+              pnglogo: "$iconpath/Sell.svg", //'assets/icons/sell.png',
               selected: currentPage == DrawerSections.sell ? true : false),
           drawerItem(
               id: 4,
               title: "Help",
-              pnglogo: 'assets/icons/help.png',
+              pnglogo: "$iconpath/Help.svg", //'assets/icons/help.png',
               selected: currentPage == DrawerSections.help ? true : false),
           drawerItem(
               id: 5,
               title: "Create a Listing",
-              pnglogo: 'assets/icons/create.png',
+              pnglogo:
+                  "$iconpath/CreateAListing.svg", //'assets/icons/create.png',
               selected:
                   currentPage == DrawerSections.createAListing ? true : false),
           drawerItem(
               id: 6,
               title: "Blog",
-              pnglogo: 'assets/icons/blog.png',
+              pnglogo: "$iconpath/Blog.svg", //'assets/icons/blog.png',
               selected: currentPage == DrawerSections.blog ? true : false),
           drawerItem(
               id: 7,
               title: "About",
-              pnglogo: 'assets/icons/about.png',
+              pnglogo: "$iconpath/About_Us.svg", //'assets/icons/about.png',
               selected: currentPage == DrawerSections.about ? true : false),
           drawerItem(
               id: 8,
               title: "Term of Use",
-              pnglogo: 'assets/icons/terms.png',
+              pnglogo: "$iconpath/Terms_Of_Use.svg", //'assets/icons/terms.png',
               selected: currentPage == DrawerSections.termOfUse ? true : false),
           drawerItem(
-              id: 10,
-              title: "Contact Us",
-              pnglogo: 'assets/icons/contact.png',
-              selected: currentPage == DrawerSections.contactUs ? true : false),
+            id: 9,
+            title: "Contact Us",
+            pnglogo: "$iconpath/Contact _Us.svg", //'assets/icons/contact.png',
+          ),
         ],
       ),
     );
@@ -273,12 +287,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     builder: (BuildContext context) => CreateListigPg()));
             // currentPage = DrawerSections.createAListing;
           } else if (id == 6) {
-           // BlogPg
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (BuildContext context) => BlogPg()));
-           // currentPage = DrawerSections.blog;
+            // BlogPg
+            Navigator.push(context,
+                MaterialPageRoute(builder: (BuildContext context) => BlogPg()));
+            // currentPage = DrawerSections.blog;
           } else if (id == 7) {
             Navigator.push(
                 context,
@@ -290,8 +302,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 MaterialPageRoute(
                     builder: (BuildContext context) => TermOfUsePg()));
             // currentPage = DrawerSections.termOfUse;
-          } else if (id == 10) {
-            currentPage = DrawerSections.contactUs;
+          } else if (id == 9) {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (BuildContext context) => ContactUsPg()));
           }
         });
         if (_scaffoldKey.currentState!.isDrawerOpen) {
@@ -305,11 +320,12 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(
               width: 10,
             ),
-            Image.asset(pnglogo ?? ""),
-            // SvgPicture.asset(
-            //   svgIconLoc,
-            //   color: Colors.black,
-            // ),
+            // Image.asset(pnglogo ?? ""),
+            // SvgPicture.asset("$imgpath/pen.svg",color: Colors.white,height: 30,width: 30,),
+            SvgPicture.asset(
+              pnglogo ?? "", color: primaryColor,
+              //color: Colors.black,
+            ),
             SizedBox(
               width: 10,
             ),

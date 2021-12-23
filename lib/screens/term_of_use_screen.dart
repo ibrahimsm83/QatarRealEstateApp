@@ -1,12 +1,16 @@
 import 'package:bonyanaldoha/screens/about_screen.dart';
+import 'package:bonyanaldoha/screens/blog_screen.dart';
+import 'package:bonyanaldoha/screens/contact_us_screen.dart';
 import 'package:bonyanaldoha/screens/create_listing_screen.dart';
 import 'package:bonyanaldoha/screens/help_screen.dart';
 import 'package:bonyanaldoha/screens/home_screen.dart';
 import 'package:bonyanaldoha/utils/color_schemes.dart';
 import 'package:bonyanaldoha/utils/constants.dart';
+import 'package:bonyanaldoha/widgets/blog_list.dart';
 import 'package:bonyanaldoha/widgets/custom_drawer.dart';
 import 'package:bonyanaldoha/widgets/custome_appbar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class TermOfUsePg extends StatefulWidget {
   const TermOfUsePg({Key? key}) : super(key: key);
@@ -171,63 +175,52 @@ class _TermOfUsePgState extends State<TermOfUsePg> {
           drawerItem(
             id: 0,
             title: "Home",
-            pnglogo: 'assets/icons/home.png',
-            // selected: currentPage == DrawerSections.home ? true : false
+            pnglogo: "$iconpath/Home.svg",
           ),
           drawerItem(
             id: 1,
             title: "Buy",
-            pnglogo: 'assets/icons/buy.png',
-            //selected: currentPage == DrawerSections.buy ? true : false
+            pnglogo: "$iconpath/Buy.svg",
           ),
           drawerItem(
             id: 2,
-            title: "Sell",
-            pnglogo: 'assets/icons/sell.png',
-            //selected: currentPage == DrawerSections.sell ? true : false
+            title: "Rent",
+            pnglogo: "$iconpath/Rent.svg",
           ),
           drawerItem(
             id: 3,
-            title: "Rent",
-            pnglogo: 'assets/icons/rent.png',
-            // selected: currentPage == DrawerSections.rent ? true : false
+            title: "Commercial",
+            pnglogo: "$iconpath/Sell.svg",
           ),
           drawerItem(
             id: 4,
             title: "Help",
-            pnglogo: 'assets/icons/help.png',
-            //  selected: currentPage == DrawerSections.help ? true : false
+            pnglogo: "$iconpath/Help.svg",
           ),
           drawerItem(
             id: 5,
             title: "Create a Listing",
-            pnglogo: 'assets/icons/create.png',
-            //  selected:
-            //   currentPage == DrawerSections.createAListing ? true : false
+            pnglogo: "$iconpath/CreateAListing.svg",
           ),
           drawerItem(
             id: 6,
             title: "Blog",
-            pnglogo: 'assets/icons/blog.png',
-            // selected: currentPage == DrawerSections.blog ? true : false
+            pnglogo: "$iconpath/Blog.svg",
           ),
           drawerItem(
             id: 7,
             title: "About",
-            pnglogo: 'assets/icons/about.png',
-            // selected: currentPage == DrawerSections.about ? true : false
+            pnglogo: "$iconpath/About_Us.svg",
           ),
           drawerItem(
             id: 8,
             title: "Term of Use",
-            pnglogo: 'assets/icons/terms.png',
-            // selected: currentPage == DrawerSections.termOfUse ? true : false
+            pnglogo: "$iconpath/Terms_Of_Use.svg",
           ),
           drawerItem(
-            id: 10,
+            id: 9,
             title: "Contact Us",
-            pnglogo: 'assets/icons/contact.png',
-            //  selected: currentPage == DrawerSections.contactUs ? true : false
+            pnglogo: "$iconpath/Contact _Us.svg",
           ),
         ],
       ),
@@ -262,24 +255,24 @@ class _TermOfUsePgState extends State<TermOfUsePg> {
           } else if (id == 2) {
             // currentPage = DrawerSections.rent;
             _currentSelected = 2;
-            apptitle = "Sell";
-            Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                    builder: (BuildContext context) => HomeScreen(
-                          currrentid: 2,
-                          title: "Sell",
-                        )));
-          } else if (id == 3) {
-            // currentPage = DrawerSections.sell;
-            _currentSelected = 3;
             apptitle = "Rent";
             Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
                     builder: (BuildContext context) => HomeScreen(
-                          currrentid: 3,
+                          currrentid: 2,
                           title: "Rent",
+                        )));
+          } else if (id == 3) {
+            // currentPage = DrawerSections.sell;
+            _currentSelected = 3;
+            apptitle = "Commercial";
+            Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                    builder: (BuildContext context) => HomeScreen(
+                          currrentid: 3,
+                          title: "Commercial",
                         )));
           } else if (id == 4) {
             // _currentSelected = 4;
@@ -296,7 +289,8 @@ class _TermOfUsePgState extends State<TermOfUsePg> {
                     builder: (BuildContext context) => CreateListigPg()));
             // currentPage = DrawerSections.createAListing;
           } else if (id == 6) {
-            // currentPage = DrawerSections.blog;
+            Navigator.pushReplacement(context,
+                MaterialPageRoute(builder: (BuildContext context) => BlogPg()));
           } else if (id == 7) {
             Navigator.pushReplacement(
                 context,
@@ -309,8 +303,11 @@ class _TermOfUsePgState extends State<TermOfUsePg> {
                 MaterialPageRoute(
                     builder: (BuildContext context) => TermOfUsePg()));
             // currentPage = DrawerSections.termOfUse;
-          } else if (id == 10) {
-            // currentPage = DrawerSections.contactUs;
+          } else if (id == 9) {
+           Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                    builder: (BuildContext context) => ContactUsPg()));
           }
         });
         if (_scaffoldKey.currentState!.isDrawerOpen) {
@@ -324,11 +321,11 @@ class _TermOfUsePgState extends State<TermOfUsePg> {
             SizedBox(
               width: 10,
             ),
-            Image.asset(pnglogo ?? ""),
-            // SvgPicture.asset(
-            //   svgIconLoc,
-            //   color: Colors.black,
-            // ),
+            //  Image.asset(pnglogo ?? ""),
+            SvgPicture.asset(
+              pnglogo ?? "",
+              color: primaryColor,
+            ),
             SizedBox(
               width: 10,
             ),
