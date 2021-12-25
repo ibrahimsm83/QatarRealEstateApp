@@ -1,0 +1,27 @@
+{
+  "welcome": "Welcome!",
+  "pleaselogintocountinue": "Please Login to Continue",
+  "forgotpassword": "Forgot Password?",
+  "Rememberme": "RememberMe",
+  "Email_Address":"Email Address",
+  "loginNow": "Login Now",
+  "or":"OR",
+  "continue_w_g":"Continue With Google",
+  "continue_W_F":"Continue With Facebook",
+  "dont_have_an_account":"Don't have an Account?",
+  "Sign_Up":" Sign Up",
+  "createAccount":"Create Account",
+  "pleaseCreateAnAccount":"Please Create Account to Continue",
+  "phoneNumber":"Phone Number",
+  "fullName":"Full Name",
+  "Password":"Password",
+  "re-type_Password":"Re-type Password",
+  "select-your-Account-Type":"Select Your Account Type",
+  "registerNow":"Register Now",
+  "already_have_an_account":"Already Have an Account? ",
+  "login":"Login",
+  "send_now":"SEND NOW"
+}
+
+
+
