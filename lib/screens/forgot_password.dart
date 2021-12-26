@@ -1,4 +1,4 @@
-import 'package:bonyanaldoha/screens/home_screen.dart';
+
 import 'package:bonyanaldoha/screens/verification_screen.dart';
 import 'package:bonyanaldoha/utils/color_schemes.dart';
 import 'package:bonyanaldoha/utils/constants.dart';

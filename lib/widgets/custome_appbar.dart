@@ -8,15 +8,17 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String? abtitle;
   final String? abCtitle;
   final int imageno;
-  Color? bgcolor;
+  final Color? bgcolor;
   bool showPreferedSize;
   double? apbarheight;
+  final Function()? onTap;
   @override
   CustomAppBar(
       {this.abtitle,
       this.bgcolor,
       this.abCtitle,
       this.imageno = 0,
+      this.onTap,
       this.showPreferedSize = false,
       this.apbarheight = 56.0});
 
@@ -80,8 +82,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   width: 10,
                 ),
                 Padding(
-                 padding:
-                    const EdgeInsets.symmetric(vertical: 10.0, horizontal: 8.0),
+                  padding: const EdgeInsets.symmetric(
+                      vertical: 10.0, horizontal: 8.0),
                   child: Container(
                     width: 50.0,
                     padding: const EdgeInsets.all(4.0),
@@ -105,13 +107,19 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 SizedBox(
                   width: 10,
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 15.0),
-                  child: Container(
-                      height: 25,
-                      width: 25,
-                      child: Image.asset('assets/icons/notification.png',
-                          color: primaryColor)),
+                InkWell(
+                  onTap: onTap,
+                  //  () {
+                  //   print("notification screen tabed");
+                  // },
+                  child: Padding(
+                    padding: const EdgeInsets.only(right: 15.0),
+                    child: Container(
+                        height: 25,
+                        width: 25,
+                        child: Image.asset('assets/icons/notification.png',
+                            color: primaryColor)),
+                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(right: 10.0),
@@ -194,13 +202,16 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               SizedBox(
                 width: 10,
               ),
-              Padding(
-                padding: const EdgeInsets.only(right: 15.0),
-                child: Container(
-                    height: 25,
-                    width: 25,
-                    child: Image.asset('assets/icons/notification.png',
-                        color: primaryColor)),
+              InkWell(
+                onTap: onTap,
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 15.0),
+                  child: Container(
+                      height: 25,
+                      width: 25,
+                      child: Image.asset('assets/icons/notification.png',
+                          color: primaryColor)),
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.only(right: 10.0),

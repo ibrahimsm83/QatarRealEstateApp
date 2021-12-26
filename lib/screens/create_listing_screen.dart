@@ -5,7 +5,6 @@ import 'package:bonyanaldoha/screens/home_screen.dart';
 import 'package:bonyanaldoha/screens/term_of_use_screen.dart';
 import 'package:bonyanaldoha/services/api_data.dart';
 import 'package:bonyanaldoha/utils/color_schemes.dart';
-import 'package:bonyanaldoha/utils/constants.dart';
 import 'package:bonyanaldoha/widgets/custom_drawer.dart';
 import 'package:bonyanaldoha/widgets/custom_vert_property_list.dart';
 import 'package:bonyanaldoha/widgets/custome_appbar.dart';

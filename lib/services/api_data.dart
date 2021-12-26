@@ -1,3 +1,5 @@
+import 'package:flutter/cupertino.dart';
+
 List<String> prices = [
   '\$567,900',
   '\$335,900',
@@ -35,3 +37,5 @@ List<String> cityImg = [
   'assets/images/city4.jpg',
   'assets/images/city3.jpg'
 ];
+
+

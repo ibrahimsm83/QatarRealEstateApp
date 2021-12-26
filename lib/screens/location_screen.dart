@@ -1,9 +1,9 @@
 import 'package:bonyanaldoha/services/api_data.dart';
 import 'package:bonyanaldoha/utils/color_schemes.dart';
 import 'package:bonyanaldoha/utils/constants.dart';
+import 'package:bonyanaldoha/widgets/custome_dialog_box.dart';
 import 'package:bonyanaldoha/widgets/home_components.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 //import '../components/location_components.dart';
@@ -143,11 +143,21 @@ class _LocationState extends State<Location> {
                     scrollDirection: Axis.horizontal,
                     itemCount: cityImg.length,
                     itemBuilder: (context, index) {
-                      return ProtertyList(
+                      return PropertyList(
                         index: index,
                         btntext: "BUY",
                         address: 'The Pearl-Qatar,Doha,Qatar',
                         imagepath: cityImg[index],
+                        onTapArrow: () {
+                          showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return CustumeDialogBox(
+                                  imagepath: cityImg[index],
+                                  textType: "BUY",
+                                );
+                              });
+                        },
                       );
                     },
                   ),

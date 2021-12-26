@@ -1,37 +1,44 @@
 import 'package:bonyanaldoha/model/drawer_list_model.dart';
 import 'package:bonyanaldoha/screens/about_screen.dart';
+import 'package:bonyanaldoha/screens/blog_screen.dart';
 import 'package:bonyanaldoha/screens/compare_screen.dart';
 import 'package:bonyanaldoha/screens/contact_us_screen.dart';
-
+import 'package:bonyanaldoha/screens/create_listing_screen.dart';
 import 'package:bonyanaldoha/screens/favorite_screen.dart';
 import 'package:bonyanaldoha/screens/help_screen.dart';
 import 'package:bonyanaldoha/screens/home_screen.dart';
 import 'package:bonyanaldoha/screens/list_a_property_screen.dart';
-import 'package:bonyanaldoha/screens/notification_screen.dart';
 import 'package:bonyanaldoha/screens/package_screen.dart';
 import 'package:bonyanaldoha/screens/setting_screen.dart';
 import 'package:bonyanaldoha/screens/term_of_use_screen.dart';
 import 'package:bonyanaldoha/services/api_data.dart';
 import 'package:bonyanaldoha/utils/color_schemes.dart';
-import 'package:bonyanaldoha/utils/constants.dart';
-import 'package:bonyanaldoha/widgets/blog_list.dart';
 import 'package:bonyanaldoha/widgets/custom_drawer.dart';
-
 import 'package:bonyanaldoha/widgets/custome_appbar.dart';
+import 'package:bonyanaldoha/widgets/notification_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class BlogPg extends StatefulWidget {
-  const BlogPg({Key? key}) : super(key: key);
+class NotificationPg extends StatefulWidget {
+  NotificationPg({Key? key}) : super(key: key);
 
   @override
-  State<BlogPg> createState() => _BlogPgState();
+  State<NotificationPg> createState() => _NotificationPgState();
 }
 
-class _BlogPgState extends State<BlogPg> {
+class _NotificationPgState extends State<NotificationPg> {
+  List notificationTitle = [
+    {'titleNoti': 'Appartement Discount 10% Off'},
+    {'details': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed'},
+    {'dateTime': 'Today 12:30 pm'},
+  ];
+
   String apptitle = 'Home';
+
   int _currentSelected = 0;
+
   GlobalKey<ScaffoldState> _scaffoldKey1 = new GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -39,14 +46,8 @@ class _BlogPgState extends State<BlogPg> {
         child: Scaffold(
           key: _scaffoldKey1,
           appBar: CustomAppBar(
-            abtitle: "Blog",
+            abtitle: "Noftification",
             bgcolor: Colors.white,
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (BuildContext context) => NotificationPg()));
-            },
           ),
           drawer: CustomeDrower(
             drawerlist: DrawerList(),
@@ -54,78 +55,78 @@ class _BlogPgState extends State<BlogPg> {
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                width: sizeWidth(context),
-                height: 45,
-                margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.3),
-                      blurRadius: 2,
-                      offset: Offset(0, 5), // Shadow position
-                    ),
-                  ],
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(8.0, 8, 0, 8),
-                      child: Container(
-                        child: Icon(
-                          Icons.search,
-                          color: Colors.grey,
-                        ),
-                      ),
-                    ),
-                    Container(
-                      width: sizeWidth(context) * 0.68,
-                      child: TextField(
-                        //showCursor: false,
-                        decoration: InputDecoration(
-                          hintText: "Search Property..",
-                          hintStyle: TextStyle(color: Colors.grey),
-                          enabledBorder: InputBorder.none,
-                          border: InputBorder.none,
-                          disabledBorder: InputBorder.none,
-                          focusedErrorBorder: InputBorder.none,
-                        ),
-                      ),
-                    ),
-                    Container(
-                      height: 30,
-                      width: sizeWidth(context) * 0.09,
-                      margin: EdgeInsets.all(5.0),
-                      decoration: BoxDecoration(
-                        color: primaryColor,
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Image.asset(
-                          'assets/icons/filtericon.png',
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Container(
-                  child: Text(
-                    "Our Blog",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ),
+              // Container(
+              //   width: sizeWidth(context),
+              //   height: 45,
+              //   margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
+              //   decoration: BoxDecoration(
+              //     color: Colors.white,
+              //     borderRadius: BorderRadius.circular(10),
+              //     boxShadow: [
+              //       BoxShadow(
+              //         color: Colors.grey.withOpacity(0.3),
+              //         blurRadius: 2,
+              //         offset: Offset(0, 5), // Shadow position
+              //       ),
+              //     ],
+              //   ),
+              //   child: Row(
+              //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //     children: [
+              //       Padding(
+              //         padding: const EdgeInsets.fromLTRB(8.0, 8, 0, 8),
+              //         child: Container(
+              //           child: Icon(
+              //             Icons.search,
+              //             color: Colors.grey,
+              //           ),
+              //         ),
+              //       ),
+              //       Container(
+              //         width: sizeWidth(context) * 0.68,
+              //         child: TextField(
+              //           //showCursor: false,
+              //           decoration: InputDecoration(
+              //             hintText: "Search Property..",
+              //             hintStyle: TextStyle(color: Colors.grey),
+              //             enabledBorder: InputBorder.none,
+              //             border: InputBorder.none,
+              //             disabledBorder: InputBorder.none,
+              //             focusedErrorBorder: InputBorder.none,
+              //           ),
+              //         ),
+              //       ),
+              //       Container(
+              //         height: 30,
+              //         width: sizeWidth(context) * 0.09,
+              //         margin: EdgeInsets.all(5.0),
+              //         decoration: BoxDecoration(
+              //           color: primaryColor,
+              //           borderRadius: BorderRadius.circular(10.0),
+              //         ),
+              //         child: Padding(
+              //           padding: const EdgeInsets.all(8.0),
+              //           child: Image.asset(
+              //             'assets/icons/filtericon.png',
+              //             color: Colors.white,
+              //           ),
+              //         ),
+              //       ),
+              //     ],
+              //   ),
+              // ),
+              // Padding(
+              //   padding: const EdgeInsets.all(10.0),
+              //   child: Container(
+              //     child: Text(
+              //       "Our Blog",
+              //       style: TextStyle(
+              //           color: Colors.black,
+              //           fontSize: 18,
+              //           fontWeight: FontWeight.bold),
+              //     ),
+              //   ),
+              // ),
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -136,10 +137,12 @@ class _BlogPgState extends State<BlogPg> {
                       shrinkWrap: true,
                       // physics: NeverScrollableScrollPhysics(),
                       itemBuilder: (context, index) {
-                        return BlogList(
+                        return NotificationList(
                           index: index,
-                          address: addresses[7],
+                          titleN: notificationTitle[0]['titleNoti'],
                           imagepath: cityImg[index],
+                          subtitleN:notificationTitle[1]['details'] ,
+                          dateTime: notificationTitle[2]['dateTime'],
                         );
                       },
                     ),
@@ -153,7 +156,7 @@ class _BlogPgState extends State<BlogPg> {
     );
   }
 
-  Widget DrawerList() {
+ Widget DrawerList() {
     return Container(
       child: Column(
         children: List.generate(
@@ -284,3 +287,4 @@ class _BlogPgState extends State<BlogPg> {
     );
   }
 }
+
