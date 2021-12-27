@@ -9,8 +9,8 @@ class LoginModel {
   late final int code;
   late final Data data;
   late final String message;
-  
-  LoginModel.fromJson(Map<String, dynamic> json){
+
+  LoginModel.fromJson(Map<String, dynamic> json) {
     error = json['error'];
     code = json['code'];
     data = Data.fromJson(json['data']);
@@ -34,8 +34,8 @@ class Data {
   });
   late final String token;
   late final User user;
-  
-  Data.fromJson(Map<String, dynamic> json){
+
+  Data.fromJson(Map<String, dynamic> json) {
     token = json['token'];
     user = User.fromJson(json['user']);
   }
@@ -59,15 +59,15 @@ class User {
     required this.email,
     required this.number,
     required this.gender,
-     this.status,
-     this.orderBy,
-     this.createdByCompId,
-     this.createdByUserId,
-     this.updatedByUserId,
-     this.deletedByUserId,
+    this.status,
+    this.orderBy,
+    this.createdByCompId,
+    this.createdByUserId,
+    this.updatedByUserId,
+    this.deletedByUserId,
     required this.createdAt,
     required this.updatedAt,
-     this.deletedAt,
+    this.deletedAt,
   });
   late final int id;
   late final int userTypeId;
@@ -87,8 +87,8 @@ class User {
   late final String createdAt;
   late final String updatedAt;
   late final Null deletedAt;
-  
-  User.fromJson(Map<String, dynamic> json){
+
+  User.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     userTypeId = json['user_type_id'];
     userTypeTitle = json['user_type_title'];

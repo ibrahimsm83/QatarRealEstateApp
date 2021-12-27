@@ -3,14 +3,13 @@ import 'package:bonyanaldoha/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
-class PropertyList extends StatefulWidget {
-  final int index;
- final String address;
-  final String imagepath;
- final String btntext;
- final  Function()? onTapArrow;
-
- const PropertyList({
+class FavoriteList extends StatefulWidget {
+  int index;
+  String address;
+  String imagepath;
+  String btntext;
+  Function()? onTapArrow;
+  FavoriteList({
     Key? key,
     this.index = 0,
     this.address = "",
@@ -20,10 +19,10 @@ class PropertyList extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _PropertyListState createState() => _PropertyListState();
+  _FavoriteListState createState() => _FavoriteListState();
 }
 
-class _PropertyListState extends State<PropertyList> {
+class _FavoriteListState extends State<FavoriteList> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -125,6 +124,30 @@ class _PropertyListState extends State<PropertyList> {
                                   child: Center(
                                     child: Text(
                                       "HOT OFFER",
+                                      // widget.btntext,
+                                      style: TextStyle(
+                                          fontSize: 12,
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 5.0,
+                              ),
+                              GestureDetector(
+                                onTap: () {},
+                                child: Container(
+                                  padding: EdgeInsets.all(5.0),
+                                  height: 25,
+                                  decoration: BoxDecoration(
+                                    color: Colors.grey.shade600,
+                                    borderRadius: BorderRadius.circular(1.0),
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      "DELETE",
                                       // widget.btntext,
                                       style: TextStyle(
                                           fontSize: 12,

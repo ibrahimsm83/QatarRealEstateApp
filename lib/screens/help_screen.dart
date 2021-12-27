@@ -1,10 +1,17 @@
+import 'package:bonyanaldoha/model/drawer_list_model.dart';
 import 'package:bonyanaldoha/screens/about_screen.dart';
 import 'package:bonyanaldoha/screens/blog_screen.dart';
+import 'package:bonyanaldoha/screens/compare_screen.dart';
 import 'package:bonyanaldoha/screens/contact_us_screen.dart';
-import 'package:bonyanaldoha/screens/create_listing_screen.dart';
+
+import 'package:bonyanaldoha/screens/favorite_screen.dart';
 import 'package:bonyanaldoha/screens/home_screen.dart';
+import 'package:bonyanaldoha/screens/list_a_property_screen.dart';
+import 'package:bonyanaldoha/screens/notification_screen.dart';
+import 'package:bonyanaldoha/screens/package_screen.dart';
+import 'package:bonyanaldoha/screens/setting_screen.dart';
 import 'package:bonyanaldoha/screens/term_of_use_screen.dart';
-import 'package:bonyanaldoha/services/api_data.dart';
+
 import 'package:bonyanaldoha/utils/color_schemes.dart';
 import 'package:bonyanaldoha/utils/constants.dart';
 import 'package:bonyanaldoha/widgets/custom_drawer.dart';
@@ -36,6 +43,12 @@ class _HelpPgState extends State<HelpPg> {
             showPreferedSize: true,
             apbarheight: 200,
             abCtitle: "Help & Support",
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => NotificationPg()));
+            },
           ),
           drawer: CustomeDrower(
             drawerlist: DrawerList(),
@@ -124,84 +137,24 @@ class _HelpPgState extends State<HelpPg> {
   Widget DrawerList() {
     return Container(
       child: Column(
-        // shows the list of menu drawer
-        children: [
-          Divider(
-            color: dividerColor,
-          ),
-          drawerItem(
-            id: 0,
-            title: "Home",
-            pnglogo: "$iconpath/Home.svg",
-          ),
-          drawerItem(
-            id: 1,
-            title: "Buy",
-            pnglogo: "$iconpath/Buy.svg",
-          ),
-          drawerItem(
-            id: 2,
-            title: "Rent",
-            pnglogo: "$iconpath/Rent.svg",
-          ),
-          drawerItem(
-            id: 3,
-            title: "Commercial",
-            pnglogo: "$iconpath/Sell.svg",
-          ),
-          drawerItem(
-            id: 4,
-            title: "Help",
-            pnglogo: "$iconpath/Help.svg",
-          ),
-          drawerItem(
-            id: 5,
-            title: "Create a Listing",
-            pnglogo: "$iconpath/CreateAListing.svg",
-          ),
-          drawerItem(
-            id: 6,
-            title: "Blog",
-            pnglogo: "$iconpath/Blog.svg",
-          ),
-          drawerItem(
-            id: 7,
-            title: "About",
-            pnglogo: "$iconpath/About_Us.svg",
-          ),
-          drawerItem(
-            id: 8,
-            title: "Term of Use",
-            pnglogo: "$iconpath/Terms_Of_Use.svg",
-          ),
-          drawerItem(
-            id: 9,
-            title: "Contact Us",
-            pnglogo: "$iconpath/Contact _Us.svg",
-          ),
-        ],
+        children: List.generate(
+            drawerMenueList.length, (i) => drawerItem(drawerMenueList[i])),
       ),
     );
   }
 
-  drawerItem({int? id, String? title, String? pnglogo, bool? selected}) {
+  drawerItem(DrawerListModel dlm) {
     return InkWell(
       onTap: () {
         setState(() {
-          if (id == 0) {
-            _currentSelected = 0;
+          if (dlm.id == 0) {
             apptitle = "Home";
             Navigator.push(
                 context,
                 MaterialPageRoute(
                     builder: (BuildContext context) => HomeScreen()));
-
-            //currentPage = DrawerSections.home;
-          } else if (id == 1) {
-            // currentPage = DrawerSections.buy;
-            _currentSelected = 1;
+          } else if (dlm.id == 1) {
             apptitle = "Buy";
-
             Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
@@ -209,9 +162,7 @@ class _HelpPgState extends State<HelpPg> {
                           currrentid: 1,
                           title: "Buy",
                         )));
-          } else if (id == 2) {
-            // currentPage = DrawerSections.rent;
-            _currentSelected = 2;
+          } else if (dlm.id == 2) {
             apptitle = "Rent";
             Navigator.pushReplacement(
                 context,
@@ -220,9 +171,7 @@ class _HelpPgState extends State<HelpPg> {
                           currrentid: 2,
                           title: "Rent",
                         )));
-          } else if (id == 3) {
-            // currentPage = DrawerSections.sell;
-            _currentSelected = 3;
+          } else if (dlm.id == 3) {
             apptitle = "Commercial";
             Navigator.pushReplacement(
                 context,
@@ -231,34 +180,48 @@ class _HelpPgState extends State<HelpPg> {
                           currrentid: 3,
                           title: "Commercial",
                         )));
-          } else if (id == 4) {
-            // _currentSelected = 4;
-            apptitle = "Help";
-
-            Navigator.pushReplacement(context,
-                MaterialPageRoute(builder: (BuildContext context) => HelpPg()));
-          } else if (id == 5) {
+          } else if (dlm.id == 4) {
             Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                    builder: (BuildContext context) => CreateListigPg()));
-          } else if (id == 6) {
+                    builder: (BuildContext context) => ListAPropertypg()));
+          } else if (dlm.id == 5) {
+            Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                    builder: (BuildContext context) => Favoritiepg()));
+          } else if (dlm.id == 6) {
+            Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                    builder: (BuildContext context) => ComparePg()));
+          } else if (dlm.id == 7) {
+            Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                    builder: (BuildContext context) => Packagespg()));
+          } else if (dlm.id == 8) {
             Navigator.pushReplacement(context,
                 MaterialPageRoute(builder: (BuildContext context) => BlogPg()));
-          } else if (id == 7) {
+          } else if (dlm.id == 9) {
+            Navigator.pushReplacement(context,
+                MaterialPageRoute(builder: (BuildContext context) => HelpPg()));
+          } else if (dlm.id == 10) {
             Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
                     builder: (BuildContext context) => AboutPg()));
-            //currentPage = DrawerSections.about;
-          } else if (id == 8) {
+          } else if (dlm.id == 11) {
+            Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                    builder: (BuildContext context) => SettingsPg()));
+          } else if (dlm.id == 12) {
             Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
                     builder: (BuildContext context) => TermOfUsePg()));
-
-            // currentPage = DrawerSections.termOfUse;
-          } else if (id == 9) {
+          } else if (dlm.id == 13) {
             Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
@@ -269,26 +232,35 @@ class _HelpPgState extends State<HelpPg> {
           _scaffoldKey.currentState!.openEndDrawer();
         }
       },
-      child: Container(
-        height: 40,
-        child: Row(
-          children: [
-            SizedBox(
-              width: 10,
+      child: Column(
+        children: [
+          dlm.id == 0
+              ? Divider(
+                  color: dividerColor,
+                )
+              : SizedBox(),
+          Container(
+            height: 40,
+            child: Row(
+              children: [
+                SizedBox(
+                  width: 10,
+                ),
+                SvgPicture.asset(
+                  dlm.iconpath,
+                  color: primaryColor,
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  dlm.title,
+                  style: TextStyle(color: Colors.white),
+                )
+              ],
             ),
-            SvgPicture.asset(
-              pnglogo ?? "",
-              color: primaryColor,
-            ),
-            SizedBox(
-              width: 10,
-            ),
-            Text(
-              title ?? "",
-              style: TextStyle(color: Colors.white),
-            )
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

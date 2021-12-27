@@ -1,9 +1,8 @@
 import 'package:bonyanaldoha/model/drawer_list_model.dart';
 import 'package:bonyanaldoha/screens/about_screen.dart';
+import 'package:bonyanaldoha/screens/blog_screen.dart';
 import 'package:bonyanaldoha/screens/compare_screen.dart';
 import 'package:bonyanaldoha/screens/contact_us_screen.dart';
-
-import 'package:bonyanaldoha/screens/favorite_screen.dart';
 import 'package:bonyanaldoha/screens/help_screen.dart';
 import 'package:bonyanaldoha/screens/home_screen.dart';
 import 'package:bonyanaldoha/screens/list_a_property_screen.dart';
@@ -13,140 +12,71 @@ import 'package:bonyanaldoha/screens/setting_screen.dart';
 import 'package:bonyanaldoha/screens/term_of_use_screen.dart';
 import 'package:bonyanaldoha/services/api_data.dart';
 import 'package:bonyanaldoha/utils/color_schemes.dart';
-import 'package:bonyanaldoha/utils/constants.dart';
-import 'package:bonyanaldoha/widgets/blog_list.dart';
 import 'package:bonyanaldoha/widgets/custom_drawer.dart';
-
 import 'package:bonyanaldoha/widgets/custome_appbar.dart';
+import 'package:bonyanaldoha/widgets/custome_dialog_box.dart';
+import 'package:bonyanaldoha/widgets/favorite_property_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class BlogPg extends StatefulWidget {
-  const BlogPg({Key? key}) : super(key: key);
+class Favoritiepg extends StatefulWidget {
+  const Favoritiepg({Key? key}) : super(key: key);
 
   @override
-  State<BlogPg> createState() => _BlogPgState();
+  _FavoritiepgState createState() => _FavoritiepgState();
 }
 
-class _BlogPgState extends State<BlogPg> {
+class _FavoritiepgState extends State<Favoritiepg> {
   String apptitle = 'Home';
   int _currentSelected = 0;
   GlobalKey<ScaffoldState> _scaffoldKey1 = new GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: SafeArea(
-        child: Scaffold(
-          key: _scaffoldKey1,
-          appBar: CustomAppBar(
-            abtitle: "Blog",
-            bgcolor: Colors.white,
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (BuildContext context) => NotificationPg()));
-            },
-          ),
-          drawer: CustomeDrower(
-            drawerlist: DrawerList(),
-          ),
-          body: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                width: sizeWidth(context),
-                height: 45,
-                margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.3),
-                      blurRadius: 2,
-                      offset: Offset(0, 5), // Shadow position
-                    ),
-                  ],
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(8.0, 8, 0, 8),
-                      child: Container(
-                        child: Icon(
-                          Icons.search,
-                          color: Colors.grey,
-                        ),
-                      ),
-                    ),
-                    Container(
-                      width: sizeWidth(context) * 0.68,
-                      child: TextField(
-                        //showCursor: false,
-                        decoration: InputDecoration(
-                          hintText: "Search Property..",
-                          hintStyle: TextStyle(color: Colors.grey),
-                          enabledBorder: InputBorder.none,
-                          border: InputBorder.none,
-                          disabledBorder: InputBorder.none,
-                          focusedErrorBorder: InputBorder.none,
-                        ),
-                      ),
-                    ),
-                    Container(
-                      height: 30,
-                      width: sizeWidth(context) * 0.09,
-                      margin: EdgeInsets.all(5.0),
-                      decoration: BoxDecoration(
-                        color: primaryColor,
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Image.asset(
-                          'assets/icons/filtericon.png',
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+    return SafeArea(
+      child: Scaffold(
+        key: _scaffoldKey1,
+        appBar: CustomAppBar(
+          abtitle: "Favorite",
+          bgcolor: Colors.white,
+          onTap: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (BuildContext context) => NotificationPg()));
+          },
+        ),
+        drawer: CustomeDrower(
+          drawerlist: DrawerList(),
+        ),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              child: ListView.builder(
+                scrollDirection: Axis.vertical,
+                itemCount: cityImg.length,
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                itemBuilder: (context, index) {
+                  return FavoriteList(
+                    index: index,
+                    btntext: "RENT",
+                    address: addresses[0],
+                    imagepath: cityImg[index],
+                    onTapArrow: () {
+                      showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return CustumeDialogBox(
+                              imagepath: cityImg[index],
+                              textType: "RENT",
+                            );
+                          });
+                    },
+                  );
+                },
               ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Container(
-                  child: Text(
-                    "Our Blog",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    child: ListView.builder(
-                      scrollDirection: Axis.vertical,
-                      itemCount: cityImg.length,
-                      shrinkWrap: true,
-                      // physics: NeverScrollableScrollPhysics(),
-                      itemBuilder: (context, index) {
-                        return BlogList(
-                          index: index,
-                          address: addresses[7],
-                          imagepath: cityImg[index],
-                        );
-                      },
-                    ),
-                  ),
-                ),
-              ),
-            ],
+            ),
           ),
         ),
       ),

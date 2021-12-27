@@ -1,6 +1,6 @@
 import 'package:bonyanaldoha/screens/forgot_password.dart';
 import 'package:bonyanaldoha/screens/home_screen.dart';
-import 'package:bonyanaldoha/services/helper.dart';
+
 import 'package:bonyanaldoha/widgets/text_form_field.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:easy_localization/src/public_ext.dart';
@@ -191,19 +191,17 @@ class _LoginScreenState extends State<LoginScreen> {
                           'loginNow',
                           style: TextStyle(color: Colors.black),
                         ).tr(),
-                        onPressed: ()
-
-                            {
-                              if (formKey.currentState!.validate()) {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                    const SnackBar(content: Text('Processing ')));
-                                Navigator.pushReplacement(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (BuildContext context) =>
-                                            HomeScreen()));
-                              }
-                            },
+                        onPressed: () {
+                          if (formKey.currentState!.validate()) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(content: Text('Processing ')));
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        HomeScreen()));
+                          }
+                        },
                         //     async {
                         //   if (formKey.currentState!.validate()) {
                         //     setState(() => _loading = true);
