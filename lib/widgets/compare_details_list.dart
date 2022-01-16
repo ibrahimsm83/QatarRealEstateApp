@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class CompareDetailsList extends StatelessWidget {
   final String imagepath;
   const CompareDetailsList({Key? key, this.imagepath = ""}) : super(key: key);
-
+  
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

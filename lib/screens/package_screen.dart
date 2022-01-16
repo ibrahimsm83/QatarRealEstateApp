@@ -1,7 +1,9 @@
 import 'package:bonyanaldoha/screens/notification_screen.dart';
 import 'package:bonyanaldoha/screens/term_of_use_screen.dart';
+import 'package:bonyanaldoha/services/api_data.dart';
 import 'package:bonyanaldoha/widgets/custom_drawer.dart';
 import 'package:bonyanaldoha/widgets/custome_appbar.dart';
+import 'package:bonyanaldoha/widgets/image_width.dart';
 import 'package:flutter/material.dart';
 import 'package:bonyanaldoha/model/drawer_list_model.dart';
 import 'package:bonyanaldoha/screens/about_screen.dart';
@@ -32,24 +34,75 @@ class _PackagespgState extends State<Packagespg> {
     return SafeArea(
       child: Scaffold(
         key: _scaffoldKey1,
-        appBar: CustomAppBar(
-          abtitle: "Package",
-          bgcolor: Colors.white,
-          onTap: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (BuildContext context) => NotificationPg()));
-          },
-        ),
-        drawer: CustomeDrower(
-          drawerlist: DrawerList(),
+        // appBar: CustomAppBar(
+        //   abtitle: "Package",
+        //   bgcolor: Colors.white,
+        //   onTap: () {
+        //     Navigator.push(
+        //         context,
+        //         MaterialPageRoute(
+        //             builder: (BuildContext context) => NotificationPg()));
+        //   },
+        // ),
+        // drawer: CustomeDrower(
+        //   drawerlist: DrawerList(),
+        // ),
+        body: CustomScrollView(
+          slivers: [
+            SliverAppBar(
+              backgroundColor: Colors.white,
+              expandedHeight: 200,
+              //floating: true,
+              pinned: true,
+              // centerTitle: false,
+              flexibleSpace: FlexibleSpaceBar(
+                background: Image.asset(
+                  cityImg[2],
+                  //'https://source.unsplash.com/random?monochromatic+dark',
+                  fit: BoxFit.cover,
+                ),
+                collapseMode: CollapseMode.pin,
+                title: Text(
+                  'Flexible Title',
+                  style: TextStyle(color: Colors.black),
+                ),
+                titlePadding: EdgeInsets.only(left: 100.0, bottom: 80),
+                // centerTitle: true,
+              ),
+              // title: Text(
+              //   'Flexible Title',
+              //   style: TextStyle(color: Colors.black),
+              // ),
+              leading: Icon(
+                Icons.arrow_back,
+                color: Colors.black,
+              ),
+              actions: const [
+                Icon(
+                  Icons.settings,
+                  color: Colors.black,
+                ),
+                SizedBox(width: 12),
+              ],
+            ),
+            buildImages(),
+          ],
         ),
       ),
     );
   }
 
-
+  Widget buildImages() => SliverToBoxAdapter(
+        child: GridView.builder(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+          ),
+          primary: false,
+          shrinkWrap: true,
+          itemCount: 20,
+          itemBuilder: (context, index) => ImageWidget(index: index),
+        ),
+      );
   Widget DrawerList() {
     return Container(
       child: Column(
