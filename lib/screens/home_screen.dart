@@ -1,5 +1,6 @@
 import 'package:bonyanaldoha/model/drawer_list_model.dart';
 import 'package:bonyanaldoha/screens/about_screen.dart';
+import 'package:bonyanaldoha/screens/agents_screen.dart';
 import 'package:bonyanaldoha/screens/blog_screen.dart';
 import 'package:bonyanaldoha/screens/buy_screen.dart';
 import 'package:bonyanaldoha/screens/compare_screen.dart';
@@ -258,7 +259,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 context,
                 MaterialPageRoute(
                     builder: (BuildContext context) => ContactUsPg()));
+          } else if (dlm.id == 14) {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (BuildContext context) => AgentsPage()));
           }
+          //AgentsPage
         });
         if (_scaffoldKey.currentState!.isDrawerOpen) {
           _scaffoldKey.currentState!.openEndDrawer();

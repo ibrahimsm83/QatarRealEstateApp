@@ -11,6 +11,7 @@ sizeWidth(BuildContext context) {
 
 const String imgpath = 'assets/images';
 const String iconpath = 'assets/svgicons';
+const String iconspath = 'assets/icons';
 
 class PreferencesKeys {
   static String token = "token";

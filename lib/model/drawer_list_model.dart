@@ -6,7 +6,8 @@ class DrawerListModel {
   final String iconpath;
   DrawerListModel({this.id = 0, this.title = "", this.iconpath = ""});
 }
- List<DrawerListModel> drawerMenueList = [
+
+List<DrawerListModel> drawerMenueList = [
   DrawerListModel(id: 0, title: "Home", iconpath: "$iconpath/Home.svg"),
   DrawerListModel(id: 1, title: "Buy", iconpath: "$iconpath/Buy.svg"),
   DrawerListModel(id: 2, title: "Rent", iconpath: "$iconpath/Rent.svg"),
@@ -26,4 +27,5 @@ class DrawerListModel {
       id: 12, title: "Terms of Use", iconpath: "$iconpath/Terms_Of_Use.svg"),
   DrawerListModel(
       id: 13, title: "Contact Us", iconpath: "$iconpath/Contact _Us.svg"),
+  DrawerListModel(id: 14, title: "Agents", iconpath: "$iconpath/Agent.svg"),
 ];
