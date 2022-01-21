@@ -12,7 +12,7 @@ import 'package:bonyanaldoha/screens/help_screen.dart';
 import 'package:bonyanaldoha/screens/list_a_property_screen.dart';
 import 'package:bonyanaldoha/screens/location_screen.dart';
 import 'package:bonyanaldoha/screens/notification_screen.dart';
-import 'package:bonyanaldoha/screens/package_screen.dart';
+import 'package:bonyanaldoha/screens/membership_screen.dart';
 import 'package:bonyanaldoha/screens/rent_screen.dart';
 import 'package:bonyanaldoha/screens/sell_screen.dart';
 import 'package:bonyanaldoha/screens/setting_screen.dart';
@@ -110,6 +110,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
           key: _scaffoldKey,
           appBar: CustomAppBar(
@@ -232,7 +233,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (BuildContext context) => Packagespg()));
+                    builder: (BuildContext context) => MemberShipPage()));
           } else if (dlm.id == 8) {
             Navigator.push(context,
                 MaterialPageRoute(builder: (BuildContext context) => BlogPg()));

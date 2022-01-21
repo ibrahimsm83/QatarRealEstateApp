@@ -1,6 +1,7 @@
 import 'package:bonyanaldoha/screens/home_screen.dart';
 import 'package:bonyanaldoha/utils/color_schemes.dart';
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class SimpleAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Function()? onTap;
@@ -12,12 +13,15 @@ class SimpleAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      titleSpacing: 0,
+      automaticallyImplyLeading: false,
       backgroundColor: backgroundColor,
       // Colors.white,
       elevation: 1.0,
       title: Text(
         abtitle!,
         style: TextStyle(
+          fontSize: 15.sp,
           color: Colors.black,
         ),
       ),

@@ -5,6 +5,7 @@ import 'package:bonyanaldoha/widgets/custome_dialog_box.dart';
 import 'package:bonyanaldoha/widgets/custome_dropdown_button.dart';
 import 'package:bonyanaldoha/widgets/home_components.dart';
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class BuyPage extends StatefulWidget {
   const BuyPage({Key? key}) : super(key: key);
@@ -235,7 +236,7 @@ class _BuyPageState extends State<BuyPage> {
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8.0),
                       child: Container(
-                        height: 310,
+                        height: 36.2.h,
                         // sizeheight(context) * 0.36,
                         //  width: sizeWidth(context),
                         child: ListView.builder(

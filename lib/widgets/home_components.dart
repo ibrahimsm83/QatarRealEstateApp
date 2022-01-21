@@ -5,12 +5,12 @@ import 'dart:math' as math;
 
 class PropertyList extends StatefulWidget {
   final int index;
- final String address;
+  final String address;
   final String imagepath;
- final String btntext;
- final  Function()? onTapArrow;
+  final String btntext;
+  final Function()? onTapArrow;
 
- const PropertyList({
+  const PropertyList({
     Key? key,
     this.index = 0,
     this.address = "",
@@ -153,22 +153,18 @@ class _PropertyListState extends State<PropertyList> {
                                 child: Transform.rotate(
                                   angle: 130 * math.pi / 180,
                                   child: Row(
-                                    children: const [
-                                      CircleAvatar(
-                                        maxRadius: 10,
-                                        backgroundColor: Colors.transparent,
+                                    children: [
+                                      Container(
                                         child: Icon(
                                           Icons.arrow_back,
-                                          size: 16,
+                                          size: 14,
                                           color: Colors.white,
                                         ),
                                       ),
-                                      CircleAvatar(
-                                        maxRadius: 10,
-                                        backgroundColor: Colors.transparent,
+                                      Container(
                                         child: Icon(
                                           Icons.arrow_forward,
-                                          size: 16,
+                                          size: 14,
                                           color: Colors.white,
                                         ),
                                       ),
@@ -177,7 +173,7 @@ class _PropertyListState extends State<PropertyList> {
                                 ),
                               ),
                               SizedBox(
-                                width: 10.0,
+                                width: 7.0,
                               ),
                               CircleAvatar(
                                 maxRadius: 10,

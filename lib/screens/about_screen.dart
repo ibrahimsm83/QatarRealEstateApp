@@ -7,7 +7,7 @@ import 'package:bonyanaldoha/screens/help_screen.dart';
 import 'package:bonyanaldoha/screens/home_screen.dart';
 import 'package:bonyanaldoha/screens/list_a_property_screen.dart';
 import 'package:bonyanaldoha/screens/notification_screen.dart';
-import 'package:bonyanaldoha/screens/package_screen.dart';
+import 'package:bonyanaldoha/screens/membership_screen.dart';
 import 'package:bonyanaldoha/screens/setting_screen.dart';
 import 'package:bonyanaldoha/screens/term_of_use_screen.dart';
 import 'package:bonyanaldoha/utils/color_schemes.dart';
@@ -126,8 +126,6 @@ class _AboutPgState extends State<AboutPg> {
                       padding: const EdgeInsets.only(right: 8.0),
                       child: Container(
                         width: sizeWidth(context) * 0.4,
-                        // margin: EdgeInsets.symmetric(
-                        //     horizontal: sizeWidth(context) * 0.06),
                         height: 45,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.all(Radius.circular(30.0)),
@@ -319,7 +317,7 @@ class _AboutPgState extends State<AboutPg> {
             Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                    builder: (BuildContext context) => Packagespg()));
+                    builder: (BuildContext context) => MemberShipPage()));
           } else if (dlm.id == 8) {
             Navigator.pushReplacement(context,
                 MaterialPageRoute(builder: (BuildContext context) => BlogPg()));

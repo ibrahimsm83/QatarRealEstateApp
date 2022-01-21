@@ -8,7 +8,7 @@ import 'package:bonyanaldoha/screens/favorite_screen.dart';
 import 'package:bonyanaldoha/screens/help_screen.dart';
 import 'package:bonyanaldoha/screens/home_screen.dart';
 import 'package:bonyanaldoha/screens/list_a_property_screen.dart';
-import 'package:bonyanaldoha/screens/package_screen.dart';
+import 'package:bonyanaldoha/screens/membership_screen.dart';
 import 'package:bonyanaldoha/screens/setting_screen.dart';
 import 'package:bonyanaldoha/screens/term_of_use_screen.dart';
 import 'package:bonyanaldoha/services/api_data.dart';
@@ -221,7 +221,7 @@ class _NotificationPgState extends State<NotificationPg> {
             Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                    builder: (BuildContext context) => Packagespg()));
+                    builder: (BuildContext context) => MemberShipPage()));
           } else if (dlm.id == 8) {
             Navigator.pushReplacement(context,
                 MaterialPageRoute(builder: (BuildContext context) => BlogPg()));

@@ -1,5 +1,5 @@
 import 'package:bonyanaldoha/screens/notification_screen.dart';
-import 'package:bonyanaldoha/screens/package_screen.dart';
+import 'package:bonyanaldoha/screens/membership_screen.dart';
 import 'package:bonyanaldoha/screens/term_of_use_screen.dart';
 import 'package:bonyanaldoha/widgets/custom_drawer.dart';
 import 'package:bonyanaldoha/widgets/custome_appbar.dart';
@@ -115,7 +115,7 @@ class _SettingsPgState extends State<SettingsPg> {
             Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                    builder: (BuildContext context) => Packagespg()));
+                    builder: (BuildContext context) => MemberShipPage()));
           } else if (dlm.id == 8) {
             Navigator.pushReplacement(context,
                 MaterialPageRoute(builder: (BuildContext context) => BlogPg()));

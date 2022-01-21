@@ -18,6 +18,7 @@ class _AddNewAgentPageState extends State<AddNewAgentPage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: appbar(
           backgroundColor: lightGreyColor,
@@ -261,7 +262,7 @@ class _AddNewAgentPageState extends State<AddNewAgentPage> {
       title: Text(
         abtitle!,
         style: TextStyle(
-          // fontSize: 18,
+          fontSize: 15.sp,
           fontWeight: FontWeight.bold,
           color: Colors.black,
         ),

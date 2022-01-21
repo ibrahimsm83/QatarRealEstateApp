@@ -5,6 +5,7 @@ import 'package:bonyanaldoha/widgets/custome_dialog_box.dart';
 import 'package:bonyanaldoha/widgets/custome_dropdown_button.dart';
 import 'package:bonyanaldoha/widgets/home_components.dart';
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class DeshboardPg extends StatefulWidget {
   const DeshboardPg({Key? key}) : super(key: key);
@@ -234,11 +235,9 @@ class _DeshboardPgState extends State<DeshboardPg> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 8.0),
+                      padding: const EdgeInsets.all(8.0),
                       child: Container(
-                        height: 310,
-                        //sizeheight(context) * 0.37,
-                        //  width: sizeWidth(context),
+                        height: 36.2.h,
                         child: ListView.builder(
                           shrinkWrap: true,
                           scrollDirection: Axis.horizontal,

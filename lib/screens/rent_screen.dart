@@ -5,6 +5,7 @@ import 'package:bonyanaldoha/widgets/custome_dialog_box.dart';
 import 'package:bonyanaldoha/widgets/custome_dropdown_button.dart';
 import 'package:bonyanaldoha/widgets/home_components.dart';
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class RentPg extends StatefulWidget {
   const RentPg({Key? key}) : super(key: key);
@@ -234,7 +235,7 @@ class _RentPgState extends State<RentPg> {
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8.0),
                       child: Container(
-                        height: 310,
+                         height: 36.2.h,
                         //  width: sizeWidth(context),
                         child: ListView.builder(
                           shrinkWrap: true,

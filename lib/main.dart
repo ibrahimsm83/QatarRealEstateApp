@@ -1,6 +1,8 @@
 import 'package:bonyanaldoha/screens/login_screen.dart';
 import 'package:bonyanaldoha/screens/splash.dart';
+import 'package:bonyanaldoha/utils/color_schemes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:sizer/sizer.dart';
 import 'package:easy_localization/easy_localization.dart';
 
@@ -38,6 +40,9 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+        statusBarColor: primaryColor,
+        statusBarIconBrightness: Brightness.dark));
     return Sizer(builder: (context, orientation, deviceType) {
       return MaterialApp(
         supportedLocales: context.supportedLocales,

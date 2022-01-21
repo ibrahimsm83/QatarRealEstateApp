@@ -18,7 +18,7 @@ List<DrawerListModel> drawerMenueList = [
       iconpath: "$iconpath/CreateAListing.svg"),
   DrawerListModel(id: 5, title: "Favorite", iconpath: "$iconpath/Home.svg"),
   DrawerListModel(id: 6, title: "Compare", iconpath: "$iconpath/Home.svg"),
-  DrawerListModel(id: 7, title: "Packages", iconpath: "$iconpath/Home.svg"),
+  DrawerListModel(id: 7, title: "Membership", iconpath: "$iconpath/Home.svg"),
   DrawerListModel(id: 8, title: "Blog", iconpath: "$iconpath/Blog.svg"),
   DrawerListModel(id: 9, title: "Help", iconpath: "$iconpath/Help.svg"),
   DrawerListModel(id: 10, title: "About", iconpath: "$iconpath/Home.svg"),

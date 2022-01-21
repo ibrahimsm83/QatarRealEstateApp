@@ -5,6 +5,7 @@ import 'package:bonyanaldoha/widgets/custome_dialog_box.dart';
 import 'package:bonyanaldoha/widgets/home_components.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:sizer/sizer.dart';
 
 //import '../components/location_components.dart';
 
@@ -136,7 +137,7 @@ class _LocationState extends State<Location> {
                   bottom: 10.0,
                 ),
                 child: SizedBox(
-                  height: sizeheight(context) * 0.36,
+                    height: 36.2.h,
                   //  width: sizeWidth(context),
                   child: ListView.builder(
                     shrinkWrap: true,
