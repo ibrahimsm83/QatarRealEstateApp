@@ -22,7 +22,6 @@ class _DeshboardPgState extends State<DeshboardPg> {
   String val2 = 'Property Type';
   String val3 = 'All Cities';
   bool seacrhProperty = false;
-
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(

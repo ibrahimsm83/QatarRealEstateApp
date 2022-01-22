@@ -2,7 +2,7 @@ import 'package:bonyanaldoha/screens/add_new_agent_screen.dart';
 import 'package:bonyanaldoha/screens/notification_screen.dart';
 import 'package:bonyanaldoha/utils/color_schemes.dart';
 import 'package:bonyanaldoha/utils/constants.dart';
-import 'package:bonyanaldoha/widgets/custome_appbar.dart';
+
 import 'package:bonyanaldoha/widgets/simple_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -20,6 +20,7 @@ class _AgentsPageState extends State<AgentsPage> {
     return MaterialApp(
       home: Scaffold(
         appBar: SimpleAppBar(
+          onTapLeading: () => Navigator.pop(context),
           backgroundColor: lightGreyColor,
           abtitle: "Agents",
           onTap: () => Navigator.push(

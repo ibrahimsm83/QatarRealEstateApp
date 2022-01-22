@@ -2,7 +2,6 @@
 import 'package:bonyanaldoha/utils/color_schemes.dart';
 import 'package:bonyanaldoha/utils/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class MyDrawerHeader extends StatefulWidget {
   const MyDrawerHeader({Key? key}) : super(key: key);
@@ -80,7 +79,6 @@ class _MyDrawerHeaderState extends State<MyDrawerHeader> {
           ),
         ),
       ],
-      //),
     );
   }
 }

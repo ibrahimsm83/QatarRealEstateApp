@@ -2,6 +2,7 @@ import 'package:bonyanaldoha/utils/color_schemes.dart';
 import 'package:bonyanaldoha/utils/constants.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class VerticalPropertyList extends StatelessWidget {
   int index;
   String address;

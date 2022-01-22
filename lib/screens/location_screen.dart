@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:sizer/sizer.dart';
 
-//import '../components/location_components.dart';
 
 class Location extends StatefulWidget {
   const Location({Key? key}) : super(key: key);
@@ -96,7 +95,7 @@ class _LocationState extends State<Location> {
                         ),
                       ),
                     ),
-                    Container(
+                    SizedBox(
                       width: sizeWidth(context) * 0.68,
                       child: TextField(
                         //showCursor: false,

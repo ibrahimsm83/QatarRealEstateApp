@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class CustumeDialogBox extends StatefulWidget {
   final String imagepath;
   final String textType;
-  CustumeDialogBox({Key? key, this.imagepath = "", this.textType = "BUY"})
+  const CustumeDialogBox({Key? key, this.imagepath = "", this.textType = "BUY"})
       : super(key: key);
 
   @override
@@ -349,14 +349,14 @@ class _CustumeDialogBoxState extends State<CustumeDialogBox> {
                           style: TextStyle(fontSize: 13),
                         ),
                         SizedBox(height: 10.0),
-                        AcceptanceOfTerms(text: 'Including All Utilities'),
+                        acceptanceOfTerms(text: 'Including All Utilities'),
                         SizedBox(height: 10.0),
-                        AcceptanceOfTerms(
+                        acceptanceOfTerms(
                             text: 'Including internet and TV cable'),
                         SizedBox(height: 10.0),
-                        AcceptanceOfTerms(text: 'Including Maintenance'),
+                        acceptanceOfTerms(text: 'Including Maintenance'),
                         SizedBox(height: 10.0),
-                        AcceptanceOfTerms(text: 'Incredible west bay views'),
+                        acceptanceOfTerms(text: 'Incredible west bay views'),
                         Padding(
                           padding: const EdgeInsets.only(top: 16.0),
                           child: Container(
@@ -402,7 +402,7 @@ class _CustumeDialogBoxState extends State<CustumeDialogBox> {
     );
   }
 
-  Widget AcceptanceOfTerms({String? text}) {
+  Widget acceptanceOfTerms({String? text}) {
     return Row(
       children: [
         Container(

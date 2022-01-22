@@ -1,9 +1,8 @@
-
 import 'package:bonyanaldoha/screens/verification_screen.dart';
 import 'package:bonyanaldoha/utils/color_schemes.dart';
 import 'package:bonyanaldoha/utils/constants.dart';
 import 'package:bonyanaldoha/widgets/text_form_field.dart';
-import 'package:easy_localization/src/public_ext.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -102,7 +101,7 @@ class ForgetPassword extends StatelessWidget {
                         child: Text(
                           'send_now',
                           style: TextStyle(color: Colors.black),
-                        ).tr(),
+                        ),
                         onPressed: () {
                           if (formKeyFw.currentState!.validate()) {
                             // ScaffoldMessenger.of(context).showSnackBar(

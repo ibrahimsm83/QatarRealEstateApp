@@ -153,20 +153,16 @@ class _PropertyListState extends State<PropertyList> {
                                 child: Transform.rotate(
                                   angle: 130 * math.pi / 180,
                                   child: Row(
-                                    children: [
-                                      Container(
-                                        child: Icon(
-                                          Icons.arrow_back,
-                                          size: 14,
-                                          color: Colors.white,
-                                        ),
+                                    children: const [
+                                      Icon(
+                                        Icons.arrow_back,
+                                        size: 14,
+                                        color: Colors.white,
                                       ),
-                                      Container(
-                                        child: Icon(
-                                          Icons.arrow_forward,
-                                          size: 14,
-                                          color: Colors.white,
-                                        ),
+                                      Icon(
+                                        Icons.arrow_forward,
+                                        size: 14,
+                                        color: Colors.white,
                                       ),
                                     ],
                                   ),

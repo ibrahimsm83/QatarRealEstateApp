@@ -1,8 +1,9 @@
 import 'package:bonyanaldoha/utils/color_schemes.dart';
 import 'package:bonyanaldoha/utils/constants.dart';
-import 'package:easy_localization/src/public_ext.dart';
+
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class CustomeTextFormField extends StatefulWidget {
   String? hintText;
   bool obscureText;

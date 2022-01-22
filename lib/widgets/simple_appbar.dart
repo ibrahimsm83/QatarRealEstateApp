@@ -1,14 +1,20 @@
-import 'package:bonyanaldoha/screens/home_screen.dart';
 import 'package:bonyanaldoha/utils/color_schemes.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 class SimpleAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Function()? onTap;
+  final Function()? onTapLeading;
   final String? abtitle;
   final Color? backgroundColor;
-  const SimpleAppBar({Key? key, this.onTap, this.abtitle, this.backgroundColor})
+  const SimpleAppBar(
+      {Key? key,
+      this.onTap,
+      this.abtitle,
+      this.backgroundColor,
+      this.onTapLeading})
       : super(key: key);
+  @override
   Size get preferredSize => Size.fromHeight(56.0);
   @override
   Widget build(BuildContext context) {
@@ -26,8 +32,7 @@ class SimpleAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
       leading: InkWell(
-        onTap: () => Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (BuildContext context) => HomeScreen())),
+        onTap: onTapLeading,
         child: Icon(
           Icons.arrow_back,
           color: primaryColor,

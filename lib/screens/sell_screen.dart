@@ -168,14 +168,12 @@ class _SellPgState extends State<SellPg> {
                           children: [
                             Padding(
                               padding: const EdgeInsets.fromLTRB(8.0, 8, 0, 8),
-                              child: Container(
-                                child: Icon(
-                                  Icons.search,
-                                  color: Colors.grey,
-                                ),
+                              child: Icon(
+                                Icons.search,
+                                color: Colors.grey,
                               ),
                             ),
-                            Container(
+                            SizedBox(
                               width: sizeWidth(context) * 0.68,
                               child: TextField(
                                 //showCursor: false,
@@ -235,7 +233,7 @@ class _SellPgState extends State<SellPg> {
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8.0),
-                      child: Container(
+                      child: SizedBox(
                         height: 36.2.h,
                         //  width: sizeWidth(context),
                         child: ListView.builder(

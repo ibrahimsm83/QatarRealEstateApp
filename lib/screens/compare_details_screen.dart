@@ -14,14 +14,12 @@ class ComapreDetailsPg extends StatefulWidget {
 }
 
 class _ComapreDetailsPgState extends State<ComapreDetailsPg> {
-  String apptitle = 'Home';
-  int _currentSelected = 0;
-  GlobalKey<ScaffoldState> _scaffoldKey1 = new GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        key: _scaffoldKey1,
+      
         appBar: AppBar(
           backgroundColor: Colors.white,
           elevation: 2.5,

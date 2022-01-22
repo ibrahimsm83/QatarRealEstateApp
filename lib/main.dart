@@ -17,7 +17,7 @@ void main() async {
     path:
         'assets/translationss', // <-- change the path of the translation files
     fallbackLocale: Locale('en', 'US'),
-    child: const MyApp(),
+    child: MyApp(),
   ));
 }
 
@@ -35,9 +35,10 @@ void main() async {
 //   );
 // }
 
+// ignore: must_be_immutable
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -50,7 +51,8 @@ class MyApp extends StatelessWidget {
         locale: context.locale,
         title: 'Flutter Demo', debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primarySwatch: myappColor,
+          // primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         //   dashboard.home: MyHomePage(title: 'Flutter Demo Home Page'),
@@ -64,4 +66,20 @@ class MyApp extends StatelessWidget {
       );
     });
   }
+
+  MaterialColor myappColor = const MaterialColor(
+    0xffC99C37,
+    <int, Color>{
+      50: Color(0xffd8b476), //10%
+      100: Color(0xffd8b476), //20%
+      200: Color(0xffd8b476), //30%
+      300: Color(0xffd8b476), //40%
+      400: Color(0xffd8b476), //50%
+      500: Color(0xffd8b476), //60%
+      600: Color(0xffd8b476), //70%
+      700: Color(0xffd8b476), //80%
+      800: Color(0xffd8b476), //90%
+      900: Color(0xffd8b476), //100%
+    },
+  );
 }

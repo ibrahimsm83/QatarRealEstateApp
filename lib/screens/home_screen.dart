@@ -22,8 +22,7 @@ import 'package:bonyanaldoha/utils/color_schemes.dart';
 import 'package:bonyanaldoha/utils/constants.dart';
 import 'package:bonyanaldoha/widgets/custom_drawer.dart';
 import 'package:bonyanaldoha/widgets/custome_appbar.dart';
-import 'package:bonyanaldoha/widgets/custome_drawer_header.dart';
-import 'package:bonyanaldoha/widgets/home_components.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -96,7 +95,6 @@ class _HomeScreenState extends State<HomeScreen> {
           }
           break;
       }
-      //  _currentScreen
     });
   }
 
@@ -109,82 +107,79 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-          key: _scaffoldKey,
-          appBar: CustomAppBar(
-            abtitle: apptitle,
-            bgcolor: Colors.white,
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (BuildContext context) => NotificationPg()));
-            },
-          ),
-          drawer: CustomeDrower(
-            drawerlist: DrawerList(),
-          ),
-          bottomNavigationBar: BottomNavigationBar(
-              elevation: 2.0,
-              onTap: _onItemTapped,
-              currentIndex: _currentSelected,
-              selectedItemColor: primaryColor,
-              unselectedItemColor: Colors.grey,
-              type: BottomNavigationBarType.fixed,
-              items: [
-                BottomNavigationBarItem(
-                    backgroundColor: Colors.white,
-                    icon: SvgPicture.asset(
-                      "$iconpath/Home.svg",
-                      color: _currentSelected == 0 ? primaryColor : Colors.grey,
-                      height: 30,
-                      width: 30,
-                    ),
-                    label: "Home"),
-                BottomNavigationBarItem(
+    return Scaffold(
+        key: _scaffoldKey,
+        appBar: CustomAppBar(
+          abtitle: apptitle,
+          bgcolor: Colors.white,
+          onTap: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (BuildContext context) => NotificationPg()));
+          },
+        ),
+        drawer: CustomeDrower(
+          drawerlist: DrawerList(),
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+            elevation: 2.0,
+            onTap: _onItemTapped,
+            currentIndex: _currentSelected,
+            selectedItemColor: primaryColor,
+            unselectedItemColor: Colors.grey,
+            type: BottomNavigationBarType.fixed,
+            items: [
+              BottomNavigationBarItem(
+                  backgroundColor: Colors.white,
                   icon: SvgPicture.asset(
-                    "$iconpath/Buy.svg",
-                    color: _currentSelected == 1 ? primaryColor : Colors.grey,
+                    "$iconpath/Home.svg",
+                    color: _currentSelected == 0 ? primaryColor : Colors.grey,
                     height: 30,
                     width: 30,
                   ),
-                  label: "Buy",
+                  label: "Home"),
+              BottomNavigationBarItem(
+                icon: SvgPicture.asset(
+                  "$iconpath/Buy.svg",
+                  color: _currentSelected == 1 ? primaryColor : Colors.grey,
+                  height: 30,
+                  width: 30,
                 ),
-                BottomNavigationBarItem(
-                  icon: SvgPicture.asset(
-                    "$iconpath/Rent.svg",
-                    color: _currentSelected == 2 ? primaryColor : Colors.grey,
-                    height: 32,
-                    width: 32,
-                  ),
-                  label: "Rent",
+                label: "Buy",
+              ),
+              BottomNavigationBarItem(
+                icon: SvgPicture.asset(
+                  "$iconpath/Rent.svg",
+                  color: _currentSelected == 2 ? primaryColor : Colors.grey,
+                  height: 32,
+                  width: 32,
                 ),
-                BottomNavigationBarItem(
-                  icon: SvgPicture.asset(
-                    "$iconpath/Sell.svg",
-                    color: _currentSelected == 3 ? primaryColor : Colors.grey,
-                    height: 30,
-                    width: 30,
-                  ),
-                  label: "Commercial",
+                label: "Rent",
+              ),
+              BottomNavigationBarItem(
+                icon: SvgPicture.asset(
+                  "$iconpath/Sell.svg",
+                  color: _currentSelected == 3 ? primaryColor : Colors.grey,
+                  height: 30,
+                  width: 30,
                 ),
-                BottomNavigationBarItem(
-                  icon: SvgPicture.asset(
-                    "$iconpath/Location.svg",
-                    color: _currentSelected == 4 ? primaryColor : Colors.grey,
-                    height: 30,
-                    width: 30,
-                  ),
-                  label: "Location",
+                label: "Commercial",
+              ),
+              BottomNavigationBarItem(
+                icon: SvgPicture.asset(
+                  "$iconpath/Location.svg",
+                  color: _currentSelected == 4 ? primaryColor : Colors.grey,
+                  height: 30,
+                  width: 30,
                 ),
-              ]),
-          body: IndexedStack(
-            index: _currentSelected,
-            children: screenList,
-          )),
-    );
+                label: "Location",
+              ),
+            ]),
+        body: IndexedStack(
+          index: _currentSelected,
+          children: screenList,
+        ));
   }
 //}
 

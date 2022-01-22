@@ -212,18 +212,22 @@ class ComparePropertyList extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          'Location :',
-                          style: TextStyle(color: Colors.black, fontSize: 13),
-                        ),
+                        Icon(Icons.location_on),
+                        // Text(
+                        //   'Location :',
+                        //   style: TextStyle(color: Colors.black, fontSize: 13),
+                        // ),
                         SizedBox(
                           width: 3,
                         ),
                         Container(
-                          width: sizeWidth(context) * 0.28,
-                          child: Text(
-                            'The Pearl-Qatar,Doha,Qatar',
-                            style: TextStyle(color: Colors.black, fontSize: 13),
+                          // width: sizeWidth(context) * 0.28,
+                          child: Flexible(
+                            child: Text(
+                              'The Pearl-Qatar, Doha, Qatar',
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 13),
+                            ),
                           ),
                         ),
                       ],

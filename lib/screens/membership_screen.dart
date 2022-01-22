@@ -1,3 +1,4 @@
+import 'package:bonyanaldoha/screens/checkout_screen.dart';
 import 'package:bonyanaldoha/screens/notification_screen.dart';
 import 'package:bonyanaldoha/widgets/simple_appbar.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,7 @@ class _MemberShipPageState extends State<MemberShipPage> {
     return SafeArea(
         child: Scaffold(
             appBar: SimpleAppBar(
+              onTapLeading: () => Navigator.pop(context),
               backgroundColor: whiteColor,
               abtitle: "Membership",
               onTap: () => Navigator.push(
@@ -201,21 +203,27 @@ class _MemberShipPageState extends State<MemberShipPage> {
               ],
             ),
             SizedBox(height: 2.h),
-            Padding(
-              padding: const EdgeInsets.only(right: 20.0),
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5.0),
-                  color: primaryColor,
-                ),
-                height: 4.h,
-                child: Center(
-                  child: Text(
-                    'GET STARTED',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
+            InkWell(
+              onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => Checkoutpage())),
+              child: Padding(
+                padding: const EdgeInsets.only(right: 20.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5.0),
+                    color: primaryColor,
+                  ),
+                  height: 4.h,
+                  child: Center(
+                    child: Text(
+                      'GET STARTED',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ),

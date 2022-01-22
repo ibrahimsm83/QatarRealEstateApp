@@ -2,8 +2,9 @@ import 'package:bonyanaldoha/services/api_data.dart';
 import 'package:bonyanaldoha/utils/color_schemes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
+
+// ignore: must_be_immutable
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String? abtitle;
   final String? abCtitle;
@@ -14,13 +15,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Function()? onTap;
   @override
   CustomAppBar(
-      {this.abtitle,
+      {Key? key, this.abtitle,
       this.bgcolor,
       this.abCtitle,
       this.imageno = 0,
       this.onTap,
       this.showPreferedSize = false,
-      this.apbarheight = 56.0});
+      this.apbarheight = 56.0}) : super(key: key);
 
   Size get preferredSize => Size.fromHeight(apbarheight!);
 
@@ -114,7 +115,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   // },
                   child: Padding(
                     padding: const EdgeInsets.only(right: 15.0),
-                    child: Container(
+                    child: SizedBox(
                         height: 25,
                         width: 25,
                         child: Image.asset('assets/icons/notification.png',

@@ -3,6 +3,7 @@ import 'package:bonyanaldoha/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
+// ignore: must_be_immutable
 class FavoriteList extends StatefulWidget {
   int index;
   String address;

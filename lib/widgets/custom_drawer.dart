@@ -1,15 +1,7 @@
-import 'package:bonyanaldoha/screens/buy_screen.dart';
-import 'package:bonyanaldoha/screens/deshboard_screen.dart';
-import 'package:bonyanaldoha/screens/help_screen.dart';
-import 'package:bonyanaldoha/screens/home_screen.dart';
-import 'package:bonyanaldoha/screens/location_screen.dart';
-import 'package:bonyanaldoha/screens/rent_screen.dart';
-import 'package:bonyanaldoha/screens/sell_screen.dart';
-import 'package:bonyanaldoha/utils/color_schemes.dart';
+
 import 'package:bonyanaldoha/widgets/custome_drawer_header.dart';
 import 'package:flutter/material.dart';
-import 'package:bonyanaldoha/screens/contact_us_screen.dart';
-import 'package:bonyanaldoha/screens/create_listing_screen.dart';
+
 
 class CustomeDrower extends StatefulWidget {
   final Widget? drawerlist;
