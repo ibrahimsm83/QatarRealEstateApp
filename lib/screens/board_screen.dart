@@ -6,21 +6,21 @@ import 'package:flutter/material.dart';
 import 'package:bonyanaldoha/utils/color_schemes.dart';
 import 'package:sizer/sizer.dart';
 
-class SettingsPg extends StatefulWidget {
-  const SettingsPg({Key? key}) : super(key: key);
+class BoardPage extends StatefulWidget {
+  const BoardPage({Key? key}) : super(key: key);
 
   @override
-  _SettingsPgState createState() => _SettingsPgState();
+  _BoardPageState createState() => _BoardPageState();
 }
 
-class _SettingsPgState extends State<SettingsPg> {
+class _BoardPageState extends State<BoardPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: SimpleAppBar(
         onTapLeading: () => Navigator.pop(context),
         backgroundColor: whiteColor,
-        abtitle: "Settings",
+        abtitle: "Board",
         onTap: () => Navigator.push(
             context,
             MaterialPageRoute(
@@ -74,20 +74,20 @@ class _SettingsPgState extends State<SettingsPg> {
           ),
           settingList(
             icon: Icons.person_rounded,
-            title: "My Profile",
-            subtitle: "Edit  You Account Details",
-            onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (BuildContext context) => Myprofile())),
+            title: "Activity",
+            subtitle: "View Your Activity",
+            // onTap: () => Navigator.push(
+            //     context,
+            //     MaterialPageRoute(
+            //         builder: (BuildContext context) => Myprofile())),
           ),
           SizedBox(
             height: 10,
           ),
           settingList(
               icon: Icons.person_rounded,
-              title: "Account Role",
-              subtitle: "Edit  You Account Role ",
+              title: "Deals",
+              subtitle: "View Your Deals",
               onTap: () {
                 print("print");
               }),
@@ -96,8 +96,8 @@ class _SettingsPgState extends State<SettingsPg> {
           ),
           settingList(
               icon: Icons.password_rounded,
-              title: "Change Password",
-              subtitle: "Change Your Password",
+              title: "Leads",
+              subtitle: "View Your Leads",
               onTap: () {
                 print("print");
               }),
@@ -106,8 +106,8 @@ class _SettingsPgState extends State<SettingsPg> {
           ),
           settingList(
               icon: Icons.person_off_outlined,
-              title: "Delecte Account",
-              subtitle: "Delecte Your Account",
+              title: "Inquiries",
+              subtitle: "View Your Inquiries",
               onTap: () {
                 print("print");
               }),

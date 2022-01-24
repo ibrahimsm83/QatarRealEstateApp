@@ -22,10 +22,11 @@ List<DrawerListModel> drawerMenueList = [
   DrawerListModel(id: 8, title: "Blog", iconpath: "$iconpath/Blog.svg"),
   DrawerListModel(id: 9, title: "Help", iconpath: "$iconpath/Help.svg"),
   DrawerListModel(id: 10, title: "About", iconpath: "$iconpath/Home.svg"),
-  // DrawerListModel(id: 11, title: "Settings", iconpath: "$iconpath/Home.svg"),
+   DrawerListModel(id: 11, title: "Settings", iconpath: "$iconpath/Home.svg"),
   DrawerListModel(
       id: 12, title: "Terms of Use", iconpath: "$iconpath/Terms_Of_Use.svg"),
   DrawerListModel(
       id: 13, title: "Contact Us", iconpath: "$iconpath/Contact _Us.svg"),
   DrawerListModel(id: 14, title: "Agents", iconpath: "$iconpath/Agent.svg"),
+   DrawerListModel(id: 15, title: "Board", iconpath: "$iconpath/Agent.svg"),
 ];
