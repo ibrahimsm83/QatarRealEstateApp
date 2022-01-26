@@ -22,6 +22,7 @@ class VerificationScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
+          // ignore: deprecated_member_use
           brightness: Brightness.dark,
           elevation: 0,
           centerTitle: true,

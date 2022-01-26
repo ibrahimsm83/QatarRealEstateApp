@@ -17,8 +17,7 @@ class AgentsPage extends StatefulWidget {
 class _AgentsPageState extends State<AgentsPage> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return  Scaffold(
         appBar: SimpleAppBar(
           onTapLeading: () => Navigator.pop(context),
           backgroundColor: lightGreyColor,
@@ -81,7 +80,7 @@ class _AgentsPageState extends State<AgentsPage> {
                       style: TextStyle(
                           fontSize: 15.sp, fontWeight: FontWeight.bold),
                     ),
-                    Container(
+                    SizedBox(
                       width: sizeWidth(context) * 0.4,
                       height: 40,
                       child: ElevatedButton(
@@ -119,9 +118,9 @@ class _AgentsPageState extends State<AgentsPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    AgentsRow(
+                    agentsRow(
                         name: "John Smith", destination: "Property Agent"),
-                    AgentsRow(
+                    agentsRow(
                         name: "John Smith", destination: "Property Agent"),
                   ],
                 ),
@@ -131,9 +130,9 @@ class _AgentsPageState extends State<AgentsPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    AgentsRow(
+                    agentsRow(
                         name: "John Smith", destination: "Property Agent"),
-                    AgentsRow(
+                    agentsRow(
                         name: "John Smith", destination: "Property Agent"),
                   ],
                 ),
@@ -142,11 +141,10 @@ class _AgentsPageState extends State<AgentsPage> {
             ],
           ),
         ),
-      ),
     );
   }
 
-  Widget AgentsRow({String? name, String? destination}) {
+  Widget agentsRow({String? name, String? destination}) {
     return Container(
       width: 42.w,
       decoration: BoxDecoration(

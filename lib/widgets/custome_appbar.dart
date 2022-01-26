@@ -23,6 +23,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       this.showPreferedSize = false,
       this.apbarheight = 56.0}) : super(key: key);
 
+  @override
   Size get preferredSize => Size.fromHeight(apbarheight!);
 
   @override
@@ -207,7 +208,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 onTap: onTap,
                 child: Padding(
                   padding: const EdgeInsets.only(right: 15.0),
-                  child: Container(
+                  child: SizedBox(
                       height: 25,
                       width: 25,
                       child: Image.asset('assets/icons/notification.png',

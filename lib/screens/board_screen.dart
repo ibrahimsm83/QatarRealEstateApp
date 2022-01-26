@@ -1,10 +1,13 @@
-import 'package:bonyanaldoha/screens/my_profile_screen.dart';
+import 'package:bonyanaldoha/screens/add_new_deal_screen.dart';
+import 'package:bonyanaldoha/screens/leads_screen.dart';
 import 'package:bonyanaldoha/screens/notification_screen.dart';
 import 'package:bonyanaldoha/utils/constants.dart';
 import 'package:bonyanaldoha/widgets/simple_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:bonyanaldoha/utils/color_schemes.dart';
 import 'package:sizer/sizer.dart';
+
+import 'inquiries_screen.dart';
 
 class BoardPage extends StatefulWidget {
   const BoardPage({Key? key}) : super(key: key);
@@ -85,32 +88,41 @@ class _BoardPageState extends State<BoardPage> {
             height: 10,
           ),
           settingList(
-              icon: Icons.person_rounded,
-              title: "Deals",
-              subtitle: "View Your Deals",
-              onTap: () {
-                print("print");
-              }),
+            icon: Icons.person_rounded,
+            title: "Deals",
+            subtitle: "View Your Deals",
+            //AddNewDeal
+            onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (BuildContext context) => AddNewDeal())),
+          ),
           SizedBox(
             height: 10,
           ),
           settingList(
-              icon: Icons.password_rounded,
-              title: "Leads",
-              subtitle: "View Your Leads",
-              onTap: () {
-                print("print");
-              }),
+            //LeadsPage
+            icon: Icons.password_rounded,
+            title: "Leads",
+            subtitle: "View Your Leads",
+            onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (BuildContext context) => LeadsPage())),
+          ),
           SizedBox(
             height: 10,
           ),
+          //InquiriePage
           settingList(
-              icon: Icons.person_off_outlined,
-              title: "Inquiries",
-              subtitle: "View Your Inquiries",
-              onTap: () {
-                print("print");
-              }),
+            icon: Icons.person_off_outlined,
+            title: "Inquiries",
+            subtitle: "View Your Inquiries",
+            onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (BuildContext context) => InquiriePage())),
+          ),
         ],
       ),
     );

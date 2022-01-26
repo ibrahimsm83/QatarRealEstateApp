@@ -15,7 +15,7 @@ class CustomeDrower extends StatefulWidget {
 class _CustomeDrowerState extends State<CustomeDrower> {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: 200,
       child: Drawer(
         child: Container(

@@ -31,15 +31,13 @@ class _CustumeDialogBoxState extends State<CustumeDialogBox> {
               children: [
                 Align(
                   alignment: Alignment.topRight,
-                  child: Container(
-                    child: IconButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      icon: Icon(
-                        Icons.cancel_rounded,
-                        color: primaryColor,
-                      ),
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: Icon(
+                      Icons.cancel_rounded,
+                      color: primaryColor,
                     ),
                   ),
                 ),
@@ -333,65 +331,63 @@ class _CustumeDialogBoxState extends State<CustumeDialogBox> {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Many Flats available with different view and big balconies including all bills with access to the beach',
-                          style: TextStyle(color: Colors.black, fontSize: 13),
-                        ),
-                        SizedBox(
-                          height: 2,
-                        ),
-                        Text(
-                          'The Tower Include all facilities:',
-                          style: TextStyle(fontSize: 13),
-                        ),
-                        SizedBox(height: 10.0),
-                        acceptanceOfTerms(text: 'Including All Utilities'),
-                        SizedBox(height: 10.0),
-                        acceptanceOfTerms(
-                            text: 'Including internet and TV cable'),
-                        SizedBox(height: 10.0),
-                        acceptanceOfTerms(text: 'Including Maintenance'),
-                        SizedBox(height: 10.0),
-                        acceptanceOfTerms(text: 'Incredible west bay views'),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 16.0),
-                          child: Container(
-                            width: sizeWidth(context) * 0.4,
-                            // margin: EdgeInsets.symmetric(
-                            //     horizontal: sizeWidth(context) * 0.06),
-                            height: 45,
-                            decoration: BoxDecoration(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(30.0)),
-                            ),
-                            child: ElevatedButton(
-                              child: Text(
-                                'MORE DETAILS',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Many Flats available with different view and big balconies including all bills with access to the beach',
+                        style: TextStyle(color: Colors.black, fontSize: 13),
+                      ),
+                      SizedBox(
+                        height: 2,
+                      ),
+                      Text(
+                        'The Tower Include all facilities:',
+                        style: TextStyle(fontSize: 13),
+                      ),
+                      SizedBox(height: 10.0),
+                      acceptanceOfTerms(text: 'Including All Utilities'),
+                      SizedBox(height: 10.0),
+                      acceptanceOfTerms(
+                          text: 'Including internet and TV cable'),
+                      SizedBox(height: 10.0),
+                      acceptanceOfTerms(text: 'Including Maintenance'),
+                      SizedBox(height: 10.0),
+                      acceptanceOfTerms(text: 'Incredible west bay views'),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 16.0),
+                        child: Container(
+                          width: sizeWidth(context) * 0.4,
+                          // margin: EdgeInsets.symmetric(
+                          //     horizontal: sizeWidth(context) * 0.06),
+                          height: 45,
+                          decoration: BoxDecoration(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(30.0)),
+                          ),
+                          child: ElevatedButton(
+                            child: Text(
+                              'MORE DETAILS',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
                               ),
-                              onPressed: () {},
-                              style: ElevatedButton.styleFrom(
-                                primary: primaryColor,
-                                textStyle: TextStyle(
-                                  fontSize: 16,
-                                ),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
+                            ),
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                              primary: primaryColor,
+                              textStyle: TextStyle(
+                                fontSize: 16,
+                              ),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10.0),
                               ),
                             ),
                           ),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               ],

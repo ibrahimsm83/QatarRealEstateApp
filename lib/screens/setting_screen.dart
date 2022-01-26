@@ -1,3 +1,4 @@
+import 'package:bonyanaldoha/screens/change_password.dart';
 import 'package:bonyanaldoha/screens/my_profile_screen.dart';
 import 'package:bonyanaldoha/screens/notification_screen.dart';
 import 'package:bonyanaldoha/utils/constants.dart';
@@ -5,6 +6,9 @@ import 'package:bonyanaldoha/widgets/simple_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:bonyanaldoha/utils/color_schemes.dart';
 import 'package:sizer/sizer.dart';
+
+import 'account_role.dart';
+import 'delete_account_screen.dart';
 
 class SettingsPg extends StatefulWidget {
   const SettingsPg({Key? key}) : super(key: key);
@@ -85,32 +89,36 @@ class _SettingsPgState extends State<SettingsPg> {
             height: 10,
           ),
           settingList(
-              icon: Icons.person_rounded,
-              title: "Account Role",
-              subtitle: "Edit  You Account Role ",
-              onTap: () {
-                print("print");
-              }),
+            icon: Icons.person_rounded,
+            title: "Account Role",
+            subtitle: "Edit  You Account Role ",
+            onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (BuildContext context) => AccountRolePage())),
+          ),
           SizedBox(
             height: 10,
           ),
           settingList(
-              icon: Icons.password_rounded,
-              title: "Change Password",
-              subtitle: "Change Your Password",
-              onTap: () {
-                print("print");
-              }),
-          SizedBox(
-            height: 10,
+            icon: Icons.password_rounded,
+            title: "Change Password",
+            subtitle: "Change Your Password",
+            onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (BuildContext context) => ChangePasswordPage())),
           ),
+          SizedBox(height: 10),
           settingList(
-              icon: Icons.person_off_outlined,
-              title: "Delecte Account",
-              subtitle: "Delecte Your Account",
-              onTap: () {
-                print("print");
-              }),
+            icon: Icons.person_off_outlined,
+            title: "Delete Account",
+            subtitle: "Delete Your Account",
+            onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (BuildContext context) => DeleteAccountPage())),
+          ),
         ],
       ),
     );

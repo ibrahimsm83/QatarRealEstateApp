@@ -188,36 +188,30 @@ class _CheckoutpageState extends State<Checkoutpage> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Flexible(
-                            child: Container(
-                              // width: sizeWidth(context) * 0.42,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    padding: EdgeInsets.fromLTRB(
-                                        12.0, 8.0, 0, 8.0),
-                                    child: richText(label: 'Town / City'),
-                                  ),
-                                  rowTextFiled(hinttext: "Town / City"),
-                                ],
-                              ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Container(
+                                  padding: EdgeInsets.fromLTRB(
+                                      12.0, 8.0, 0, 8.0),
+                                  child: richText(label: 'Town / City'),
+                                ),
+                                rowTextFiled(hinttext: "Town / City"),
+                              ],
                             ),
                           ),
                           SizedBox(width: 10.0),
                           Flexible(
-                            child: Container(
-                              //  width: sizeWidth(context) * 0.42,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    padding: EdgeInsets.fromLTRB(
-                                        12.0, 8.0, 0, 8.0),
-                                    child: richText(label: 'Postcode / ZIP'),
-                                  ),
-                                  rowTextFiled(hinttext: "Postcode / ZIP"),
-                                ],
-                              ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Container(
+                                  padding: EdgeInsets.fromLTRB(
+                                      12.0, 8.0, 0, 8.0),
+                                  child: richText(label: 'Postcode / ZIP'),
+                                ),
+                                rowTextFiled(hinttext: "Postcode / ZIP"),
+                              ],
                             ),
                           ),
                         ],
@@ -404,16 +398,12 @@ class _CheckoutpageState extends State<Checkoutpage> {
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Container(
-                                        child: Text("Total"),
-                                      ),
-                                      Container(
-                                        child: Text(
-                                          "100QR",
-                                          style: TextStyle(
-                                              fontSize: 10.sp,
-                                              fontWeight: FontWeight.bold),
-                                        ),
+                                      Text("Total"),
+                                      Text(
+                                        "100QR",
+                                        style: TextStyle(
+                                            fontSize: 10.sp,
+                                            fontWeight: FontWeight.bold),
                                       ),
                                     ],
                                   ),
@@ -458,7 +448,7 @@ class _CheckoutpageState extends State<Checkoutpage> {
                           ),
                           Padding(
                             padding: const EdgeInsets.only(right: 8.0),
-                            child: Container(
+                            child: SizedBox(
                               width: sizeWidth(context) * 0.7,
                               child: Text(
                                 'I would like to receive exclusive emails with discounts and product information',
@@ -474,12 +464,7 @@ class _CheckoutpageState extends State<Checkoutpage> {
                       alignment: Alignment.topLeft,
                       child: Container(
                         padding: EdgeInsets.symmetric(horizontal: 10.0),
-                        // child: Text(
-                        //   "Your Personal data will be used to process your order, support Your experience thought this website, and for the other purpose described in our privacy Policy ",
-                        //   textAlign: TextAlign.justify,
-                        //   style: TextStyle(
-                        //       color: Colors.grey[700], fontSize: 14),
-                        // ),
+                      
                         child: RichText(
                           textAlign: TextAlign.justify,
                           text: TextSpan(

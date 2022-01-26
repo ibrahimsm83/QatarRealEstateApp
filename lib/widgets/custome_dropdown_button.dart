@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:bonyanaldoha/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -5,15 +7,21 @@ import 'package:sizer/sizer.dart';
 class CustomeDropDownButton extends StatelessWidget {
   final String label;
   final String value;
+  final double? fontSize;
   final List<dynamic>? itemList;
+  final FontWeight? fontWeight;
   final Function(String?)? onChanged;
 
   const CustomeDropDownButton(
       {Key? key,
       this.label = "",
       this.value = "",
+      this.fontSize = 10,
       this.onChanged,
-      this.itemList})
+      this.itemList,
+      this.fontWeight=FontWeight.bold,
+      
+      })
       : super(key: key);
 
   @override
@@ -26,11 +34,10 @@ class CustomeDropDownButton extends StatelessWidget {
         children: [
           Text(
             label,
-            //'Buy Or Rent',
             style: TextStyle(
-                fontSize: 10.sp,
+                fontSize: fontSize!.sp,
                 color: Colors.black,
-                fontWeight: FontWeight.bold),
+                fontWeight: fontWeight),
           ),
           SizedBox(height: 8.0),
           Container(

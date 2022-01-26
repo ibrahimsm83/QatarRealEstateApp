@@ -168,14 +168,12 @@ class _BuyPageState extends State<BuyPage> {
                           children: [
                             Padding(
                               padding: const EdgeInsets.fromLTRB(8.0, 8, 0, 8),
-                              child: Container(
-                                child: Icon(
-                                  Icons.search,
-                                  color: Colors.grey,
-                                ),
+                              child: Icon(
+                                Icons.search,
+                                color: Colors.grey,
                               ),
                             ),
-                            Container(
+                            SizedBox(
                               width: sizeWidth(context) * 0.68,
                               child: TextField(
                                 //showCursor: false,
@@ -212,30 +210,28 @@ class _BuyPageState extends State<BuyPage> {
                     ),
                     Padding(
                       padding: const EdgeInsets.all(10.0),
-                      child: Container(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: const [
-                            Text(
-                              "Nearby",
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: const [
+                          Text(
+                            "Nearby",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            "Save More",
+                            style: TextStyle(
+                              color: primaryColor,
                             ),
-                            Text(
-                              "Save More",
-                              style: TextStyle(
-                                color: primaryColor,
-                              ),
-                            )
-                          ],
-                        ),
+                          )
+                        ],
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8.0),
-                      child: Container(
+                      child: SizedBox(
                         height: 36.2.h,
                         // sizeheight(context) * 0.36,
                         //  width: sizeWidth(context),
@@ -281,31 +277,29 @@ class _BuyPageState extends State<BuyPage> {
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Container(
-              child: ListView.builder(
-                scrollDirection: Axis.vertical,
-                itemCount: cityImg.length,
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                itemBuilder: (context, index) {
-                  return PropertyList(
-                    index: index,
-                    btntext: "BUY",
-                    address: addresses[0],
-                    imagepath: cityImg[index],
-                    onTapArrow: () {
-                      showDialog(
-                          context: context,
-                          builder: (BuildContext context) {
-                            return CustumeDialogBox(
-                              imagepath: cityImg[index],
-                              textType: "BUY",
-                            );
-                          });
-                    },
-                  );
-                },
-              ),
+            child: ListView.builder(
+              scrollDirection: Axis.vertical,
+              itemCount: cityImg.length,
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              itemBuilder: (context, index) {
+                return PropertyList(
+                  index: index,
+                  btntext: "BUY",
+                  address: addresses[0],
+                  imagepath: cityImg[index],
+                  onTapArrow: () {
+                    showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return CustumeDialogBox(
+                            imagepath: cityImg[index],
+                            textType: "BUY",
+                          );
+                        });
+                  },
+                );
+              },
             ),
           ),
         ],

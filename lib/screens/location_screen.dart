@@ -87,12 +87,10 @@ class _LocationState extends State<Location> {
                   children: [
                     Padding(
                       padding: const EdgeInsets.fromLTRB(8.0, 8, 0, 8),
-                      child: Container(
-                        child: Icon(
-                          Icons.search,
-                          color: Colors.grey,
-                          size: 24.0,
-                        ),
+                      child: Icon(
+                        Icons.search,
+                        color: Colors.grey,
+                        size: 24.0,
                       ),
                     ),
                     SizedBox(

@@ -26,58 +26,56 @@ class _MemberShipPageState extends State<MemberShipPage> {
                   MaterialPageRoute(
                       builder: (BuildContext context) => NotificationPg())),
             ),
-            body: Container(
-              child: Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 10.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          MembershipRow(
-                              type: "FREE TRAIL",
-                              days: "7 days",
-                              price: 0.000,
-                              properties: "2",
-                              featureList: 1),
-                          MembershipRow(
-                              type: "PLUS",
-                              days: "1 Month",
-                              price: 100,
-                              properties: "5",
-                              featureList: 1),
-                        ],
-                      ),
+            body: Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 10.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        membershipRow(
+                            type: "FREE TRAIL",
+                            days: "7 days",
+                            price: 0.000,
+                            properties: "2",
+                            featureList: 1),
+                        membershipRow(
+                            type: "PLUS",
+                            days: "1 Month",
+                            price: 100,
+                            properties: "5",
+                            featureList: 1),
+                      ],
                     ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 10.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          MembershipRow(
-                              type: "PREMIUM",
-                              days: "1 Month",
-                              price: 200,
-                              properties: "25",
-                              featureList: 1),
-                          MembershipRow(
-                              type: "GOLD",
-                              days: "1 Month",
-                              price: 500,
-                              properties: "Unlimited",
-                              featureList: 10),
-                        ],
-                      ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 10.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        membershipRow(
+                            type: "PREMIUM",
+                            days: "1 Month",
+                            price: 200,
+                            properties: "25",
+                            featureList: 1),
+                        membershipRow(
+                            type: "GOLD",
+                            days: "1 Month",
+                            price: 500,
+                            properties: "Unlimited",
+                            featureList: 10),
+                      ],
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             )));
   }
 
-  Widget MembershipRow({
+  Widget membershipRow({
     String? type,
     String? days,
     num? price,

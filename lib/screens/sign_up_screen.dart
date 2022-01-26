@@ -18,7 +18,6 @@ class SignupScreen extends StatefulWidget {
 class _SignupScreenState extends State<SignupScreen> {
   bool rememberMe = false;
   final formKey1 = GlobalKey<FormState>();
-  bool _pwShow = true;
   bool flag = false;
 
   @override

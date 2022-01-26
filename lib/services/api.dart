@@ -49,11 +49,12 @@ ApiErrorRepsonse handleError(error) {
         message: "Undetedcted issue found, kindly try again!",
       );
     }
-  } else
+  } else {
     throw ApiErrorRepsonse(
       code: ResponseCodes.unknown,
       message: "Undetedcted issue found, kindly try again!",
     );
+  }
 }
 
 class ApiErrorRepsonse {
@@ -108,6 +109,7 @@ class Api {
       var response = await (await dio()).put(url, data: body);
 
       return jsonDecode(response.data);
+    // ignore: empty_catches
     } catch (error) {}
   }
 

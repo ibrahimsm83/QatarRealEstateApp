@@ -116,7 +116,7 @@ class VerticalPropertyList extends StatelessWidget {
               SizedBox(
                 width: 10.0,
               ),
-              Container(
+              SizedBox(
                 height: MediaQuery.of(context).size.height * 0.16,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 10.0),

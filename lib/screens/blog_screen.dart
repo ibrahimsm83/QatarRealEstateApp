@@ -53,14 +53,12 @@ class _BlogPgState extends State<BlogPg> {
                   children: [
                     Padding(
                       padding: const EdgeInsets.fromLTRB(8.0, 8, 0, 8),
-                      child: Container(
-                        child: Icon(
-                          Icons.search,
-                          color: Colors.grey,
-                        ),
+                      child: Icon(
+                        Icons.search,
+                        color: Colors.grey,
                       ),
                     ),
-                    Container(
+                    SizedBox(
                       width: sizeWidth(context) * 0.68,
                       child: TextField(
                         //showCursor: false,
@@ -95,33 +93,29 @@ class _BlogPgState extends State<BlogPg> {
               ),
               Padding(
                 padding: const EdgeInsets.all(10.0),
-                child: Container(
-                  child: Text(
-                    "Our Blog",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold),
-                  ),
+                child: Text(
+                  "Our Blog",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  child: ListView.builder(
-                    physics: NeverScrollableScrollPhysics(),
-                    scrollDirection: Axis.vertical,
-                    itemCount: cityImg.length,
-                    shrinkWrap: true,
-                    // physics: NeverScrollableScrollPhysics(),
-                    itemBuilder: (context, index) {
-                      return BlogList(
-                        index: index,
-                        address: addresses[7],
-                        imagepath: cityImg[index],
-                      );
-                    },
-                  ),
+                child: ListView.builder(
+                  physics: NeverScrollableScrollPhysics(),
+                  scrollDirection: Axis.vertical,
+                  itemCount: cityImg.length,
+                  shrinkWrap: true,
+                  // physics: NeverScrollableScrollPhysics(),
+                  itemBuilder: (context, index) {
+                    return BlogList(
+                      index: index,
+                      address: addresses[7],
+                      imagepath: cityImg[index],
+                    );
+                  },
                 ),
               ),
             ],

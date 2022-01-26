@@ -211,7 +211,7 @@ class ComparePropertyList extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
+                      children:const [
                         Icon(Icons.location_on),
                         // Text(
                         //   'Location :',
@@ -220,14 +220,11 @@ class ComparePropertyList extends StatelessWidget {
                         SizedBox(
                           width: 3,
                         ),
-                        Container(
-                          // width: sizeWidth(context) * 0.28,
-                          child: Flexible(
-                            child: Text(
-                              'The Pearl-Qatar, Doha, Qatar',
-                              style:
-                                  TextStyle(color: Colors.black, fontSize: 13),
-                            ),
+                        Flexible(
+                          child: Text(
+                            'The Pearl-Qatar, Doha, Qatar',
+                            style:
+                                TextStyle(color: Colors.black, fontSize: 13),
                           ),
                         ),
                       ],

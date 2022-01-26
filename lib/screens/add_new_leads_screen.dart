@@ -21,7 +21,7 @@ class _MyprofileState extends State<Myprofile> {
       appBar: SimpleAppBar(
         onTapLeading: () => Navigator.pop(context),
         backgroundColor: whiteColor,
-        abtitle: "My Profile",
+        abtitle: "Add New Leads",
         onTap: () => Navigator.push(
             context,
             MaterialPageRoute(
@@ -92,27 +92,18 @@ class _MyprofileState extends State<Myprofile> {
 
                   Container(
                     padding: EdgeInsets.fromLTRB(12.0, 12.0, 0, 8.0),
-                    child: headingText(heading: 'Your Name'),
+                    child: headingText(heading: 'Title'),
                   ),
                   //FirstName
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Flexible(
-                          child: Container(
-                            child: rowTextFiled(hinttext: "AgentF"),
-                          ),
-                        ),
-                        SizedBox(width: 10.0),
-                        Flexible(
-                          child: Container(
-                            child: rowTextFiled(hinttext: "AgentL"),
-                          ),
-                        ),
-                      ],
-                    ),
+                  CustomeTextFormField(
+                    horizontalMergin: 0.03,
+                    hintText: 'Select',
+                    validator: (String? val) {
+                      if (val == null || val.isEmpty) {
+                        return '';
+                      }
+                      return null;
+                    },
                   ),
                 ],
               ),
@@ -450,55 +441,9 @@ class _MyprofileState extends State<Myprofile> {
                     ],
                   ),
                   //MessageBox
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(height: 1.h),
-                      Align(
-                        alignment: Alignment.topLeft,
-                        child: Container(
-                          padding: EdgeInsets.fromLTRB(12.0, 8.0, 0, 8.0),
-                          child: headingText(heading: 'About Me'),
-                        ),
-                      ),
-                      CustomeTextFormField(
-                        horizontalMergin: 0.03,
-                        //hintText: 'Note about your order e.g',
-                        maxLines: 5,
-                      ),
-                    ],
-                  ),
-                   SizedBox(height: 20.0),
-                   Container(
-                    width: sizeWidth(context),
-                    margin: EdgeInsets.symmetric(
-                        horizontal: sizeWidth(context) * 0.06),
-                    height: 45,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                    ),
-                    child: ElevatedButton(
-                      child: Text(
-                        'UPDATE PROFILE',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        primary: primaryColor,
-                        textStyle: TextStyle(
-                          fontSize: 16,
-                        ),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                      ),
-                    ),
-                  ),
+
                   SizedBox(height: 20.0),
-                  // SizedBox(height: 1.h),
+
                   Align(
                     alignment: Alignment.topLeft,
                     child: Padding(
@@ -766,6 +711,24 @@ class _MyprofileState extends State<Myprofile> {
                       ),
                     ],
                   ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(height: 1.h),
+                      Align(
+                        alignment: Alignment.topLeft,
+                        child: Container(
+                          padding: EdgeInsets.fromLTRB(12.0, 8.0, 0, 8.0),
+                          child: headingText(heading: 'Private Note'),
+                        ),
+                      ),
+                      CustomeTextFormField(
+                        horizontalMergin: 0.03,
+                        hintText: 'Enter the Message',
+                        maxLines: 5,
+                      ),
+                    ],
+                  ),
                   SizedBox(height: 20.0),
                   Container(
                     width: sizeWidth(context),
@@ -777,7 +740,7 @@ class _MyprofileState extends State<Myprofile> {
                     ),
                     child: ElevatedButton(
                       child: Text(
-                        'UPDATE PROFILE',
+                        'SAVE',
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,

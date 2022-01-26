@@ -71,9 +71,7 @@ class ForgetPassword extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(
-                      height: 20.0,
-                    ),
+                    SizedBox(height: 20.0),
                     CustomeTextFormField(
                       hintText: 'Email Address',
                       validator: (String? val) {
@@ -84,9 +82,7 @@ class ForgetPassword extends StatelessWidget {
                       },
                     ),
                     //pw
-                    SizedBox(
-                      height: 40,
-                    ),
+                    SizedBox(height: 40),
                     //Login Buttons
                     Container(
                       width: sizeWidth(context),
@@ -99,7 +95,7 @@ class ForgetPassword extends StatelessWidget {
                       ),
                       child: ElevatedButton(
                         child: Text(
-                          'send_now',
+                          'Send Now',
                           style: TextStyle(color: Colors.black),
                         ),
                         onPressed: () {
@@ -159,14 +155,12 @@ class ForgetPassword extends StatelessWidget {
                       },
                       child: Padding(
                         padding: EdgeInsets.all(30.0),
-                        child: Container(
-                          child: Text(
-                            "CANCEL",
-                            style: TextStyle(
-                                color: Colors.grey,
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold),
-                          ),
+                        child: Text(
+                          "CANCEL",
+                          style: TextStyle(
+                              color: Colors.grey,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold),
                         ),
                       ),
                     ),

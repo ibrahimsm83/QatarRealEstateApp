@@ -37,22 +37,20 @@ class _NotificationPgState extends State<NotificationPg> {
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  child: ListView.builder(
-                    scrollDirection: Axis.vertical,
-                    itemCount: cityImg.length,
-                    shrinkWrap: true,
-                    // physics: NeverScrollableScrollPhysics(),
-                    itemBuilder: (context, index) {
-                      return NotificationList(
-                        index: index,
-                        titleN: notificationTitle[0]['titleNoti'],
-                        imagepath: cityImg[index],
-                        subtitleN: notificationTitle[1]['details'],
-                        dateTime: notificationTitle[2]['dateTime'],
-                      );
-                    },
-                  ),
+                child: ListView.builder(
+                  scrollDirection: Axis.vertical,
+                  itemCount: cityImg.length,
+                  shrinkWrap: true,
+                  // physics: NeverScrollableScrollPhysics(),
+                  itemBuilder: (context, index) {
+                    return NotificationList(
+                      index: index,
+                      titleN: notificationTitle[0]['titleNoti'],
+                      imagepath: cityImg[index],
+                      subtitleN: notificationTitle[1]['details'],
+                      dateTime: notificationTitle[2]['dateTime'],
+                    );
+                  },
                 ),
               ),
             ),

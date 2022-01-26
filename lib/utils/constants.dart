@@ -31,3 +31,21 @@ class ResponseCodes {
 class Constants {
   static String baseUrl = "https://www.onmascota.thevistech.com";
 }
+
+Map<String, dynamic> constanText = {
+  "accountRole": "Account Role",
+  "agent": "Agent",
+  "updatedAccount": "UPDATE ACCOUNT",
+  "updatedPassword": "UPDATE PASSWORD",
+  "changePassword": "Change Password",
+  "deleteAccount": "Delete Account",
+  "deleteMyAccount": "DELETE MY ACCOUNT",
+  "addNewDeal": "Add New Deal",
+  "group": "Group",
+  "title": "Title",
+  "contactName": "Contact Name",
+  "dealValue": "Deal Value",
+  "inquiries": "Inquiries",
+  "addNewInquiry": "ADD NEW INQUIRY",
+  "dontHaveAnyInquiriesAtThisMoment": "Don't have any inquiry at this moment.",
+};

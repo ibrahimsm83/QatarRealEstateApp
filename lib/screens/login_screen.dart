@@ -22,8 +22,8 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final formKey = GlobalKey<FormState>();
   bool _loading = false;
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _passController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passController = TextEditingController();
 
   bool rememberMe = false;
 
@@ -283,19 +283,17 @@ class _LoginScreenState extends State<LoginScreen> {
                             borderRadius:
                                 BorderRadius.all(Radius.circular(10.0)),
                           ),
-                          child: Container(
+                          child: SizedBox(
                             height: 25,
                             child: Row(
                               children: [
                                 SizedBox(
                                   width: 2.0.w,
                                 ),
-                                Container(
-                                  child: Image.asset(
-                                    'assets/icons/google.png',
-                                    height: 8.h,
-                                    width: 8.w,
-                                  ),
+                                Image.asset(
+                                  'assets/icons/google.png',
+                                  height: 8.h,
+                                  width: 8.w,
                                 ),
                                 SizedBox(
                                   width: 10.w,
@@ -318,7 +316,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           vertical: 10.0,
                           horizontal: sizeWidth(context) * 0.06),
                       child: GestureDetector(
-                        onTap: () => null,
+                        onTap: () => {},
                         child: Container(
                           height: 45,
                           decoration: BoxDecoration(
@@ -327,19 +325,17 @@ class _LoginScreenState extends State<LoginScreen> {
                             borderRadius:
                                 BorderRadius.all(Radius.circular(10.0)),
                           ),
-                          child: Container(
+                          child: SizedBox(
                             height: 25,
                             child: Row(
                               children: [
                                 SizedBox(
                                   width: 2.0.w,
                                 ),
-                                Container(
-                                  child: Image.asset(
-                                    'assets/icons/facebook.png',
-                                    height: 8.h,
-                                    width: 8.w,
-                                  ),
+                                Image.asset(
+                                  'assets/icons/facebook.png',
+                                  height: 8.h,
+                                  width: 8.w,
                                 ),
                                 SizedBox(
                                   width: 10.w,

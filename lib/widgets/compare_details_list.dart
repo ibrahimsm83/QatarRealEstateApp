@@ -262,7 +262,7 @@ class CompareDetailsList extends StatelessWidget {
           ),
         ),
         SizedBox(width: 3.0),
-        Container(
+        SizedBox(
           width: sizeWidth(context) * 0.28,
           child: Text(
             detail,

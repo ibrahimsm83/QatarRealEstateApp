@@ -61,7 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
   String apptitle = 'Home';
 
   int _currentSelected = 0;
-  GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
   var currentPage = DrawerSections.home;
 
   dynamic container;
@@ -121,7 +121,7 @@ class _HomeScreenState extends State<HomeScreen> {
           },
         ),
         drawer: CustomeDrower(
-          drawerlist: DrawerList(),
+          drawerlist: drawerList(),
         ),
         bottomNavigationBar: BottomNavigationBar(
             elevation: 2.0,
@@ -184,13 +184,11 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 //}
 
-  Widget DrawerList() {
-    return Container(
-      child: Column(
-        // shows the list of menu drawer
-        children: List.generate(
-            drawerMenueList.length, (i) => drawerItem(drawerMenueList[i])),
-      ),
+  Widget drawerList() {
+    return Column(
+      // shows the list of menu drawer
+      children: List.generate(
+          drawerMenueList.length, (i) => drawerItem(drawerMenueList[i])),
     );
   }
 
@@ -280,7 +278,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   color: dividerColor,
                 )
               : SizedBox(),
-          Container(
+          SizedBox(
             height: 40,
             child: Row(
               children: [

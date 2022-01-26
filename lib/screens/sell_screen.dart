@@ -210,25 +210,23 @@ class _SellPgState extends State<SellPg> {
                     ),
                     Padding(
                       padding: const EdgeInsets.all(10.0),
-                      child: Container(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: const [
-                            Text(
-                              "Nearby",
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: const [
+                          Text(
+                            "Nearby",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            "Save More",
+                            style: TextStyle(
+                              color: primaryColor,
                             ),
-                            Text(
-                              "Save More",
-                              style: TextStyle(
-                                color: primaryColor,
-                              ),
-                            )
-                          ],
-                        ),
+                          )
+                        ],
                       ),
                     ),
                     Padding(
@@ -278,31 +276,29 @@ class _SellPgState extends State<SellPg> {
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Container(
-              child: ListView.builder(
-                scrollDirection: Axis.vertical,
-                itemCount: cityImg.length,
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                itemBuilder: (context, index) {
-                  return PropertyList(
-                    index: index,
-                    btntext: "COMMERCIAL",
-                    address: addresses[0],
-                    imagepath: cityImg[index],
-                    onTapArrow: () {
-                      showDialog(
-                          context: context,
-                          builder: (BuildContext context) {
-                            return CustumeDialogBox(
-                              imagepath: cityImg[index],
-                              textType: "COMMERCIAL",
-                            );
-                          });
-                    },
-                  );
-                },
-              ),
+            child: ListView.builder(
+              scrollDirection: Axis.vertical,
+              itemCount: cityImg.length,
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              itemBuilder: (context, index) {
+                return PropertyList(
+                  index: index,
+                  btntext: "COMMERCIAL",
+                  address: addresses[0],
+                  imagepath: cityImg[index],
+                  onTapArrow: () {
+                    showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return CustumeDialogBox(
+                            imagepath: cityImg[index],
+                            textType: "COMMERCIAL",
+                          );
+                        });
+                  },
+                );
+              },
             ),
           ),
         ],

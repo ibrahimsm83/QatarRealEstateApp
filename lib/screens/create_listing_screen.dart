@@ -11,18 +11,19 @@ import 'package:bonyanaldoha/widgets/custome_appbar.dart';
 import 'package:flutter/material.dart';
 
 class CreateListigPg extends StatefulWidget {
-  CreateListigPg({Key? key}) : super(key: key);
+  const CreateListigPg({Key? key}) : super(key: key);
 
   @override
   State<CreateListigPg> createState() => _CreateListigPgState();
 }
 
 class _CreateListigPgState extends State<CreateListigPg> {
+  // ignore: unused_field
   int _currentSelected = 0;
 
   String apptitle = 'Home';
 
-  GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+  final GlobalKey<ScaffoldState> _scaffoldKey =  GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +39,7 @@ class _CreateListigPgState extends State<CreateListigPg> {
             abCtitle: "Create A Listing",
           ),
           drawer: CustomeDrower(
-            drawerlist: DrawerList(),
+            drawerlist: drawerList(),
           ),
           body: SingleChildScrollView(
             child: Column(
@@ -115,28 +116,21 @@ class _CreateListigPgState extends State<CreateListigPg> {
                 SizedBox(
                   height: 5.0,
                 ),
-                Container(
-                  // height: sizeheight(context),
-                  // width: double.infinity,
-
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      child: ListView.builder(
-                        scrollDirection: Axis.vertical,
-                        itemCount: cityImg.length,
-                        shrinkWrap: true,
-                        physics: NeverScrollableScrollPhysics(),
-                        itemBuilder: (context, index) {
-                          return VerticalPropertyList(
-                            index: index,
-                            btntext: "BUY",
-                            address: addresses[0],
-                            imagepath: cityImg[index],
-                          );
-                        },
-                      ),
-                    ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ListView.builder(
+                    scrollDirection: Axis.vertical,
+                    itemCount: cityImg.length,
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    itemBuilder: (context, index) {
+                      return VerticalPropertyList(
+                        index: index,
+                        btntext: "BUY",
+                        address: addresses[0],
+                        imagepath: cityImg[index],
+                      );
+                    },
                   ),
                 ),
                 //ListView
@@ -152,77 +146,75 @@ class _CreateListigPgState extends State<CreateListigPg> {
     );
   }
 
-  Widget DrawerList() {
-    return Container(
-      child: Column(
-        // shows the list of menu drawer
-        children: [
-          Divider(
-            color: dividerColor,
-          ),
-          drawerItem(
-            id: 0,
-            title: "Home",
-            pnglogo: 'assets/icons/home.png',
-            // selected: currentPage == DrawerSections.home ? true : false
-          ),
-          drawerItem(
-            id: 1,
-            title: "Buy",
-            pnglogo: 'assets/icons/buy.png',
-            //selected: currentPage == DrawerSections.buy ? true : false
-          ),
-          drawerItem(
-            id: 2,
-            title: "Sell",
-            pnglogo: 'assets/icons/sell.png',
-            //selected: currentPage == DrawerSections.sell ? true : false
-          ),
-          drawerItem(
-            id: 3,
-            title: "Rent",
-            pnglogo: 'assets/icons/rent.png',
-            // selected: currentPage == DrawerSections.rent ? true : false
-          ),
-          drawerItem(
-            id: 4,
-            title: "Help",
-            pnglogo: 'assets/icons/help.png',
-            //  selected: currentPage == DrawerSections.help ? true : false
-          ),
-          drawerItem(
-            id: 5,
-            title: "Create a Listing",
-            pnglogo: 'assets/icons/create.png',
-            //  selected:
-            //   currentPage == DrawerSections.createAListing ? true : false
-          ),
-          drawerItem(
-            id: 6,
-            title: "Blog",
-            pnglogo: 'assets/icons/blog.png',
-            // selected: currentPage == DrawerSections.blog ? true : false
-          ),
-          drawerItem(
-            id: 7,
-            title: "About",
-            pnglogo: 'assets/icons/about.png',
-            // selected: currentPage == DrawerSections.about ? true : false
-          ),
-          drawerItem(
-            id: 8,
-            title: "Term of Use",
-            pnglogo: 'assets/icons/terms.png',
-            // selected: currentPage == DrawerSections.termOfUse ? true : false
-          ),
-          drawerItem(
-            id: 9,
-            title: "Contact Us",
-            pnglogo: 'assets/icons/contact.png',
-            //  selected: currentPage == DrawerSections.contactUs ? true : false
-          ),
-        ],
-      ),
+  Widget drawerList() {
+    return Column(
+      // shows the list of menu drawer
+      children: [
+        Divider(
+          color: dividerColor,
+        ),
+        drawerItem(
+          id: 0,
+          title: "Home",
+          pnglogo: 'assets/icons/home.png',
+          // selected: currentPage == DrawerSections.home ? true : false
+        ),
+        drawerItem(
+          id: 1,
+          title: "Buy",
+          pnglogo: 'assets/icons/buy.png',
+          //selected: currentPage == DrawerSections.buy ? true : false
+        ),
+        drawerItem(
+          id: 2,
+          title: "Sell",
+          pnglogo: 'assets/icons/sell.png',
+          //selected: currentPage == DrawerSections.sell ? true : false
+        ),
+        drawerItem(
+          id: 3,
+          title: "Rent",
+          pnglogo: 'assets/icons/rent.png',
+          // selected: currentPage == DrawerSections.rent ? true : false
+        ),
+        drawerItem(
+          id: 4,
+          title: "Help",
+          pnglogo: 'assets/icons/help.png',
+          //  selected: currentPage == DrawerSections.help ? true : false
+        ),
+        drawerItem(
+          id: 5,
+          title: "Create a Listing",
+          pnglogo: 'assets/icons/create.png',
+          //  selected:
+          //   currentPage == DrawerSections.createAListing ? true : false
+        ),
+        drawerItem(
+          id: 6,
+          title: "Blog",
+          pnglogo: 'assets/icons/blog.png',
+          // selected: currentPage == DrawerSections.blog ? true : false
+        ),
+        drawerItem(
+          id: 7,
+          title: "About",
+          pnglogo: 'assets/icons/about.png',
+          // selected: currentPage == DrawerSections.about ? true : false
+        ),
+        drawerItem(
+          id: 8,
+          title: "Term of Use",
+          pnglogo: 'assets/icons/terms.png',
+          // selected: currentPage == DrawerSections.termOfUse ? true : false
+        ),
+        drawerItem(
+          id: 9,
+          title: "Contact Us",
+          pnglogo: 'assets/icons/contact.png',
+          //  selected: currentPage == DrawerSections.contactUs ? true : false
+        ),
+      ],
     );
   }
 
@@ -313,7 +305,7 @@ class _CreateListigPgState extends State<CreateListigPg> {
           _scaffoldKey.currentState!.openEndDrawer();
         }
       },
-      child: Container(
+      child: SizedBox(
         height: 40,
         child: Row(
           children: [

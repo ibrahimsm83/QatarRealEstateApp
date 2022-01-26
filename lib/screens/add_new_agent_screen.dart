@@ -306,7 +306,7 @@ class _AddNewAgentPageState extends State<AddNewAgentPage> {
           onTap: onTap,
           child: Padding(
             padding: const EdgeInsets.only(right: 15.0),
-            child: Container(
+            child: SizedBox(
                 height: 25,
                 width: 25,
                 child: Image.asset('assets/icons/notification.png',

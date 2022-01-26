@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 
 List<String> prices = [
   '\$567,900',

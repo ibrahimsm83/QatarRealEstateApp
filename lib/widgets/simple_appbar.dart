@@ -27,7 +27,7 @@ class SimpleAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: Text(
         abtitle!,
         style: TextStyle(
-          fontSize: 15.sp,
+          fontSize: 14.sp,
           color: Colors.black,
         ),
       ),
@@ -70,7 +70,7 @@ class SimpleAppBar extends StatelessWidget implements PreferredSizeWidget {
           onTap: onTap,
           child: Padding(
             padding: const EdgeInsets.only(right: 15.0),
-            child: Container(
+            child: SizedBox(
                 height: 25,
                 width: 25,
                 child: Image.asset('assets/icons/notification.png',
