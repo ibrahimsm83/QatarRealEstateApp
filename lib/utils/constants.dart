@@ -41,6 +41,7 @@ Map<String, dynamic> constanText = {
   "deleteAccount": "Delete Account",
   "deleteMyAccount": "DELETE MY ACCOUNT",
   "addNewDeal": "Add New Deal",
+  "filterbylisting":"Filter by Listing",
   "group": "Group",
   "title": "Title",
   "contactName": "Contact Name",

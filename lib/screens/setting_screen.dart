@@ -5,6 +5,7 @@ import 'package:bonyanaldoha/utils/constants.dart';
 import 'package:bonyanaldoha/widgets/simple_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:bonyanaldoha/utils/color_schemes.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sizer/sizer.dart';
 
 import 'account_role.dart';
@@ -77,7 +78,7 @@ class _SettingsPgState extends State<SettingsPg> {
             height: 10,
           ),
           settingList(
-            icon: Icons.person_rounded,
+            iconpath: "$iconpath/My Profile.svg",
             title: "My Profile",
             subtitle: "Edit  You Account Details",
             onTap: () => Navigator.push(
@@ -89,7 +90,7 @@ class _SettingsPgState extends State<SettingsPg> {
             height: 10,
           ),
           settingList(
-            icon: Icons.person_rounded,
+            iconpath: "$iconpath/Account Role.svg",
             title: "Account Role",
             subtitle: "Edit  You Account Role ",
             onTap: () => Navigator.push(
@@ -101,7 +102,7 @@ class _SettingsPgState extends State<SettingsPg> {
             height: 10,
           ),
           settingList(
-            icon: Icons.password_rounded,
+            iconpath: "$iconpath/Change Password.svg",
             title: "Change Password",
             subtitle: "Change Your Password",
             onTap: () => Navigator.push(
@@ -111,7 +112,7 @@ class _SettingsPgState extends State<SettingsPg> {
           ),
           SizedBox(height: 10),
           settingList(
-            icon: Icons.person_off_outlined,
+            iconpath: "$iconpath/Delete Account.svg",
             title: "Delete Account",
             subtitle: "Delete Your Account",
             onTap: () => Navigator.push(
@@ -127,7 +128,7 @@ class _SettingsPgState extends State<SettingsPg> {
   Widget settingList({
     String? title,
     String? subtitle,
-    IconData? icon,
+    dynamic iconpath,
     void Function()? onTap,
   }) {
     return Container(
@@ -135,10 +136,11 @@ class _SettingsPgState extends State<SettingsPg> {
       //padding: EdgeInsets.all(20),
       child: ListTile(
         onTap: onTap,
-        leading: Icon(
-          icon,
-          size: 50,
+        leading: SvgPicture.asset(
+          iconpath,
           color: primaryColor,
+          height: 40,
+          width: 40,
         ),
         title: Text(
           title!,

@@ -12,17 +12,15 @@ class CustomeDropDownButton extends StatelessWidget {
   final FontWeight? fontWeight;
   final Function(String?)? onChanged;
 
-  const CustomeDropDownButton(
-      {Key? key,
-      this.label = "",
-      this.value = "",
-      this.fontSize = 10,
-      this.onChanged,
-      this.itemList,
-      this.fontWeight=FontWeight.bold,
-      
-      })
-      : super(key: key);
+  const CustomeDropDownButton({
+    Key? key,
+    this.label = "",
+    this.value = "",
+    this.fontSize = 10,
+    this.onChanged,
+    this.itemList,
+    this.fontWeight = FontWeight.bold,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +37,7 @@ class CustomeDropDownButton extends StatelessWidget {
                 color: Colors.black,
                 fontWeight: fontWeight),
           ),
-          SizedBox(height: 8.0),
+          SizedBox(height: label.isEmpty ? 0.0 : 8.0),
           Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),

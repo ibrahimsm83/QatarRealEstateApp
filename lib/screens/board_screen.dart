@@ -1,3 +1,4 @@
+import 'package:bonyanaldoha/screens/activity_screen.dart';
 import 'package:bonyanaldoha/screens/add_new_deal_screen.dart';
 import 'package:bonyanaldoha/screens/leads_screen.dart';
 import 'package:bonyanaldoha/screens/notification_screen.dart';
@@ -5,6 +6,7 @@ import 'package:bonyanaldoha/utils/constants.dart';
 import 'package:bonyanaldoha/widgets/simple_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:bonyanaldoha/utils/color_schemes.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sizer/sizer.dart';
 
 import 'inquiries_screen.dart';
@@ -76,19 +78,20 @@ class _BoardPageState extends State<BoardPage> {
             height: 10,
           ),
           settingList(
-            icon: Icons.person_rounded,
+            // Activities
+            iconpath: "$iconpath/Activities.svg",
             title: "Activity",
             subtitle: "View Your Activity",
-            // onTap: () => Navigator.push(
-            //     context,
-            //     MaterialPageRoute(
-            //         builder: (BuildContext context) => Myprofile())),
+            onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (BuildContext context) => ActivityPage())),
           ),
           SizedBox(
             height: 10,
           ),
           settingList(
-            icon: Icons.person_rounded,
+            iconpath: "$iconpath/Deals.svg",
             title: "Deals",
             subtitle: "View Your Deals",
             //AddNewDeal
@@ -102,7 +105,7 @@ class _BoardPageState extends State<BoardPage> {
           ),
           settingList(
             //LeadsPage
-            icon: Icons.password_rounded,
+            iconpath: "$iconpath/Leads.svg",
             title: "Leads",
             subtitle: "View Your Leads",
             onTap: () => Navigator.push(
@@ -115,7 +118,7 @@ class _BoardPageState extends State<BoardPage> {
           ),
           //InquiriePage
           settingList(
-            icon: Icons.person_off_outlined,
+            iconpath: "$iconpath/Inquries.svg",
             title: "Inquiries",
             subtitle: "View Your Inquiries",
             onTap: () => Navigator.push(
@@ -131,7 +134,7 @@ class _BoardPageState extends State<BoardPage> {
   Widget settingList({
     String? title,
     String? subtitle,
-    IconData? icon,
+    dynamic iconpath,
     void Function()? onTap,
   }) {
     return Container(
@@ -139,10 +142,11 @@ class _BoardPageState extends State<BoardPage> {
       //padding: EdgeInsets.all(20),
       child: ListTile(
         onTap: onTap,
-        leading: Icon(
-          icon,
-          size: 50,
+        leading: SvgPicture.asset(
+          iconpath,
           color: primaryColor,
+          height: 40,
+          width: 40,
         ),
         title: Text(
           title!,

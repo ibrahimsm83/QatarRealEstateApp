@@ -17,130 +17,125 @@ class AgentsPage extends StatefulWidget {
 class _AgentsPageState extends State<AgentsPage> {
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-        appBar: SimpleAppBar(
-          onTapLeading: () => Navigator.pop(context),
-          backgroundColor: lightGreyColor,
-          abtitle: "Agents",
-          onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (BuildContext context) => NotificationPg())),
-        ),
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              Container(
-                color: lightGreyColor,
-                //height: 25.h,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    SizedBox(height: 3.h),
-                    Container(
-                      height: 12.h,
-                      width: 12.w,
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage('$imgpath/profile.jpg'),
-                            fit: BoxFit.contain,
-                          ),
-                          color: primaryColor,
-                          shape: BoxShape.circle),
-                    ),
-                    SizedBox(height: 10),
-                    Align(
-                      alignment: Alignment.center,
-                      child: Text(
-                        "John Smith ",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 14.sp),
-                      ),
-                    ),
-                    SizedBox(height: 5),
-                    Align(
-                      alignment: Alignment.center,
-                      child: Text(
-                        "Agency",
-                        style: TextStyle(color: Colors.grey, fontSize: 12.sp),
-                      ),
-                    ),
-                    SizedBox(height: 3.h),
-                  ],
-                ),
-              ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "All Agents",
+    return Scaffold(
+      appBar: SimpleAppBar(
+        onTapLeading: () => Navigator.pop(context),
+        backgroundColor: whiteColor,
+        abtitle: "Agents",
+        onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (BuildContext context) => NotificationPg())),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              color: Colors.brown[50],
+              //height: 25.h,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  SizedBox(height: 3.h),
+                  Container(
+                    height: 12.h,
+                    width: 12.w,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('$imgpath/profile.jpg'),
+                          fit: BoxFit.contain,
+                        ),
+                        color: primaryColor,
+                        shape: BoxShape.circle),
+                  ),
+                  SizedBox(height: 10),
+                  Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      "John Smith ",
                       style: TextStyle(
-                          fontSize: 15.sp, fontWeight: FontWeight.bold),
+                          fontWeight: FontWeight.bold, fontSize: 14.sp),
                     ),
-                    SizedBox(
-                      width: sizeWidth(context) * 0.4,
-                      height: 40,
-                      child: ElevatedButton(
-                        child: Text(
-                          'ADD NEW AGENT',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                          ),
+                  ),
+                  SizedBox(height: 5),
+                  Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      "Agency",
+                      style: TextStyle(color: Colors.grey, fontSize: 12.sp),
+                    ),
+                  ),
+                  SizedBox(height: 3.h),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "All Agents",
+                    style:
+                        TextStyle(fontSize: 15.sp, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    width: sizeWidth(context) * 0.4,
+                    height: 40,
+                    child: ElevatedButton(
+                      child: Text(
+                        'ADD NEW AGENT',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
                         ),
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (BuildContext context) =>
-                                      AddNewAgentPage()));
-                        },
-                        style: ElevatedButton.styleFrom(
-                          primary: primaryColor,
-                          textStyle: TextStyle(
-                            fontSize: 13.sp,
-                          ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5.0),
-                          ),
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (BuildContext context) =>
+                                    AddNewAgentPage()));
+                      },
+                      style: ElevatedButton.styleFrom(
+                        primary: primaryColor,
+                        textStyle: TextStyle(
+                          fontSize: 13.sp,
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5.0),
                         ),
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    agentsRow(
-                        name: "John Smith", destination: "Property Agent"),
-                    agentsRow(
-                        name: "John Smith", destination: "Property Agent"),
-                  ],
-                ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  agentsRow(name: "John Smith", destination: "Property Agent"),
+                  agentsRow(name: "John Smith", destination: "Property Agent"),
+                ],
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    agentsRow(
-                        name: "John Smith", destination: "Property Agent"),
-                    agentsRow(
-                        name: "John Smith", destination: "Property Agent"),
-                  ],
-                ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  agentsRow(name: "John Smith", destination: "Property Agent"),
+                  agentsRow(name: "John Smith", destination: "Property Agent"),
+                ],
               ),
-              SizedBox(height: 3.h),
-            ],
-          ),
+            ),
+            SizedBox(height: 3.h),
+          ],
         ),
+      ),
     );
   }
 
@@ -149,7 +144,7 @@ class _AgentsPageState extends State<AgentsPage> {
       width: 42.w,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10.0),
-        color: lightGreyColor,
+        color: Colors.brown[50],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
