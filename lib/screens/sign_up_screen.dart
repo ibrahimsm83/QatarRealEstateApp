@@ -1,3 +1,4 @@
+import 'package:bonyanaldoha/widgets/custome_dropdown_button.dart';
 import 'package:bonyanaldoha/widgets/text_form_field.dart';
 import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/gestures.dart';
@@ -19,7 +20,16 @@ class _SignupScreenState extends State<SignupScreen> {
   bool rememberMe = false;
   final formKey1 = GlobalKey<FormState>();
   bool flag = false;
-
+  final items1 = [
+    'Select your account type',
+    'Agent',
+    'Agency',
+    'Owner',
+    'Buyer',
+    'Seller',
+    'Manager'
+  ];
+  String val1 = 'Select your account type';
   @override
   Widget build(BuildContext context) {
     var logoImg = Image.asset(
@@ -75,7 +85,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       ).tr(),
                     ),
                     CustomeTextFormField(
-                      hintText: 'fullName'.tr(),
+                      hintText: "First Name", //'fullName'.tr(),
                       validator: (String? val) {
                         if (val == null || val.isEmpty) {
                           return '';
@@ -83,6 +93,27 @@ class _SignupScreenState extends State<SignupScreen> {
                         return null;
                       },
                     ),
+                    SizedBox(height: 10.0),
+                    CustomeTextFormField(
+                      hintText: "Last Name", //'fullName'.tr(),
+                      validator: (String? val) {
+                        if (val == null || val.isEmpty) {
+                          return '';
+                        }
+                        return null;
+                      },
+                    ),
+                    SizedBox(height: 10.0),
+                    CustomeTextFormField(
+                      hintText: "Username", //'fullName'.tr(),
+                      validator: (String? val) {
+                        if (val == null || val.isEmpty) {
+                          return '';
+                        }
+                        return null;
+                      },
+                    ),
+
                     SizedBox(height: 10.0),
                     //Email name
                     CustomeTextFormField(
@@ -120,9 +151,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         return null;
                       },
                     ),
-                    SizedBox(
-                      height: 10.0,
-                    ),
+                    SizedBox(height: 10.0),
                     CustomeTextFormField(
                       obscureText: true,
                       hintText: 're-type_Password'.tr(),
@@ -134,27 +163,87 @@ class _SignupScreenState extends State<SignupScreen> {
                       },
                     ),
                     //Google Button
+                    // Padding(
+                    //   padding: EdgeInsets.symmetric(
+                    //       vertical: 10.0,
+                    //       horizontal: sizeWidth(context) * 0.06),
+                    //   child: InkWell(
+                    //     onTap: () {},
+                    //     child: Container(
+                    //       height: 45,
+                    //       width: double.infinity,
+                    //       decoration: BoxDecoration(
+                    //         color: Colors.white,
+                    //         border: Border.all(color: Colors.grey),
+                    //         borderRadius:
+                    //             BorderRadius.all(Radius.circular(10.0)),
+                    //       ),
+                    //       child: Center(
+                    //         child: Text('select-your-Account-Type').tr(),
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
+
+                    CustomeDropDownButton(
+                      fontSize: 12,
+                      fontWeight: FontWeight.normal,
+                      value: val1,
+                      itemList: items1,
+                      onChanged: (String? value) {
+                        return setState(
+                          () => val1 = value!,
+                        );
+                      },
+                    ),
                     Padding(
-                      padding: EdgeInsets.symmetric(
-                          vertical: 10.0,
-                          horizontal: sizeWidth(context) * 0.06),
-                      child: InkWell(
-                        onTap: () {},
-                        child: Container(
-                          height: 45,
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            border: Border.all(color: Colors.grey),
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(10.0)),
+                      padding: EdgeInsets.only(left: sizeWidth(context) * 0.04),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            height: 40.0,
+                            width: 40.0,
+                            child: Checkbox(
+                              materialTapTargetSize:
+                                  MaterialTapTargetSize.shrinkWrap,
+                              value: rememberMe,
+                              activeColor: primaryColor,
+                              onChanged: (value) => setState(
+                                () => rememberMe = value!,
+                              ),
+                            ),
                           ),
-                          child: Center(
-                            child: Text('select-your-Account-Type').tr(),
+                          RichText(
+                            text: TextSpan(
+                              text: "I agree with your ",
+                              style: TextStyle(
+                                  color: Colors.black, fontSize: 12.sp),
+                              children: <TextSpan>[
+                                TextSpan(
+                                  text: "Terms & Conditions",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      decoration: TextDecoration.underline,
+                                      color: Colors.black,
+                                      fontSize: 11.sp),
+                                  recognizer: TapGestureRecognizer()
+                                    ..onTap = () {
+                                      Navigator.of(context).pushReplacement(
+                                        MaterialPageRoute(
+                                          builder: (BuildContext context) =>
+                                              const LoginScreen(),
+                                        ),
+                                      );
+                                    },
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
+                        ],
                       ),
                     ),
+                    SizedBox(height: 10.0),
                     Container(
                       width: sizeWidth(context),
                       margin: EdgeInsets.symmetric(
@@ -217,6 +306,88 @@ class _SignupScreenState extends State<SignupScreen> {
                                 },
                             )
                           ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 10.0),
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                          vertical: 8.0, horizontal: sizeWidth(context) * 0.06),
+                      child: InkWell(
+                        onTap: () {},
+                        child: Container(
+                          height: 45,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(color: Colors.grey),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(10.0)),
+                          ),
+                          child: SizedBox(
+                            height: 25,
+                            child: Row(
+                              children: [
+                                SizedBox(
+                                  width: 2.0.w,
+                                ),
+                                Image.asset(
+                                  'assets/icons/google.png',
+                                  height: 8.h,
+                                  width: 8.w,
+                                ),
+                                SizedBox(
+                                  width: 10.w,
+                                ),
+                                Container(
+                                  child: Text(
+                                    'continue_w_g',
+                                    style: TextStyle(color: Colors.grey[700]),
+                                  ).tr(),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    //Facebook Button
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                          vertical: 8.0, horizontal: sizeWidth(context) * 0.06),
+                      child: GestureDetector(
+                        onTap: () => {},
+                        child: Container(
+                          height: 45,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(color: Colors.grey),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(10.0)),
+                          ),
+                          child: SizedBox(
+                            height: 25,
+                            child: Row(
+                              children: [
+                                SizedBox(
+                                  width: 2.0.w,
+                                ),
+                                Image.asset(
+                                  'assets/icons/facebook.png',
+                                  height: 8.h,
+                                  width: 8.w,
+                                ),
+                                SizedBox(
+                                  width: 10.w,
+                                ),
+                                Container(
+                                  child: Text(
+                                    'continue_W_F',
+                                    style: TextStyle(color: Colors.grey[700]),
+                                  ).tr(),
+                                ),
+                              ],
+                            ),
+                          ),
                         ),
                       ),
                     ),

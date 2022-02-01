@@ -17,7 +17,7 @@ class DeshboardPg extends StatefulWidget {
 class _DeshboardPgState extends State<DeshboardPg> {
   final items1 = ['Select', 'item2', 'item3', 'item4'];
   final items2 = ['Property Type', 'item2', 'item3', 'item4'];
-  final items3 = ['All Cities', 'UnitedArabEmaratas', 'All', 'item4'];
+  final items3 = ['All Cities', 'Qatar', 'All', 'item4'];
   String val1 = 'Select';
   String val2 = 'Property Type';
   String val3 = 'All Cities';

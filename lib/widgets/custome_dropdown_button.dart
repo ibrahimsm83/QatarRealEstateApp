@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:bonyanaldoha/utils/color_schemes.dart';
 import 'package:bonyanaldoha/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -26,7 +27,6 @@ class CustomeDropDownButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: sizeWidth(context) * 0.06),
-      //  padding: EdgeInsets.fromLTRB(sizeWidth(context) * 0.06, 10, 10, 10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -40,8 +40,9 @@ class CustomeDropDownButton extends StatelessWidget {
           SizedBox(height: label.isEmpty ? 0.0 : 8.0),
           Container(
             decoration: BoxDecoration(
+              color: whiteColor,
               borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: Colors.grey, width: 1.5),
+              border: Border.all(color: primaryColor, width: 1.5),
             ),
             padding: EdgeInsets.symmetric(horizontal: 12, vertical: 0),
             child: DropdownButtonHideUnderline(

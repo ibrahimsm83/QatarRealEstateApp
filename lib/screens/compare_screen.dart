@@ -31,65 +31,66 @@ class _ComparePgState extends State<ComparePg> {
               MaterialPageRoute(
                   builder: (BuildContext context) => NotificationPg())),
         ),
-        body: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                ComparePropertyList(imagepath: cityImg[0]),
-                ComparePropertyList(imagepath: cityImg[1]),
-              ],
-            ),
-            SizedBox(
-              height: 6.0,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                ComparePropertyList(imagepath: cityImg[2]),
-                ComparePropertyList(imagepath: cityImg[3]),
-              ],
-            ),
-            SizedBox(
-              height: 20.0,
-            ),
-            Container(
-              width: sizeWidth(context),
-              margin:
-                  EdgeInsets.symmetric(horizontal: sizeWidth(context) * 0.06),
-              height: 45,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(30.0)),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  ComparePropertyList(imagepath: cityImg[0]),
+                  ComparePropertyList(imagepath: cityImg[1]),
+                ],
               ),
-              child: ElevatedButton(
-                child: Text(
-                  'COMPARE NOW',
-                  style: TextStyle(
-                    fontSize: 14.0,
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
+              SizedBox(
+                height: 6.0,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  ComparePropertyList(imagepath: cityImg[2]),
+                  ComparePropertyList(imagepath: cityImg[3]),
+                ],
+              ),
+              SizedBox(height: 20.0),
+              Container(
+                width: sizeWidth(context),
+                margin:
+                    EdgeInsets.symmetric(horizontal: sizeWidth(context) * 0.06),
+                height: 45,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                ),
+                child: ElevatedButton(
+                  child: Text(
+                    'COMPARE NOW',
+                    style: TextStyle(
+                      fontSize: 14.0,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  onPressed: () {
+                    //ComapreDetailsPg
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                ComapreDetailsPg()));
+                  },
+                  style: ElevatedButton.styleFrom(
+                    primary: primaryColor,
+                    textStyle: TextStyle(
+                      fontSize: 14,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
                   ),
                 ),
-                onPressed: () {
-                  //ComapreDetailsPg
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (BuildContext context) =>
-                              ComapreDetailsPg()));
-                },
-                style: ElevatedButton.styleFrom(
-                  primary: primaryColor,
-                  textStyle: TextStyle(
-                    fontSize: 14,
-                  ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                ),
               ),
-            ),
-          ],
+              SizedBox(height: 20.0),
+            ],
+          ),
         ),
       ),
     );

@@ -8,12 +8,10 @@ import 'package:flutter/material.dart';
 import 'package:bonyanaldoha/utils/color_schemes.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sizer/sizer.dart';
-
 import 'inquiries_screen.dart';
 
 class BoardPage extends StatefulWidget {
   const BoardPage({Key? key}) : super(key: key);
-
   @override
   _BoardPageState createState() => _BoardPageState();
 }
@@ -34,9 +32,7 @@ class _BoardPageState extends State<BoardPage> {
       body: Column(
         children: [
           Container(
-            // color: lightGreyColor,
             color: Colors.brown[50],
-            //height: 25.h,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
@@ -139,7 +135,6 @@ class _BoardPageState extends State<BoardPage> {
   }) {
     return Container(
       color: Colors.brown[50],
-      //padding: EdgeInsets.all(20),
       child: ListTile(
         onTap: onTap,
         leading: SvgPicture.asset(

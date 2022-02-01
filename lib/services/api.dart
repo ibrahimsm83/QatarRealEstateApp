@@ -109,7 +109,7 @@ class Api {
       var response = await (await dio()).put(url, data: body);
 
       return jsonDecode(response.data);
-    // ignore: empty_catches
+      // ignore: empty_catches
     } catch (error) {}
   }
 

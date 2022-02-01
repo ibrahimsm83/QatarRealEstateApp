@@ -1,8 +1,8 @@
+import 'package:bonyanaldoha/screens/profile_screen.dart';
 import 'package:bonyanaldoha/services/api_data.dart';
 import 'package:bonyanaldoha/utils/color_schemes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 
 // ignore: must_be_immutable
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -15,13 +15,15 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Function()? onTap;
   @override
   CustomAppBar(
-      {Key? key, this.abtitle,
+      {Key? key,
+      this.abtitle,
       this.bgcolor,
       this.abCtitle,
       this.imageno = 0,
       this.onTap,
       this.showPreferedSize = false,
-      this.apbarheight = 56.0}) : super(key: key);
+      this.apbarheight = 56.0})
+      : super(key: key);
 
   @override
   Size get preferredSize => Size.fromHeight(apbarheight!);
@@ -123,18 +125,25 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                             color: primaryColor)),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 10.0),
-                  child: Container(
-                    // height: 30,
-                    width: 40,
-                    margin: EdgeInsets.all(8.0),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10.0),
-                      image: DecorationImage(
-                        image: AssetImage('assets/images/profile.jpg'),
-                        fit: BoxFit.cover,
+                InkWell(
+                  //ProfilePage
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext context) => ProfilePage())),
+                  child: Padding(
+                    padding: const EdgeInsets.only(right: 10.0),
+                    child: Container(
+                      // height: 30,
+                      width: 40,
+                      margin: EdgeInsets.all(8.0),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10.0),
+                        image: DecorationImage(
+                          image: AssetImage('assets/images/profile.jpg'),
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                   ),
@@ -215,24 +224,30 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                           color: primaryColor)),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(right: 10.0),
-                child: Container(
-                  // height: 30,
-                  width: 40,
-                  margin: EdgeInsets.all(8.0),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10.0),
-                    image: DecorationImage(
-                      image: AssetImage('assets/images/profile.jpg'),
-                      fit: BoxFit.cover,
+              InkWell(
+                //ProfilePage
+                onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) => ProfilePage())),
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 10.0),
+                  child: Container(
+                    // height: 30,
+                    width: 40,
+                    margin: EdgeInsets.all(8.0),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10.0),
+                      image: DecorationImage(
+                        image: AssetImage('assets/images/profile.jpg'),
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 ),
               ),
             ],
           );
-  
   }
 }
