@@ -1,3 +1,4 @@
+import 'package:bonyanaldoha/screens/list_a_property_screen.dart';
 import 'package:bonyanaldoha/screens/profile_screen.dart';
 import 'package:bonyanaldoha/utils/color_schemes.dart';
 import 'package:flutter/material.dart';
@@ -44,22 +45,29 @@ class SimpleAppBar extends StatelessWidget implements PreferredSizeWidget {
         SizedBox(
           width: 10,
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 8.0),
-          child: Container(
-            width: 50,
-            padding: const EdgeInsets.all(4.0),
-            decoration: BoxDecoration(
-              border: Border.all(color: primaryColor),
-              borderRadius: BorderRadius.circular(5.0),
-            ),
-            child: Center(
-              child: Text(
-                "Add",
-                style: TextStyle(
-                    fontSize: 12,
-                    color: primaryColor,
-                    fontWeight: FontWeight.bold),
+        InkWell(
+          onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (BuildContext context) => ListAPropertypg())),
+          child: Padding(
+            padding:
+                const EdgeInsets.symmetric(vertical: 10.0, horizontal: 8.0),
+            child: Container(
+              width: 50,
+              padding: const EdgeInsets.all(4.0),
+              decoration: BoxDecoration(
+                border: Border.all(color: primaryColor),
+                borderRadius: BorderRadius.circular(5.0),
+              ),
+              child: Center(
+                child: Text(
+                  "Add",
+                  style: TextStyle(
+                      fontSize: 12,
+                      color: primaryColor,
+                      fontWeight: FontWeight.bold),
+                ),
               ),
             ),
           ),
