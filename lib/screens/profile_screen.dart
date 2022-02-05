@@ -1,3 +1,5 @@
+import 'package:bonyanaldoha/screens/add_new_agency_screen.dart';
+import 'package:bonyanaldoha/screens/my_developers_screen.dart';
 import 'package:bonyanaldoha/utils/color_schemes.dart';
 import 'package:bonyanaldoha/utils/constants.dart';
 import 'package:bonyanaldoha/widgets/simple_appbar.dart';
@@ -123,12 +125,26 @@ class ProfilePage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     profileAdsBox(
-                        Iconname: "$iconpath/Inquries.svg", title: 'My Agents'),
+                        Iconname: "$iconpath/Inquries.svg",
+                        title: 'My Listings'),
                     profileAdsBox(
-                        Iconname: "$iconpath/Leads.svg", title: 'My Listings'),
+                      Iconname: "$iconpath/Leads.svg",
+                      title: 'My Agents',
+                      onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) =>
+                                  AddNewAgencypage())),
+                    ),
                     profileAdsBox(
-                        Iconname: "$iconpath/My Profile.svg",
-                        title: 'My Developers')
+                      Iconname: "$iconpath/My Profile.svg",
+                      title: 'My Developers',
+                      onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) =>
+                                  Developerspage())),
+                    )
                   ],
                 ),
               ),
@@ -191,30 +207,37 @@ class ProfilePage extends StatelessWidget {
     );
   }
 
-  Widget profileAdsBox({required String Iconname, required String title}) {
-    return Container(
-      height: 120,
-      width: 120,
-      decoration: BoxDecoration(
-          color: Colors.grey.shade200,
-          borderRadius: BorderRadius.circular(5.0)),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          SvgPicture.asset(
-            Iconname,
-            //"$iconpath/advertise.svg",
-            color: Colors.black,
-            height: 40,
-            width: 40,
-          ),
-          SizedBox(height: 3.0),
-          Text(
-            //"Advertise",
-            title,
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
-          ),
-        ],
+//Developerspage
+  Widget profileAdsBox(
+      {required String Iconname,
+      required String title,
+      void Function()? onTap}) {
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        height: 120,
+        width: 120,
+        decoration: BoxDecoration(
+            color: Colors.grey.shade200,
+            borderRadius: BorderRadius.circular(5.0)),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SvgPicture.asset(
+              Iconname,
+              //"$iconpath/advertise.svg",
+              color: Colors.black,
+              height: 40,
+              width: 40,
+            ),
+            SizedBox(height: 3.0),
+            Text(
+              //"Advertise",
+              title,
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+            ),
+          ],
+        ),
       ),
     );
   }

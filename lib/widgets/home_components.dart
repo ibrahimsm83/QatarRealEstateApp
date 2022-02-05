@@ -9,6 +9,7 @@ class PropertyList extends StatefulWidget {
   final String imagepath;
   final String btntext;
   final Function()? onTapArrow;
+    final Function()? onTapDetaislbtn;
 
   const PropertyList({
     Key? key,
@@ -17,6 +18,7 @@ class PropertyList extends StatefulWidget {
     this.imagepath = "",
     this.btntext = "",
     this.onTapArrow,
+    this.onTapDetaislbtn
   }) : super(key: key);
 
   @override
@@ -335,21 +337,22 @@ class _PropertyListState extends State<PropertyList> {
                           'COMMERCIAL',
                           style: TextStyle(color: Colors.black, fontSize: 13),
                         ),
-                        Container(
-                          padding: const EdgeInsets.all(4.0),
-                          decoration: BoxDecoration(
-                            // color: primaryColor,
-                            border: Border.all(color: primaryColor),
-
-                            borderRadius: BorderRadius.circular(5.0),
-                          ),
-                          child: Center(
-                            child: Text(
-                              "Details",
-                              style: TextStyle(
-                                  fontSize: 12,
-                                  color: primaryColor,
-                                  fontWeight: FontWeight.bold),
+                        InkWell(
+                          onTap:widget.onTapDetaislbtn,
+                          child: Container(
+                            padding: const EdgeInsets.all(4.0),
+                            decoration: BoxDecoration(
+                              border: Border.all(color: primaryColor),
+                              borderRadius: BorderRadius.circular(5.0),
+                            ),
+                            child: Center(
+                              child: Text(
+                                "Details",
+                                style: TextStyle(
+                                    fontSize: 12,
+                                    color: primaryColor,
+                                    fontWeight: FontWeight.bold),
+                              ),
                             ),
                           ),
                         )

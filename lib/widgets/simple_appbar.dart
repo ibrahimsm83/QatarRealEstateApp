@@ -52,7 +52,7 @@ class SimpleAppBar extends StatelessWidget implements PreferredSizeWidget {
                   builder: (BuildContext context) => ListAPropertypg())),
           child: Padding(
             padding:
-                const EdgeInsets.symmetric(vertical: 10.0, horizontal: 8.0),
+                const EdgeInsets.symmetric(vertical: 12.0, horizontal: 8.0),
             child: Container(
               width: 50,
               padding: const EdgeInsets.all(4.0),
