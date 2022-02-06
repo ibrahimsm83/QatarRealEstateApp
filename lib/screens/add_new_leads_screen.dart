@@ -7,14 +7,14 @@ import 'package:flutter/material.dart';
 
 import 'package:sizer/sizer.dart';
 
-class Myprofile extends StatefulWidget {
-  const Myprofile({Key? key}) : super(key: key);
+class AddNewLeads extends StatefulWidget {
+  const AddNewLeads({Key? key}) : super(key: key);
 
   @override
-  _MyprofileState createState() => _MyprofileState();
+  _AddNewLeadsState createState() => _AddNewLeadsState();
 }
 
-class _MyprofileState extends State<Myprofile> {
+class _AddNewLeadsState extends State<AddNewLeads> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

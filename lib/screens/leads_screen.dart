@@ -1,4 +1,3 @@
-
 import 'package:bonyanaldoha/screens/add_new_leads_screen.dart';
 import 'package:bonyanaldoha/screens/notification_screen.dart';
 import 'package:bonyanaldoha/utils/color_schemes.dart';
@@ -97,7 +96,7 @@ class _LeadsPageState extends State<LeadsPage> {
                             context,
                             MaterialPageRoute(
                                 builder: (BuildContext context) =>
-                                    Myprofile()));
+                                    AddNewLeads()));
                       },
                       style: ElevatedButton.styleFrom(
                         primary: primaryColor,

@@ -1,10 +1,18 @@
 import 'package:bonyanaldoha/screens/add_new_agency_screen.dart';
+import 'package:bonyanaldoha/screens/developers_list_screen.dart';
+import 'package:bonyanaldoha/screens/my_agents_screen.dart';
 import 'package:bonyanaldoha/screens/my_developers_screen.dart';
+import 'package:bonyanaldoha/screens/my_order_screen.dart';
 import 'package:bonyanaldoha/utils/color_schemes.dart';
 import 'package:bonyanaldoha/utils/constants.dart';
 import 'package:bonyanaldoha/widgets/simple_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import 'add_new_leads_screen.dart';
+import 'agency_list_screen.dart';
+import 'my_invoice_screen.dart';
+import 'my_profile_screen.dart';
 
 class ProfilePage extends StatelessWidget {
   ProfilePage({Key? key}) : super(key: key);
@@ -77,14 +85,14 @@ class ProfilePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SvgPicture.asset(
-                    "$iconpath/location.svg",
+                    "$iconpath/Location.svg",
                     // color: Colors.black,
                     height: 20,
                     width: 20,
                   ),
                   SizedBox(width: 3.0),
                   Text(
-                    "Mad by Qatar .",
+                    "Made by Boyan Al Doha.",
                     style: TextStyle(
                       fontSize: 16,
                     ),
@@ -103,7 +111,7 @@ class ProfilePage extends StatelessWidget {
                   ),
                   SizedBox(width: 3.0),
                   Text(
-                    "www.Qarat.com",
+                    "www.boyanaldoha.com",
                     style: TextStyle(
                       fontSize: 16,
                     ),
@@ -133,8 +141,9 @@ class ProfilePage extends StatelessWidget {
                       onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (BuildContext context) =>
-                                  AddNewAgencypage())),
+                            builder: (BuildContext context) => MyAgentsPage(),
+                            //AddNewAgencypage()
+                          )),
                     ),
                     profileAdsBox(
                       Iconname: "$iconpath/My Profile.svg",
@@ -143,7 +152,8 @@ class ProfilePage extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                               builder: (BuildContext context) =>
-                                  Developerspage())),
+                                  //
+                                  DevelopersListPage())),
                     )
                   ],
                 ),
@@ -155,12 +165,36 @@ class ProfilePage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     profileAdsBox(
-                        Iconname: "$iconpath/Deals.svg", title: 'My Orders'),
+                      Iconname: "$iconpath/Deals.svg", title: 'My Orders',
+                      //MyOrderPage
+                      onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) =>
+                                  //
+                                  MyOrderPage())),
+                    ),
+                    //MyInvoicePage
                     profileAdsBox(
-                        Iconname: "$iconpath/Invoice.svg",
-                        title: 'My Invoices'),
+                      Iconname: "$iconpath/Invoice.svg",
+                      title: 'My Invoices',
+                      onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) =>
+                                  //
+                                  MyInvoicePage())),
+                    ),
                     profileAdsBox(
-                        Iconname: "$iconpath/Membership.svg", title: 'Invite')
+                      Iconname: "$iconpath/Membership.svg",
+                      title: 'My Agencies',
+                      onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) =>
+                                  //
+                                  AgencyListPage())),
+                    )
                   ],
                 ),
               ),
@@ -182,11 +216,10 @@ class ProfilePage extends StatelessWidget {
                           color: Colors.black, fontWeight: FontWeight.bold),
                     ),
                     onPressed: () {
-                      // Navigator.pushReplacement(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //         builder: (BuildContext context) =>
-                      //             const HomePage()));
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) => Myprofile()));
                     },
                     style: ElevatedButton.styleFrom(
                       primary: primaryColor,

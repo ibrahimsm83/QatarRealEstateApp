@@ -1,3 +1,4 @@
+import 'package:bonyanaldoha/screens/property_details.dart';
 import 'package:bonyanaldoha/services/api_data.dart';
 import 'package:bonyanaldoha/utils/color_schemes.dart';
 import 'package:bonyanaldoha/utils/constants.dart';
@@ -6,7 +7,6 @@ import 'package:bonyanaldoha/widgets/home_components.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:sizer/sizer.dart';
-
 
 class Location extends StatefulWidget {
   const Location({Key? key}) : super(key: key);
@@ -134,7 +134,7 @@ class _LocationState extends State<Location> {
                   bottom: 10.0,
                 ),
                 child: SizedBox(
-                    height: 36.2.h,
+                  height: 36.2.h,
                   //  width: sizeWidth(context),
                   child: ListView.builder(
                     shrinkWrap: true,
@@ -146,6 +146,10 @@ class _LocationState extends State<Location> {
                         btntext: "BUY",
                         address: 'The Pearl-Qatar,Doha,Qatar',
                         imagepath: cityImg[index],
+                        onTapDetaislbtn: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => PropertyDetailsPg())),
                         onTapArrow: () {
                           showDialog(
                               context: context,

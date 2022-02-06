@@ -37,9 +37,6 @@ class _DeshboardPgState extends State<DeshboardPg> {
                       context,
                       MaterialPageRoute(
                           builder: (context) => AdvanceSearchPage()));
-                  //   setState(() {
-                  //     seacrhProperty = true;
-                  //   });
                 },
                 child: Container(
                   width: sizeWidth(context),

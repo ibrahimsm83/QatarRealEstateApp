@@ -1,3 +1,4 @@
+import 'package:bonyanaldoha/screens/property_details.dart';
 import 'package:bonyanaldoha/services/api_data.dart';
 import 'package:bonyanaldoha/utils/color_schemes.dart';
 import 'package:bonyanaldoha/utils/constants.dart';
@@ -244,6 +245,11 @@ class _SellPgState extends State<SellPg> {
                               btntext: "COMMERCIAL",
                               address: addresses[0],
                               imagepath: cityImg[index],
+                              onTapDetaislbtn: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          PropertyDetailsPg())),
                               onTapArrow: () {
                                 showDialog(
                                     context: context,
@@ -287,6 +293,10 @@ class _SellPgState extends State<SellPg> {
                   btntext: "COMMERCIAL",
                   address: addresses[0],
                   imagepath: cityImg[index],
+                  onTapDetaislbtn: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => PropertyDetailsPg())),
                   onTapArrow: () {
                     showDialog(
                         context: context,
