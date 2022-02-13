@@ -1,4 +1,4 @@
-
+import 'package:bonyanaldoha/screens/login_screen.dart';
 import 'package:bonyanaldoha/utils/color_schemes.dart';
 import 'package:bonyanaldoha/utils/constants.dart';
 import 'package:flutter/material.dart';
@@ -11,8 +11,6 @@ class MyDrawerHeader extends StatefulWidget {
 
 class _MyDrawerHeaderState extends State<MyDrawerHeader> {
   @override
-
-
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -59,7 +57,8 @@ class _MyDrawerHeaderState extends State<MyDrawerHeader> {
           height: 5.0,
         ),
         GestureDetector(
-          onTap: () {},
+          onTap: () => Navigator.pushReplacement(
+              context, MaterialPageRoute(builder: (context) => LoginScreen())),
           child: Container(
             height: 25,
             width: sizeWidth(context) * 0.2,

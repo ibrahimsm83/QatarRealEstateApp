@@ -13,6 +13,12 @@ const String imgpath = 'assets/images';
 const String iconpath = 'assets/svgicons';
 const String iconspath = 'assets/icons';
 
+//icons path
+const String bedIcon = '$iconspath/bed.jpg';
+const String shoverIcon = '$iconspath/bathtap.png';
+const String carIcon = '$iconspath/car.png';
+const String trianleicon = '$iconspath/triangle.png';
+
 class PreferencesKeys {
   static String token = "token";
 }
@@ -41,7 +47,7 @@ Map<String, dynamic> constanText = {
   "deleteAccount": "Delete Account",
   "deleteMyAccount": "DELETE MY ACCOUNT",
   "addNewDeal": "Add New Deal",
-  "filterbylisting":"Filter by Listing",
+  "filterbylisting": "Filter by Listing",
   "group": "Group",
   "title": "Title",
   "contactName": "Contact Name",

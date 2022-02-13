@@ -32,7 +32,8 @@ class _ComparePgState extends State<ComparePg> {
                   builder: (BuildContext context) => NotificationPg())),
         ),
         body: SingleChildScrollView(
-          child: Column(
+          child: 
+          Column(
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

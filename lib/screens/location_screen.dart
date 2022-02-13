@@ -1,3 +1,4 @@
+import 'package:bonyanaldoha/screens/advance_search_screen.dart';
 import 'package:bonyanaldoha/screens/property_details.dart';
 import 'package:bonyanaldoha/services/api_data.dart';
 import 'package:bonyanaldoha/utils/color_schemes.dart';
@@ -65,65 +66,71 @@ class _LocationState extends State<Location> {
                   onTap: (coordinates) => _controller
                       .animateCamera(CameraUpdate.newLatLng(coordinates))),
             ),
-            Align(
-              alignment: Alignment.topCenter,
-              child: Container(
-                width: sizeWidth(context),
-                height: 45,
-                margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.3),
-                      blurRadius: 2,
-                      offset: Offset(0, 5), // Shadow position
-                    ),
-                  ],
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(8.0, 8, 0, 8),
-                      child: Icon(
-                        Icons.search,
-                        color: Colors.grey,
-                        size: 24.0,
+            InkWell(
+              onTap: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => AdvanceSearchPage())),
+              child: Align(
+                alignment: Alignment.topCenter,
+                child: Container(
+                  width: sizeWidth(context),
+                  height: 45,
+                  margin:
+                      EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.3),
+                        blurRadius: 2,
+                        offset: Offset(0, 5), // Shadow position
                       ),
-                    ),
-                    SizedBox(
-                      width: sizeWidth(context) * 0.68,
-                      child: TextField(
-                        //showCursor: false,
-                        decoration: InputDecoration(
-                          hintText: "Search Property",
-                          hintStyle: TextStyle(color: Colors.grey),
-                          enabledBorder: InputBorder.none,
-                          border: InputBorder.none,
-                          disabledBorder: InputBorder.none,
-                          focusedErrorBorder: InputBorder.none,
+                    ],
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(8.0, 8, 0, 8),
+                        child: Icon(
+                          Icons.search,
+                          color: Colors.grey,
+                          size: 24.0,
                         ),
                       ),
-                    ),
-                    Container(
-                      height: 30,
-                      width: sizeWidth(context) * 0.09,
-                      margin: EdgeInsets.all(5.0),
-                      decoration: BoxDecoration(
-                        color: primaryColor,
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Image.asset(
-                          'assets/icons/filtericon.png',
-                          color: Colors.white,
+                      SizedBox(
+                        width: sizeWidth(context) * 0.68,
+                        child: TextField(
+                          //showCursor: false,
+                          enabled: false,
+                          decoration: InputDecoration(
+                            hintText: "Search Property",
+                            hintStyle: TextStyle(color: Colors.grey),
+                            enabledBorder: InputBorder.none,
+                            border: InputBorder.none,
+                            disabledBorder: InputBorder.none,
+                            focusedErrorBorder: InputBorder.none,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                      Container(
+                        height: 30,
+                        width: sizeWidth(context) * 0.09,
+                        margin: EdgeInsets.all(5.0),
+                        decoration: BoxDecoration(
+                          color: primaryColor,
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Image.asset(
+                            'assets/icons/filtericon.png',
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

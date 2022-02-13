@@ -12,21 +12,24 @@ class CustomeDropDownButton extends StatelessWidget {
   final List<dynamic>? itemList;
   final FontWeight? fontWeight;
   final Function(String?)? onChanged;
+  final double? horizantalmergin;
 
-  const CustomeDropDownButton({
+  CustomeDropDownButton({
     Key? key,
     this.label = "",
     this.value = "",
     this.fontSize = 10,
     this.onChanged,
     this.itemList,
+    this.horizantalmergin = 0.06,
     this.fontWeight = FontWeight.bold,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: sizeWidth(context) * 0.06),
+      margin: EdgeInsets.symmetric(
+          horizontal: sizeWidth(context) * horizantalmergin),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

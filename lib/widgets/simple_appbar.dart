@@ -1,3 +1,4 @@
+import 'package:bonyanaldoha/screens/add_property_screen.dart';
 import 'package:bonyanaldoha/screens/list_a_property_screen.dart';
 import 'package:bonyanaldoha/screens/profile_screen.dart';
 import 'package:bonyanaldoha/utils/color_schemes.dart';
@@ -49,7 +50,7 @@ class SimpleAppBar extends StatelessWidget implements PreferredSizeWidget {
           onTap: () => Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (BuildContext context) => ListAPropertypg())),
+                  builder: (BuildContext context) => AddPropertyScreen())),
           child: Padding(
             padding:
                 const EdgeInsets.symmetric(vertical: 12.0, horizontal: 8.0),

@@ -1,19 +1,16 @@
-import 'package:bonyanaldoha/screens/add_new_agency_screen.dart';
 import 'package:bonyanaldoha/screens/developers_list_screen.dart';
 import 'package:bonyanaldoha/screens/my_agents_screen.dart';
-import 'package:bonyanaldoha/screens/my_developers_screen.dart';
 import 'package:bonyanaldoha/screens/my_order_screen.dart';
 import 'package:bonyanaldoha/utils/color_schemes.dart';
 import 'package:bonyanaldoha/utils/constants.dart';
-import 'package:bonyanaldoha/widgets/simple_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
-import 'add_new_leads_screen.dart';
+import 'package:sizer/sizer.dart';
 import 'agency_list_screen.dart';
 import 'my_invoice_screen.dart';
 import 'my_profile_screen.dart';
 
+// ignore: must_be_immutable
 class ProfilePage extends StatelessWidget {
   ProfilePage({Key? key}) : super(key: key);
   double coverheight = 220;
@@ -119,7 +116,6 @@ class ProfilePage extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 15.0),
-              // Divider(),
               Container(
                 height: 0.5,
                 width: sizeWidth(context) / 1.5,
@@ -132,28 +128,34 @@ class ProfilePage extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    profileAdsBox(
-                        Iconname: "$iconpath/Inquries.svg",
-                        title: 'My Listings'),
-                    profileAdsBox(
-                      Iconname: "$iconpath/Leads.svg",
-                      title: 'My Agents',
-                      onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (BuildContext context) => MyAgentsPage(),
-                            //AddNewAgencypage()
-                          )),
+                    Flexible(
+                      child: profileAdsBox(
+                          Iconname: "$iconpath/Inquries.svg",
+                          title: 'My Listings'),
                     ),
-                    profileAdsBox(
-                      Iconname: "$iconpath/My Profile.svg",
-                      title: 'My Developers',
-                      onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (BuildContext context) =>
-                                  //
-                                  DevelopersListPage())),
+                    Flexible(
+                      child: profileAdsBox(
+                        Iconname: "$iconpath/Leads.svg",
+                        title: 'My Agents',
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (BuildContext context) => MyAgentsPage(),
+                              //AddNewAgencypage()
+                            )),
+                      ),
+                    ),
+                    Flexible(
+                      child: profileAdsBox(
+                        Iconname: "$iconpath/My Profile.svg",
+                        title: 'My Developers',
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (BuildContext context) =>
+                                    //
+                                    DevelopersListPage())),
+                      ),
                     )
                   ],
                 ),
@@ -164,36 +166,42 @@ class ProfilePage extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    profileAdsBox(
-                      Iconname: "$iconpath/Deals.svg", title: 'My Orders',
-                      //MyOrderPage
-                      onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (BuildContext context) =>
-                                  //
-                                  MyOrderPage())),
+                    Flexible(
+                      child: profileAdsBox(
+                        Iconname: "$iconpath/Deals.svg", title: 'My Orders',
+                        //MyOrderPage
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (BuildContext context) =>
+                                    //
+                                    MyOrderPage())),
+                      ),
                     ),
                     //MyInvoicePage
-                    profileAdsBox(
-                      Iconname: "$iconpath/Invoice.svg",
-                      title: 'My Invoices',
-                      onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (BuildContext context) =>
-                                  //
-                                  MyInvoicePage())),
+                    Flexible(
+                      child: profileAdsBox(
+                        Iconname: "$iconpath/Invoice.svg",
+                        title: 'My Invoices',
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (BuildContext context) =>
+                                    //
+                                    MyInvoicePage())),
+                      ),
                     ),
-                    profileAdsBox(
-                      Iconname: "$iconpath/Membership.svg",
-                      title: 'My Agencies',
-                      onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (BuildContext context) =>
-                                  //
-                                  AgencyListPage())),
+                    Flexible(
+                      child: profileAdsBox(
+                        Iconname: "$iconpath/Membership.svg",
+                        title: 'My Agencies',
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (BuildContext context) =>
+                                    //
+                                    AgencyListPage())),
+                      ),
                     )
                   ],
                 ),
@@ -249,7 +257,7 @@ class ProfilePage extends StatelessWidget {
       onTap: onTap,
       child: Container(
         height: 120,
-        width: 120,
+        width: 115,
         decoration: BoxDecoration(
             color: Colors.grey.shade200,
             borderRadius: BorderRadius.circular(5.0)),
@@ -267,7 +275,8 @@ class ProfilePage extends StatelessWidget {
             Text(
               //"Advertise",
               title,
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+              textAlign: TextAlign.center,
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 10.sp),
             ),
           ],
         ),

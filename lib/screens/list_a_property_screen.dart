@@ -6,7 +6,6 @@ import 'package:bonyanaldoha/widgets/simple_appbar.dart';
 import 'package:bonyanaldoha/widgets/text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:sizer/sizer.dart';
 
 class ListAPropertypg extends StatefulWidget {
   const ListAPropertypg({Key? key}) : super(key: key);

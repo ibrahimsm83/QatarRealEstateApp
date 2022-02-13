@@ -1,5 +1,6 @@
 import 'package:bonyanaldoha/model/drawer_list_model.dart';
 import 'package:bonyanaldoha/screens/about_screen.dart';
+import 'package:bonyanaldoha/screens/add_property_screen.dart';
 import 'package:bonyanaldoha/screens/agents_screen.dart';
 import 'package:bonyanaldoha/screens/blog_screen.dart';
 import 'package:bonyanaldoha/screens/board_screen.dart';
@@ -212,7 +213,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (BuildContext context) => ListAPropertypg()));
+                    builder: (BuildContext context) => AddPropertyScreen()));
           } else if (dlm.id == 5) {
             Navigator.push(
                 context,

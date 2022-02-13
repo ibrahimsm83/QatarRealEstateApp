@@ -7,8 +7,10 @@ import 'package:flutter/material.dart';
 class CustomeTextFormField extends StatefulWidget {
   String? hintText;
   bool obscureText;
+  bool? enabled;
   double horizontalMergin;
   int maxLines;
+  Color fillColor;
   TextInputType? keyboardType;
   String? Function(String?)? validator;
   CustomeTextFormField({
@@ -17,6 +19,8 @@ class CustomeTextFormField extends StatefulWidget {
     this.validator,
     this.keyboardType,
     this.maxLines = 1,
+    this.enabled = true,
+    this.fillColor = whiteColor,
     this.horizontalMergin = 0.06,
     this.obscureText = false,
   }) : super(key: key);
@@ -43,10 +47,11 @@ class _CustomeTextFormFieldState extends State<CustomeTextFormField> {
         validator: widget.validator,
         obscureText: _pwShow,
         maxLines: widget.maxLines,
+        enabled: widget.enabled,
         decoration: InputDecoration(
           filled: true,
           isCollapsed: true,
-          fillColor: whiteColor,
+          fillColor: widget.fillColor,
           hintText: widget.hintText,
           contentPadding: EdgeInsets.fromLTRB(14, 14.0, 0, 14.0),
           enabledBorder: OutlineInputBorder(
@@ -61,6 +66,9 @@ class _CustomeTextFormFieldState extends State<CustomeTextFormField> {
           errorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10.0),
               borderSide: BorderSide(color: errorColor)),
+          disabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10.0),
+              borderSide: BorderSide(color: primaryColor)),
           suffixIcon: Visibility(
             visible: widget.obscureText,
             child: InkWell(
