@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 class VerificationScreen extends StatelessWidget {
   final formKeyotp = GlobalKey<FormState>();
 
- VerificationScreen({Key? key}) : super(key: key);
+  VerificationScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -45,16 +45,19 @@ class VerificationScreen extends StatelessWidget {
           child: Form(
             key: formKeyotp,
             child: Padding(
-              padding: EdgeInsets.only(top: sizeheight(context) * 0.13),
+              padding: EdgeInsets.only(top: sizeheight(context) * 0.12),
               child: Column(
                 children: [
                   Container(
                     alignment: Alignment.center,
-                    child: Image.asset(
-                      'assets/images/logo.png',
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 40.0),
+                      child: Image.asset(
+                        'assets/images/logo.png',
+                      ),
                     ),
                   ),
-                  SizedBox(height:10),
+                  SizedBox(height: 10),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 12),
                     child: Text(

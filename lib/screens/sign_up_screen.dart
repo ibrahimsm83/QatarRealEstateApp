@@ -62,7 +62,10 @@ class _SignupScreenState extends State<SignupScreen> {
                     ),
                     Container(
                       alignment: Alignment.center,
-                      child: logoImg,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 40.0),
+                        child: logoImg,
+                      ),
                     ),
                     Container(
                       alignment: Alignment.center,

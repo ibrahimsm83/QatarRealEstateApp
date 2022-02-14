@@ -26,23 +26,20 @@ class _SplashState extends State<Splash> {
       'assets/images/logo.png',
     );
     return SafeArea(
-      child: Scaffold(
-        body: Scaffold(
+      child: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/Slpace_Screen.jpg"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Scaffold(
+          backgroundColor: Colors.transparent,
           body: Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("assets/images/Slpace_Screen.jpg"),
-                fit: BoxFit.cover,
-              ),
-            ),
-            child: Container(
-              width: double.infinity,
-              padding: EdgeInsets.only(top: 20.h),
-              child: Column(
-                children: [
-                  logoImg,
-                ],
-              ),
+            padding: EdgeInsets.only(top: 20.h),
+            child: Padding(
+              padding: const EdgeInsets.all(40.0),
+              child: logoImg,
             ),
           ),
         ),

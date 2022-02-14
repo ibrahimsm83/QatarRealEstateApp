@@ -257,28 +257,31 @@ class ProfilePage extends StatelessWidget {
       onTap: onTap,
       child: Container(
         height: 120,
-        width: 115,
+        // width: 115,
         decoration: BoxDecoration(
             color: Colors.grey.shade200,
             borderRadius: BorderRadius.circular(5.0)),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SvgPicture.asset(
-              Iconname,
-              //"$iconpath/advertise.svg",
-              color: Colors.black,
-              height: 40,
-              width: 40,
-            ),
-            SizedBox(height: 3.0),
-            Text(
-              //"Advertise",
-              title,
-              textAlign: TextAlign.center,
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 10.sp),
-            ),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SvgPicture.asset(
+                Iconname,
+                //"$iconpath/advertise.svg",
+                color: Colors.black,
+                height: 40,
+                width: 40,
+              ),
+              SizedBox(height: 3.0),
+              Text(
+                //"Advertise",
+                title,
+                textAlign: TextAlign.center,
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 10.sp),
+              ),
+            ],
+          ),
         ),
       ),
     );

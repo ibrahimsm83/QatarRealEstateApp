@@ -73,37 +73,41 @@ class _InquiriePageState extends State<InquiriePage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    constanText['inquiries'],
-                    style:
-                        TextStyle(fontSize: 15.sp, fontWeight: FontWeight.bold),
+                  Flexible(
+                    child: Text(
+                      constanText['inquiries'],
+                      style: TextStyle(
+                          fontSize: 15.sp, fontWeight: FontWeight.bold),
+                    ),
                   ),
-                  SizedBox(
-                    width: sizeWidth(context) * 0.4,
-                    height: 40,
-                    child: ElevatedButton(
-                      child: Text(
-                        constanText['addNewInquiry'],
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
+                  Flexible(
+                    child: SizedBox(
+                      //  width: sizeWidth(context) * 0.4,
+                      height: 40,
+                      child: ElevatedButton(
+                        child: Text(
+                          constanText['addNewInquiry'],
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                      ),
-                      onPressed: () {
-                        // Navigator.push(
-                        //     context,
-                        //     MaterialPageRoute(
-                        //         builder: (BuildContext context) =>
-                        //             AddNewAgentPage()));
-                      },
-                      style: ElevatedButton.styleFrom(
-                        primary: primaryColor,
-                        textStyle: TextStyle(
-                          fontSize: 13.sp,
-                        ),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5.0),
+                        onPressed: () {
+                          // Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //         builder: (BuildContext context) =>
+                          //             AddNewAgentPage()));
+                        },
+                        style: ElevatedButton.styleFrom(
+                          primary: primaryColor,
+                          textStyle: TextStyle(
+                            fontSize: 13.sp,
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(5.0),
+                          ),
                         ),
                       ),
                     ),

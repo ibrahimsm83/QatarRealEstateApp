@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:bonyanaldoha/screens/forgot_password.dart';
 import 'package:bonyanaldoha/screens/home_screen.dart';
 
@@ -78,12 +80,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     //       )),
                     // ),
 
-                    SizedBox(
-                      height: 8.h,
-                    ),
+                    SizedBox(height: 7.h),
                     Container(
                       alignment: Alignment.center,
-                      child: logoImg,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 40.0),
+                        child: logoImg,
+                      ),
                     ),
                     Container(
                       alignment: Alignment.center,
@@ -193,13 +196,19 @@ class _LoginScreenState extends State<LoginScreen> {
                         ).tr(),
                         onPressed: () {
                           if (formKey.currentState!.validate()) {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(content: Text('Processing ')));
-                            Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (BuildContext context) =>
-                                        HomeScreen()));
+                            showLoaderDialog(context);
+                            Timer(Duration(seconds: 2), () {
+                              Navigator.pop(context);
+                              Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (BuildContext context) =>
+                                          HomeScreen()));
+                            });
+                            // Navigator.pop(context);
+                            // ScaffoldMessenger.of(context).showSnackBar(
+                            //     const SnackBar(content: Text('Processing ')));
+
                           }
                         },
                         //     async {
@@ -389,6 +398,25 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
         ),
       ),
+    );
+  }
+
+  showLoaderDialog(BuildContext context) {
+    AlertDialog alert = AlertDialog(
+      content: Row(
+        children: [
+          const CircularProgressIndicator(),
+          Container(
+              margin: EdgeInsets.only(left: 7), child: Text("Loading...")),
+        ],
+      ),
+    );
+    showDialog(
+      barrierDismissible: false,
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
     );
   }
 }

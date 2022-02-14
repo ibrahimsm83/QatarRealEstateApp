@@ -365,6 +365,7 @@ class _ActivityPageState extends State<ActivityPage> {
             ),
             Text(
               time!,
+              textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 14,
                 color: Colors.grey[600],
