@@ -36,6 +36,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     var logoImg = Image.asset(
       'assets/images/logo.png',
+      fit: BoxFit.cover,
     );
     return Container(
       height: MediaQuery.of(context).size.height,
@@ -52,7 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Form(
               key: formKey,
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                padding: const EdgeInsets.symmetric(horizontal: 4.0),
                 child: Column(
                   children: [
                     // SizedBox(
@@ -80,14 +81,17 @@ class _LoginScreenState extends State<LoginScreen> {
                     //       )),
                     // ),
 
-                    SizedBox(height: 7.h),
-                    Container(
-                      alignment: Alignment.center,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 40.0),
+                    SizedBox(height: 5.h),
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: sizeWidth(context) * 0.2),
+                      child: Container(
+                        alignment: Alignment.center,
                         child: logoImg,
                       ),
                     ),
+
+                    SizedBox(height: 2.h),
                     Container(
                       alignment: Alignment.center,
                       padding: EdgeInsets.all(10),

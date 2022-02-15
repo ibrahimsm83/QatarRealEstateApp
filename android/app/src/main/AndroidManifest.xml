@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.bonyanaldoha">
    <application
-        android:label="Bonyan Al Doha"
+        android:label="Home Search"
         android:icon="@mipmap/ic_launcher">
          <meta-data android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCSIFvepgZUstSBmyLgFXiyxd3nx2zOoBY"/>

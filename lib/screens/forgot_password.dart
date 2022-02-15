@@ -36,10 +36,11 @@ class ForgetPassword extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Container(
-                      alignment: Alignment.center,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 40.0),
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: sizeWidth(context) * 0.2),
+                      child: Container(
+                        alignment: Alignment.center,
                         child: logoImg,
                       ),
                     ),

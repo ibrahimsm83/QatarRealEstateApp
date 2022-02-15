@@ -48,10 +48,11 @@ class VerificationScreen extends StatelessWidget {
               padding: EdgeInsets.only(top: sizeheight(context) * 0.12),
               child: Column(
                 children: [
-                  Container(
-                    alignment: Alignment.center,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 40.0),
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: sizeWidth(context) * 0.2),
+                    child: Container(
+                      alignment: Alignment.center,
                       child: Image.asset(
                         'assets/images/logo.png',
                       ),

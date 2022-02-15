@@ -54,16 +54,12 @@ class _SignupScreenState extends State<SignupScreen> {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    SizedBox(
-                      height: 2.h,
-                    ),
-                    SizedBox(
-                      height: 5.h,
-                    ),
-                    Container(
-                      alignment: Alignment.center,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 40.0),
+                    SizedBox(height: 5.h),
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: sizeWidth(context) * 0.2),
+                      child: Container(
+                        alignment: Alignment.center,
                         child: logoImg,
                       ),
                     ),

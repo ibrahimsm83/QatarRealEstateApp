@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:bonyanaldoha/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'login_screen.dart';
@@ -35,10 +36,10 @@ class _SplashState extends State<Splash> {
         ),
         child: Scaffold(
           backgroundColor: Colors.transparent,
-          body: Container(
-            padding: EdgeInsets.only(top: 20.h),
-            child: Padding(
-              padding: const EdgeInsets.all(40.0),
+          body: Padding(
+            padding: EdgeInsets.symmetric(horizontal: sizeWidth(context) * 0.2),
+            child: Container(
+              padding: EdgeInsets.only(top: 20.h),
               child: logoImg,
             ),
           ),
