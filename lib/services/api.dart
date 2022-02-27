@@ -1,5 +1,5 @@
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:bonyanaldoha/utils/constants.dart';
+import 'package:bonyanaldoha/utils/app_strings.dart';
 import 'package:dio/dio.dart';
 import 'dart:convert';
 import 'dart:async';

@@ -2,7 +2,7 @@ import 'package:bonyanaldoha/screens/checkout_screen.dart';
 import 'package:bonyanaldoha/screens/notification_screen.dart';
 import 'package:bonyanaldoha/widgets/simple_appbar.dart';
 import 'package:flutter/material.dart';
-import 'package:bonyanaldoha/utils/color_schemes.dart';
+import 'package:bonyanaldoha/utils/app_colors.dart';
 import 'package:sizer/sizer.dart';
 
 class MemberShipPage extends StatefulWidget {

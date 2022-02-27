@@ -1,6 +1,6 @@
 import 'package:bonyanaldoha/screens/verification_screen.dart';
-import 'package:bonyanaldoha/utils/color_schemes.dart';
-import 'package:bonyanaldoha/utils/constants.dart';
+import 'package:bonyanaldoha/utils/app_colors.dart';
+import 'package:bonyanaldoha/utils/app_strings.dart';
 import 'package:bonyanaldoha/widgets/text_form_field.dart';
 
 import 'package:flutter/cupertino.dart';

@@ -1,4 +1,4 @@
-import 'package:bonyanaldoha/utils/constants.dart';
+import 'package:bonyanaldoha/utils/index_utils.dart';
 
 class DrawerListModel {
   final int id;

@@ -1,6 +1,6 @@
 import 'package:bonyanaldoha/screens/notification_screen.dart';
-import 'package:bonyanaldoha/utils/color_schemes.dart';
-import 'package:bonyanaldoha/utils/constants.dart';
+import 'package:bonyanaldoha/utils/app_colors.dart';
+import 'package:bonyanaldoha/utils/app_strings.dart';
 
 import 'package:bonyanaldoha/widgets/simple_appbar.dart';
 import 'package:bonyanaldoha/widgets/text_form_field.dart';
@@ -122,7 +122,7 @@ class _ListAPropertypgState extends State<ListAPropertypg> {
               Padding(
                 padding: const EdgeInsets.all(18.0),
                 child: Row(
-                  children: [
+                  children: const [
                     Text(
                       'Country  ',
                       style: TextStyle(fontWeight: FontWeight.bold),
@@ -244,7 +244,7 @@ class _ListAPropertypgState extends State<ListAPropertypg> {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 8.0),
           child: Row(
-            children: [
+            children:const [
               Text(
                 'Area ',
                 style: TextStyle(fontWeight: FontWeight.bold),
@@ -293,7 +293,7 @@ class _ListAPropertypgState extends State<ListAPropertypg> {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 8.0),
           child: Row(
-            children: [
+            children: const [
               Text(
                 'Price ',
                 style: TextStyle(fontWeight: FontWeight.bold),
@@ -352,7 +352,7 @@ class _ListAPropertypgState extends State<ListAPropertypg> {
                     selectedColorForPropertyType3 = false;
                     selectedColorForPropertyType2 = false;
                   }
-                  print(selectedView);
+               
                   // if(selectedColorForPropertyType3==true||selectedColorForPropertyType2==true){
                   //   if (selectedColorForPropertyType2==true) {
                   //     selectedColorForPropertyType2=false;
@@ -397,7 +397,7 @@ class _ListAPropertypgState extends State<ListAPropertypg> {
               onTap: () {
                 setState(() {
                   selectedView = 1;
-                  print(selectedView);
+              
                   selectedColorForPropertyType2 = true;
                   if (selectedColorForPropertyType1 == true ||
                       selectedColorForPropertyType3 == true) {
@@ -1219,7 +1219,7 @@ class _ListAPropertypgState extends State<ListAPropertypg> {
   }
 
   _bedroomsContainer() {
-    return Container(
+    return SizedBox(
       height: MediaQuery.of(context).size.height * 0.15,
       width: double.infinity,
 
@@ -1372,7 +1372,7 @@ class _ListAPropertypgState extends State<ListAPropertypg> {
   }
 
   _bathroomsContainer() {
-    return Container(
+    return SizedBox(
       height: MediaQuery.of(context).size.height * 0.15,
       width: double.infinity,
       //padding: EdgeInsets.all(8.0),
@@ -1520,73 +1520,69 @@ class _ListAPropertypgState extends State<ListAPropertypg> {
       padding: EdgeInsets.symmetric(horizontal: sizeWidth(context) * 0.02),
       child: Row(
         children: <Widget>[
-          Container(
-            child: Flexible(
-              flex: 2,
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 8.0),
-                decoration: BoxDecoration(
-                    color: Color(0xfffafafa),
-                    borderRadius: BorderRadius.circular(10.0),
-                    border: Border.all(color: primaryColor)),
-                child: DropdownButtonHideUnderline(
-                  child: DropdownButton(
-                    iconEnabledColor: Colors.grey[500],
-                    iconDisabledColor: Colors.grey[500],
-                    hint: Text(
-                      '+1',
-                      style: TextStyle(color: Colors.grey[500]),
-                    ),
+          Flexible(
+            flex: 2,
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 8.0),
+              decoration: BoxDecoration(
+                  color: Color(0xfffafafa),
+                  borderRadius: BorderRadius.circular(10.0),
+                  border: Border.all(color: primaryColor)),
+              child: DropdownButtonHideUnderline(
+                child: DropdownButton(
+                  iconEnabledColor: Colors.grey[500],
+                  iconDisabledColor: Colors.grey[500],
+                  hint: Text(
+                    '+1',
                     style: TextStyle(color: Colors.grey[500]),
-                    value: _countryValue,
-                    onChanged: (newValue) {
-                      setState(() {
-                        _countryValue = newValue.toString();
-                      });
-                    },
-                    items: _countryCode.map((value) {
-                      return DropdownMenuItem(
-                        value: value,
-                        child: Text(value),
-                      );
-                    }).toList(),
-                    isExpanded: true,
                   ),
+                  style: TextStyle(color: Colors.grey[500]),
+                  value: _countryValue,
+                  onChanged: (newValue) {
+                    setState(() {
+                      _countryValue = newValue.toString();
+                    });
+                  },
+                  items: _countryCode.map((value) {
+                    return DropdownMenuItem(
+                      value: value,
+                      child: Text(value),
+                    );
+                  }).toList(),
+                  isExpanded: true,
                 ),
               ),
-            ), //flexible
+            ),
           ),
           SizedBox(width: 8),
-          Container(
-            child: Flexible(
-                flex: 7,
-                child: TextFormField(
-                    enabled: true,
-                    style: TextStyle(fontSize: 16),
-                    keyboardType: TextInputType.number,
-                    textAlign: TextAlign.start,
-                    decoration: InputDecoration(
-                        contentPadding: EdgeInsets.only(
-                          left: 15,
-                        ),
-                        fillColor: whiteColor,
-                        filled: true,
-                        hintText: 'Phone',
-                        hintStyle: TextStyle(color: Colors.grey[500]),
-                        enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                            borderSide: BorderSide(color: primaryColor)),
-                        focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                            borderSide: BorderSide(color: primaryColor)),
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                            borderSide: BorderSide(color: primaryColor)),
-                        disabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                            borderSide:
-                                BorderSide(color: primaryColor))))), //flexible
-          ), //container
+          Flexible(
+              flex: 7,
+              child: TextFormField(
+                  enabled: true,
+                  style: TextStyle(fontSize: 16),
+                  keyboardType: TextInputType.number,
+                  textAlign: TextAlign.start,
+                  decoration: InputDecoration(
+                      contentPadding: EdgeInsets.only(
+                        left: 15,
+                      ),
+                      fillColor: whiteColor,
+                      filled: true,
+                      hintText: 'Phone',
+                      hintStyle: TextStyle(color: Colors.grey[500]),
+                      enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                          borderSide: BorderSide(color: primaryColor)),
+                      focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                          borderSide: BorderSide(color: primaryColor)),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                          borderSide: BorderSide(color: primaryColor)),
+                      disabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                          borderSide:
+                              BorderSide(color: primaryColor))))), //container
         ], //widget
       ),
     );
@@ -1623,80 +1619,76 @@ class _ListAPropertypgState extends State<ListAPropertypg> {
       padding: EdgeInsets.symmetric(horizontal: sizeWidth(context) * 0.06),
       child: Row(
         children: <Widget>[
-          Container(
-            child: Flexible(
-              flex: 1,
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 8.0),
-                decoration: BoxDecoration(
-                    color: whiteColor,
-                    borderRadius: BorderRadius.circular(10.0),
-                    border: Border.all(color: primaryColor)),
-                child: DropdownButtonHideUnderline(
-                  child: DropdownButton(
-                    iconEnabledColor: Colors.grey[500],
-                    iconDisabledColor: Colors.grey[500],
-                    hint: Text(
-                      'Choose Province',
-                      style: TextStyle(color: Colors.grey[500]),
-                    ),
+          Flexible(
+            flex: 1,
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 8.0),
+              decoration: BoxDecoration(
+                  color: whiteColor,
+                  borderRadius: BorderRadius.circular(10.0),
+                  border: Border.all(color: primaryColor)),
+              child: DropdownButtonHideUnderline(
+                child: DropdownButton(
+                  iconEnabledColor: Colors.grey[500],
+                  iconDisabledColor: Colors.grey[500],
+                  hint: Text(
+                    'Choose Province',
                     style: TextStyle(color: Colors.grey[500]),
-                    value: _provinceValue,
-                    onChanged: (newValue) {
-                      setState(() {
-                        _provinceValue = newValue.toString();
-                      });
-                    },
-                    items: _provincesName.map((value) {
-                      return DropdownMenuItem(
-                        value: value,
-                        child: Text(value),
-                      );
-                    }).toList(),
-                    isExpanded: true,
                   ),
+                  style: TextStyle(color: Colors.grey[500]),
+                  value: _provinceValue,
+                  onChanged: (newValue) {
+                    setState(() {
+                      _provinceValue = newValue.toString();
+                    });
+                  },
+                  items: _provincesName.map((value) {
+                    return DropdownMenuItem(
+                      value: value,
+                      child: Text(value),
+                    );
+                  }).toList(),
+                  isExpanded: true,
                 ),
               ),
-            ), //flexible
+            ),
           ),
           SizedBox(
             width: 10,
           ),
-          Container(
-            child: Flexible(
-              flex: 1,
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 8.0),
-                decoration: BoxDecoration(
-                    color: whiteColor,
-                    borderRadius: BorderRadius.circular(10.0),
-                    border: Border.all(color: primaryColor)),
-                child: DropdownButtonHideUnderline(
-                  child: DropdownButton(
-                    iconEnabledColor: Colors.grey[500],
-                    iconDisabledColor: Colors.grey[500],
-                    hint: Text(
-                      'Choose city',
-                      style: TextStyle(color: Colors.grey[500]),
-                    ),
+          Flexible(
+            flex: 1,
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 8.0),
+              decoration: BoxDecoration(
+                  color: whiteColor,
+                  borderRadius: BorderRadius.circular(10.0),
+                  border: Border.all(color: primaryColor)),
+              child: DropdownButtonHideUnderline(
+                child: DropdownButton(
+                  iconEnabledColor: Colors.grey[500],
+                  iconDisabledColor: Colors.grey[500],
+                  hint: Text(
+                    'Choose city',
                     style: TextStyle(color: Colors.grey[500]),
-                    value: _cityValue,
-                    onChanged: (newValue) {
-                      setState(() {
-                        _cityValue = newValue.toString();
-                      });
-                    },
-                    items: _citiesName.map((value) {
-                      return DropdownMenuItem(
-                        value: value,
-                        child: Text(value),
-                      );
-                    }).toList(),
-                    isExpanded: true,
                   ),
+                  style: TextStyle(color: Colors.grey[500]),
+                  value: _cityValue,
+                  onChanged: (newValue) {
+                    setState(() {
+                      _cityValue = newValue.toString();
+                    });
+                  },
+                  items: _citiesName.map((value) {
+                    return DropdownMenuItem(
+                      value: value,
+                      child: Text(value),
+                    );
+                  }).toList(),
+                  isExpanded: true,
                 ),
               ),
-            ), //flexible
+            ),
           ),
         ], //widget
       ),

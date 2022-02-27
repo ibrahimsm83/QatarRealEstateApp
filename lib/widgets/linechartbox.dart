@@ -1,8 +1,9 @@
-import 'package:bonyanaldoha/utils/color_schemes.dart';
+import 'package:bonyanaldoha/utils/app_colors.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
+// ignore: must_be_immutable
 class LineChartBox extends StatelessWidget {
   final List<String> ytitles;
   final List<String> xtitles;

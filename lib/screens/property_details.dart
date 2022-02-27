@@ -1,7 +1,6 @@
 import 'package:bonyanaldoha/screens/notification_screen.dart';
 import 'package:bonyanaldoha/services/api_data.dart';
-import 'package:bonyanaldoha/utils/color_schemes.dart';
-import 'package:bonyanaldoha/utils/constants.dart';
+import 'package:bonyanaldoha/utils/index_utils.dart';
 import 'package:bonyanaldoha/widgets/compare_property_list.dart';
 import 'package:bonyanaldoha/widgets/custome_dropdown_button.dart';
 import 'package:bonyanaldoha/widgets/simple_appbar.dart';
@@ -105,14 +104,12 @@ class _PropertyDetailsPgState extends State<PropertyDetailsPg> {
                   Positioned(
                     left: sizeWidth(context) / 2.7,
                     top: sliderhieght - 20,
-                    child: Container(
-                      child: DotsIndicator(
-                        dotsCount: pageCount,
-                        position: selectedPage.toDouble(),
-                        decorator: DotsDecorator(
-                          color: Colors.grey, // Inactive color
-                          activeColor: Colors.white,
-                        ),
+                    child: DotsIndicator(
+                      dotsCount: pageCount,
+                      position: selectedPage.toDouble(),
+                      decorator: DotsDecorator(
+                        color: Colors.grey, // Inactive color
+                        activeColor: Colors.white,
                       ),
                     ),
                   )
@@ -428,31 +425,31 @@ class _PropertyDetailsPgState extends State<PropertyDetailsPg> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(height: 2.h),
-                    FeatureBullet(text: "Air Conditioning"),
+                    featureBullet(text: "Air Conditioning"),
                     SizedBox(height: 1.h),
-                    FeatureBullet(text: "Barbeque"),
+                    featureBullet(text: "Barbeque"),
                     SizedBox(height: 1.h),
-                    FeatureBullet(text: "Dryer"),
+                    featureBullet(text: "Dryer"),
                     SizedBox(height: 1.h),
-                    FeatureBullet(text: "Gym"),
+                    featureBullet(text: "Gym"),
                     SizedBox(height: 1.h),
-                    FeatureBullet(text: "Laundry"),
+                    featureBullet(text: "Laundry"),
                     SizedBox(height: 1.h),
-                    FeatureBullet(text: "Lawn"),
+                    featureBullet(text: "Lawn"),
                   ],
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    FeatureBullet(text: "Microwave"),
+                    featureBullet(text: "Microwave"),
                     SizedBox(height: 1.h),
-                    FeatureBullet(text: "Refrigerator"),
+                    featureBullet(text: "Refrigerator"),
                     SizedBox(height: 1.h),
-                    FeatureBullet(text: "TV Cable"),
+                    featureBullet(text: "TV Cable"),
                     SizedBox(height: 1.h),
-                    FeatureBullet(text: "WiFi"),
+                    featureBullet(text: "WiFi"),
                     SizedBox(height: 1.h),
-                    FeatureBullet(text: "Window Covering"),
+                    featureBullet(text: "Window Covering"),
                   ],
                 ),
               ],
@@ -576,7 +573,7 @@ class _PropertyDetailsPgState extends State<PropertyDetailsPg> {
     );
   }
 
-  Widget FeatureBullet({String? text}) {
+  Widget featureBullet({String? text}) {
     return Row(
       children: [
         Container(
@@ -891,7 +888,7 @@ class _PropertyDetailsPgState extends State<PropertyDetailsPg> {
       children: [
         Row(
           children: [
-            Container(
+            SizedBox(
               height: 20,
               width: 20,
               child: icons,
@@ -1251,7 +1248,7 @@ class _PropertyDetailsPgState extends State<PropertyDetailsPg> {
   }
 
   Widget overViewRow() {
-    return Container(
+    return SizedBox(
       width: sizeWidth(context),
       child: Column(
         children: [
@@ -1279,14 +1276,14 @@ class _PropertyDetailsPgState extends State<PropertyDetailsPg> {
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+                children: const [
                   Text("2350", style: TextStyle(fontWeight: FontWeight.bold)),
                   Text("Area"),
                 ],
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+                children: const [
                   Text(
                     "2022",
                     style: TextStyle(fontWeight: FontWeight.bold),

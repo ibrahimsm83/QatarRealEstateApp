@@ -1,7 +1,7 @@
 import 'package:bonyanaldoha/screens/notification_screen.dart';
 
-import 'package:bonyanaldoha/utils/color_schemes.dart';
-import 'package:bonyanaldoha/utils/constants.dart';
+import 'package:bonyanaldoha/utils/app_colors.dart';
+import 'package:bonyanaldoha/utils/app_strings.dart';
 
 import 'package:bonyanaldoha/widgets/simple_appbar.dart';
 import 'package:bonyanaldoha/widgets/text_form_field.dart';

@@ -1,6 +1,6 @@
 import 'package:bonyanaldoha/screens/login_screen.dart';
 import 'package:bonyanaldoha/screens/splash.dart';
-import 'package:bonyanaldoha/utils/color_schemes.dart';
+import 'package:bonyanaldoha/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:sizer/sizer.dart';

@@ -1,13 +1,11 @@
 import 'package:bonyanaldoha/screens/change_password.dart';
 import 'package:bonyanaldoha/screens/my_profile_screen.dart';
 import 'package:bonyanaldoha/screens/notification_screen.dart';
-import 'package:bonyanaldoha/utils/constants.dart';
+import 'package:bonyanaldoha/utils/index_utils.dart';
 import 'package:bonyanaldoha/widgets/simple_appbar.dart';
 import 'package:flutter/material.dart';
-import 'package:bonyanaldoha/utils/color_schemes.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sizer/sizer.dart';
-
 import 'account_role.dart';
 import 'delete_account_screen.dart';
 

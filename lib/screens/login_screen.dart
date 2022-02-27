@@ -7,9 +7,9 @@ import 'package:bonyanaldoha/widgets/text_form_field.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/gestures.dart';
-import 'package:bonyanaldoha/utils/color_schemes.dart';
+import 'package:bonyanaldoha/utils/app_colors.dart';
 import 'package:sizer/sizer.dart';
-import 'package:bonyanaldoha/utils/constants.dart';
+import 'package:bonyanaldoha/utils/app_strings.dart';
 import 'package:flutter/material.dart';
 
 import 'sign_up_screen.dart';

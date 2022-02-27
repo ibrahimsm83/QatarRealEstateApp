@@ -1,8 +1,8 @@
 //Update List-a property screen into add property screen.dart
 
 import 'package:bonyanaldoha/screens/notification_screen.dart';
-import 'package:bonyanaldoha/utils/color_schemes.dart';
-import 'package:bonyanaldoha/utils/constants.dart';
+import 'package:bonyanaldoha/utils/app_colors.dart';
+import 'package:bonyanaldoha/utils/app_strings.dart';
 import 'package:bonyanaldoha/widgets/custome_dropdown_button.dart';
 import 'package:bonyanaldoha/widgets/simple_appbar.dart';
 import 'package:bonyanaldoha/widgets/text_form_field.dart';
@@ -823,7 +823,7 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(height: 2.h),
-                FeatureBullet(
+                featureBullet(
                   text: "Air Conditioning",
                   value: airCondition,
                   onChanged: (value) => setState(
@@ -831,7 +831,7 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                   ),
                 ),
                 SizedBox(height: 1.h),
-                FeatureBullet(
+                featureBullet(
                   text: "Landry",
                   value: landry,
                   onChanged: (value) => setState(
@@ -839,7 +839,7 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                   ),
                 ),
                 SizedBox(height: 1.h),
-                FeatureBullet(
+                featureBullet(
                   text: "Refrigerator",
                   value: refigerator,
                   onChanged: (value) => setState(
@@ -847,7 +847,7 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                   ),
                 ),
                 SizedBox(height: 1.h),
-                FeatureBullet(
+                featureBullet(
                   text: "Washer",
                   value: washer,
                   onChanged: (value) => setState(
@@ -855,7 +855,7 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                   ),
                 ),
                 SizedBox(height: 1.h),
-                FeatureBullet(
+                featureBullet(
                   text: "Barbeque",
                   value: brabeque,
                   onChanged: (value) => setState(
@@ -863,7 +863,7 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                   ),
                 ),
                 SizedBox(height: 1.h),
-                FeatureBullet(
+                featureBullet(
                   text: "Lawn",
                   value: lawn,
                   onChanged: (value) => setState(
@@ -871,7 +871,7 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                   ),
                 ),
                 SizedBox(height: 1.h),
-                FeatureBullet(
+                featureBullet(
                   text: "Sauna",
                   value: sauna,
                   onChanged: (value) => setState(
@@ -879,7 +879,7 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                   ),
                 ),
                 SizedBox(height: 1.h),
-                FeatureBullet(
+                featureBullet(
                   text: "WiFi",
                   value: wifi,
                   onChanged: (value) => setState(
@@ -891,7 +891,7 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                FeatureBullet(
+                featureBullet(
                   text: "Dryer",
                   value: dryer,
                   onChanged: (value) => setState(
@@ -899,7 +899,7 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                   ),
                 ),
                 SizedBox(height: 1.h),
-                FeatureBullet(
+                featureBullet(
                   text: "Microwave",
                   value: microwave,
                   onChanged: (value) => setState(
@@ -907,7 +907,7 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                   ),
                 ),
                 SizedBox(height: 1.h),
-                FeatureBullet(
+                featureBullet(
                   text: "Swiming Phool",
                   value: swimingPhool,
                   onChanged: (value) => setState(
@@ -915,7 +915,7 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                   ),
                 ),
                 SizedBox(height: 1.h),
-                FeatureBullet(
+                featureBullet(
                   text: "Window Covering",
                   value: windowCovering,
                   onChanged: (value) => setState(
@@ -923,7 +923,7 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                   ),
                 ),
                 SizedBox(height: 1.h),
-                FeatureBullet(
+                featureBullet(
                   text: "Gym",
                   value: gym,
                   onChanged: (value) => setState(
@@ -931,7 +931,7 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                   ),
                 ),
                 SizedBox(height: 1.h),
-                FeatureBullet(
+                featureBullet(
                   text: "Outdoor shower",
                   value: outdoorShower,
                   onChanged: (value) => setState(
@@ -939,7 +939,7 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
                   ),
                 ),
                 SizedBox(height: 1.h),
-                FeatureBullet(
+                featureBullet(
                   text: "TV Table",
                   value: tvTable,
                   onChanged: (value) => setState(
@@ -954,7 +954,7 @@ class _AddPropertyScreenState extends State<AddPropertyScreen> {
     );
   }
 
-  Widget FeatureBullet(
+  Widget featureBullet(
       {String? text,
       required void Function(bool?)? onChanged,
       required bool? value}) {

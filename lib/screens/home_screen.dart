@@ -1,32 +1,10 @@
-import 'package:bonyanaldoha/model/drawer_list_model.dart';
-import 'package:bonyanaldoha/screens/about_screen.dart';
-import 'package:bonyanaldoha/screens/add_property_screen.dart';
-import 'package:bonyanaldoha/screens/agents_screen.dart';
-import 'package:bonyanaldoha/screens/blog_screen.dart';
-import 'package:bonyanaldoha/screens/board_screen.dart';
-import 'package:bonyanaldoha/screens/buy_screen.dart';
-import 'package:bonyanaldoha/screens/compare_screen.dart';
-import 'package:bonyanaldoha/screens/contact_us_screen.dart';
-
-import 'package:bonyanaldoha/screens/deshboard_screen.dart';
-import 'package:bonyanaldoha/screens/favorite_screen.dart';
-import 'package:bonyanaldoha/screens/help_screen.dart';
-import 'package:bonyanaldoha/screens/list_a_property_screen.dart';
-import 'package:bonyanaldoha/screens/location_screen.dart';
-import 'package:bonyanaldoha/screens/notification_screen.dart';
-import 'package:bonyanaldoha/screens/membership_screen.dart';
-import 'package:bonyanaldoha/screens/rent_screen.dart';
-import 'package:bonyanaldoha/screens/sell_screen.dart';
-import 'package:bonyanaldoha/screens/setting_screen.dart';
-import 'package:bonyanaldoha/screens/term_of_use_screen.dart';
-
-import 'package:bonyanaldoha/utils/color_schemes.dart';
-import 'package:bonyanaldoha/utils/constants.dart';
-import 'package:bonyanaldoha/widgets/custom_drawer.dart';
-import 'package:bonyanaldoha/widgets/custome_appbar.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:bonyanaldoha/utils/index_utils.dart';
+import 'package:bonyanaldoha/screens/index_screens.dart';
+import 'package:bonyanaldoha/widgets/custom_drawer.dart';
+import 'package:bonyanaldoha/widgets/custome_appbar.dart';
+import 'package:bonyanaldoha/model/drawer_list_model.dart';
 
 enum DrawerSections {
   home,

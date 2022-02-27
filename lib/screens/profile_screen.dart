@@ -1,8 +1,9 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:bonyanaldoha/screens/developers_list_screen.dart';
 import 'package:bonyanaldoha/screens/my_agents_screen.dart';
 import 'package:bonyanaldoha/screens/my_order_screen.dart';
-import 'package:bonyanaldoha/utils/color_schemes.dart';
-import 'package:bonyanaldoha/utils/constants.dart';
+import 'package:bonyanaldoha/utils/index_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sizer/sizer.dart';
@@ -24,15 +25,6 @@ class ProfilePage extends StatelessWidget {
         title: Text("Profile"),
         backgroundColor: whiteColor,
       ),
-      // SimpleAppBar(
-      //   onTapLeading: () => Navigator.pop(context),
-      //   backgroundColor: whiteColor,
-      //   abtitle: "Profile",
-      //   // onTap: () => Navigator.push(
-      //   //     context,
-      //   //     MaterialPageRoute(
-      //   //         builder: (BuildContext context) => NotificationPg())),
-      // ),
       body: ListView(
         padding: EdgeInsets.zero,
         children: [

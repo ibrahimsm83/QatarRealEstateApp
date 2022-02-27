@@ -1,6 +1,6 @@
 import 'package:bonyanaldoha/screens/notification_screen.dart';
 import 'package:bonyanaldoha/services/api_data.dart';
-import 'package:bonyanaldoha/utils/color_schemes.dart';
+import 'package:bonyanaldoha/utils/app_colors.dart';
 import 'package:bonyanaldoha/widgets/custome_dialog_box.dart';
 import 'package:bonyanaldoha/widgets/favorite_property_list.dart';
 import 'package:bonyanaldoha/widgets/simple_appbar.dart';

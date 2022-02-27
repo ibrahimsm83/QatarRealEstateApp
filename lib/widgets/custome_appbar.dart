@@ -1,8 +1,6 @@
-import 'package:bonyanaldoha/screens/add_property_screen.dart';
-import 'package:bonyanaldoha/screens/list_a_property_screen.dart';
-import 'package:bonyanaldoha/screens/profile_screen.dart';
+import 'package:bonyanaldoha/screens/index_screens.dart';
 import 'package:bonyanaldoha/services/api_data.dart';
-import 'package:bonyanaldoha/utils/color_schemes.dart';
+import 'package:bonyanaldoha/utils/app_colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -195,7 +193,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (BuildContext context) => AddPropertyScreen())),
+                        builder: (BuildContext context) =>
+                            AddPropertyScreen())),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
                       vertical: 12.0, horizontal: 8.0),

@@ -9,21 +9,12 @@ sizeWidth(BuildContext context) {
   return MediaQuery.of(context).size.width;
 }
 
-const String imgpath = 'assets/images';
-const String iconpath = 'assets/svgicons';
-const String iconspath = 'assets/icons';
-
-//icons path
-const String bedIcon = '$iconspath/bed.jpg';
-const String shoverIcon = '$iconspath/bathtap.png';
-const String carIcon = '$iconspath/car.png';
-const String trianleicon = '$iconspath/triangle.png';
 
 class PreferencesKeys {
   static String token = "token";
 }
 
-class ResponseCodes {
+abstract class ResponseCodes {
   static String unknown = "UN8656696";
   static String timeout = "TOE8463688";
   static String alreadyExist = "ERRDB0001";
@@ -34,25 +25,37 @@ class ResponseCodes {
 }
 
 //https://www.onmascota.thevistech.com/api/login?email=admin@onmascota.com&password=123456789
-class Constants {
+abstract class Constants {
   static String baseUrl = "https://www.onmascota.thevistech.com";
 }
 
 Map<String, dynamic> constanText = {
-  "accountRole": "Account Role",
+  //Add New Inquiry Screen
+  "Price":"Price",
+  "Contact":"Contact",
+  "Address":"Address",
+  "Bedrooms":"Bedrooms",
+  "Area_Size":"Area Size",
+  "Bathrooms":"Bathrooms",
+  "Information":"Information",
+  "Inquiry_Type":"Inquiry Type",
+  "Property_Type":"Property Type",
+     
+
   "agent": "Agent",
-  "updatedAccount": "UPDATE ACCOUNT",
-  "updatedPassword": "UPDATE PASSWORD",
-  "changePassword": "Change Password",
-  "deleteAccount": "Delete Account",
-  "deleteMyAccount": "DELETE MY ACCOUNT",
-  "addNewDeal": "Add New Deal",
-  "filterbylisting": "Filter by Listing",
   "group": "Group",
   "title": "Title",
-  "contactName": "Contact Name",
-  "dealValue": "Deal Value",
   "inquiries": "Inquiries",
+  "dealValue": "Deal Value",
+  "addNewDeal": "Add New Deal",
+  "contactName": "Contact Name",
+  "accountRole": "Account Role",
+  "deleteAccount": "Delete Account",
   "addNewInquiry": "ADD NEW INQUIRY",
+  "updatedAccount": "UPDATE ACCOUNT",
+  "changePassword": "Change Password",
+  "updatedPassword": "UPDATE PASSWORD",
+  "deleteMyAccount": "DELETE MY ACCOUNT",
+  "filterbylisting": "Filter by Listing",
   "dontHaveAnyInquiriesAtThisMoment": "Don't have any inquiry at this moment.",
 };

@@ -1,8 +1,7 @@
-import 'package:bonyanaldoha/screens/advance_search_screen.dart';
-import 'package:bonyanaldoha/screens/property_details.dart';
+
+import 'package:bonyanaldoha/screens/index_screens.dart';
 import 'package:bonyanaldoha/services/api_data.dart';
-import 'package:bonyanaldoha/utils/color_schemes.dart';
-import 'package:bonyanaldoha/utils/constants.dart';
+import 'package:bonyanaldoha/utils/index_utils.dart';
 import 'package:bonyanaldoha/widgets/custome_dialog_box.dart';
 import 'package:bonyanaldoha/widgets/custome_dropdown_button.dart';
 import 'package:bonyanaldoha/widgets/home_components.dart';

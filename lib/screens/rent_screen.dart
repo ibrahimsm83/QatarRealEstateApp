@@ -1,10 +1,9 @@
 import 'package:bonyanaldoha/screens/advance_search_screen.dart';
 import 'package:bonyanaldoha/screens/property_details.dart';
 import 'package:bonyanaldoha/services/api_data.dart';
-import 'package:bonyanaldoha/utils/color_schemes.dart';
-import 'package:bonyanaldoha/utils/constants.dart';
+import 'package:bonyanaldoha/utils/app_colors.dart';
+import 'package:bonyanaldoha/utils/app_strings.dart';
 import 'package:bonyanaldoha/widgets/custome_dialog_box.dart';
-import 'package:bonyanaldoha/widgets/custome_dropdown_button.dart';
 import 'package:bonyanaldoha/widgets/home_components.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -102,25 +101,23 @@ class _RentPgState extends State<RentPg> {
               ),
               Padding(
                 padding: const EdgeInsets.all(10.0),
-                child: Container(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
-                      Text(
-                        "Nearby",
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    Text(
+                      "Nearby",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      "Save More",
+                      style: TextStyle(
+                        color: primaryColor,
                       ),
-                      Text(
-                        "Save More",
-                        style: TextStyle(
-                          color: primaryColor,
-                        ),
-                      )
-                    ],
-                  ),
+                    )
+                  ],
                 ),
               ),
               Padding(
@@ -174,35 +171,33 @@ class _RentPgState extends State<RentPg> {
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Container(
-              child: ListView.builder(
-                scrollDirection: Axis.vertical,
-                itemCount: cityImg.length,
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                itemBuilder: (context, index) {
-                  return PropertyList(
-                    index: index,
-                    btntext: "RENT",
-                    address: addresses[0],
-                    imagepath: cityImg[index],
-                    onTapDetaislbtn: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => PropertyDetailsPg())),
-                    onTapArrow: () {
-                      showDialog(
-                          context: context,
-                          builder: (BuildContext context) {
-                            return CustumeDialogBox(
-                              imagepath: cityImg[index],
-                              textType: "RENT",
-                            );
-                          });
-                    },
-                  );
-                },
-              ),
+            child: ListView.builder(
+              scrollDirection: Axis.vertical,
+              itemCount: cityImg.length,
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              itemBuilder: (context, index) {
+                return PropertyList(
+                  index: index,
+                  btntext: "RENT",
+                  address: addresses[0],
+                  imagepath: cityImg[index],
+                  onTapDetaislbtn: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => PropertyDetailsPg())),
+                  onTapArrow: () {
+                    showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return CustumeDialogBox(
+                            imagepath: cityImg[index],
+                            textType: "RENT",
+                          );
+                        });
+                  },
+                );
+              },
             ),
           ),
         ],

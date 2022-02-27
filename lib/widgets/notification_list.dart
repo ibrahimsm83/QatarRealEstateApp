@@ -1,4 +1,4 @@
-import 'package:bonyanaldoha/utils/constants.dart';
+import 'package:bonyanaldoha/utils/app_strings.dart';
 import 'package:flutter/material.dart';
 
 class NotificationList extends StatelessWidget {

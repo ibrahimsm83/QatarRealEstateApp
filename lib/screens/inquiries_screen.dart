@@ -1,10 +1,8 @@
-import 'package:bonyanaldoha/screens/notification_screen.dart';
-import 'package:bonyanaldoha/utils/color_schemes.dart';
-import 'package:bonyanaldoha/utils/constants.dart';
-import 'package:bonyanaldoha/widgets/simple_appbar.dart';
-
-import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:flutter/material.dart';
+import 'package:bonyanaldoha/utils/index_utils.dart';
+import 'package:bonyanaldoha/widgets/simple_appbar.dart';
+import 'package:bonyanaldoha/screens/index_screens.dart';
 
 class InquiriePage extends StatefulWidget {
   const InquiriePage({Key? key}) : super(key: key);
@@ -94,11 +92,11 @@ class _InquiriePageState extends State<InquiriePage> {
                           ),
                         ),
                         onPressed: () {
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (BuildContext context) =>
-                          //             AddNewAgentPage()));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      AddNewInquiries()));
                         },
                         style: ElevatedButton.styleFrom(
                           primary: primaryColor,

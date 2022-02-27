@@ -1,5 +1,5 @@
 import 'package:bonyanaldoha/screens/notification_screen.dart';
-import 'package:bonyanaldoha/utils/color_schemes.dart';
+import 'package:bonyanaldoha/utils/app_colors.dart';
 import 'package:bonyanaldoha/widgets/simple_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:horizontal_data_table/horizontal_data_table.dart';
@@ -13,10 +13,9 @@ class MyInvoicePage extends StatefulWidget {
 }
 
 class _MyInvoicePageState extends State<MyInvoicePage> {
-  HDTRefreshController _hdtRefreshController = HDTRefreshController();
+  final HDTRefreshController _hdtRefreshController = HDTRefreshController();
 
   static const int sortName = 0;
-  static const int sortStatus = 1;
   bool isAscending = true;
   int sortType = sortName;
 
@@ -55,7 +54,7 @@ class _MyInvoicePageState extends State<MyInvoicePage> {
   }
 
   Widget _getBodyWidget() {
-    return Container(
+    return SizedBox(
       child: HorizontalDataTable(
         leftHandSideColumnWidth: 80,
         rightHandSideColumnWidth: 600,

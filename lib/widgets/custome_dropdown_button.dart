@@ -1,7 +1,7 @@
 import 'dart:ui';
 
-import 'package:bonyanaldoha/utils/color_schemes.dart';
-import 'package:bonyanaldoha/utils/constants.dart';
+import 'package:bonyanaldoha/utils/app_colors.dart';
+import 'package:bonyanaldoha/utils/app_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
@@ -14,7 +14,7 @@ class CustomeDropDownButton extends StatelessWidget {
   final Function(String?)? onChanged;
   final double? horizantalmergin;
 
-  CustomeDropDownButton({
+  const CustomeDropDownButton({
     Key? key,
     this.label = "",
     this.value = "",

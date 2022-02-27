@@ -1,11 +1,8 @@
-import 'package:bonyanaldoha/screens/notification_screen.dart';
-import 'package:bonyanaldoha/utils/color_schemes.dart';
-import 'package:bonyanaldoha/utils/constants.dart';
-import 'package:bonyanaldoha/widgets/button.dart';
-import 'package:bonyanaldoha/widgets/custome_dropdown_button.dart';
-import 'package:bonyanaldoha/widgets/simple_appbar.dart';
-import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:flutter/material.dart';
+import 'package:bonyanaldoha/utils/index_utils.dart';
+import 'package:bonyanaldoha/widgets/index_widgets.dart';
+import 'package:bonyanaldoha/screens/index_screens.dart';
 
 class AccountRolePage extends StatefulWidget {
   const AccountRolePage({Key? key}) : super(key: key);
@@ -20,9 +17,7 @@ class _AccountRolePageState extends State<AccountRolePage> {
     'Agent2',
     'Agent3',
   ];
-
   String val1 = 'Agent';
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

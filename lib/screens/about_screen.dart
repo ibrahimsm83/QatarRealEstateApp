@@ -1,14 +1,10 @@
-import 'package:bonyanaldoha/screens/notification_screen.dart';
-
-import 'package:bonyanaldoha/utils/color_schemes.dart';
-import 'package:bonyanaldoha/utils/constants.dart';
-
-import 'package:bonyanaldoha/widgets/simple_appbar.dart';
 import 'package:flutter/material.dart';
+import 'package:bonyanaldoha/utils/index_utils.dart';
+import 'package:bonyanaldoha/screens/index_screens.dart';
+import 'package:bonyanaldoha/widgets/simple_appbar.dart';
 
 class AboutPg extends StatefulWidget {
   const AboutPg({Key? key}) : super(key: key);
-
   @override
   State<AboutPg> createState() => _AboutPgState();
 }
@@ -82,7 +78,6 @@ class _AboutPgState extends State<AboutPg> {
                         style: TextStyle(
                           fontSize: 16,
                           color: Colors.black45,
-                          //fontWeight: FontWeight.bold
                         ),
                       ),
                     ),
@@ -175,8 +170,6 @@ class _AboutPgState extends State<AboutPg> {
   Widget temaMemberinfo({int? index}) {
     return SizedBox(
       width: MediaQuery.of(context).size.width * 0.45,
-      // height:
-      //     MediaQuery.of(context).size.height * 0.16,
       child: Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0),
@@ -198,15 +191,11 @@ class _AboutPgState extends State<AboutPg> {
                     image: DecorationImage(
                         fit: BoxFit.fitHeight,
                         image: AssetImage(
-                          // 'assets/images/city3.jpg',
                           teamMember[index!]['image'],
-                          // imagepath,
-                          //houseImg[index - 1]
                         ))),
               ),
               Text(
                 teamMember[index]['title'],
-                //"Kathleen Grant ",
                 style: TextStyle(
                   fontSize: 18,
                   color: Colors.black,
@@ -215,7 +204,6 @@ class _AboutPgState extends State<AboutPg> {
               SizedBox(height: 3.0),
               Text(
                 teamMember[index]['subtitle'],
-                // "Funder ",
                 style: TextStyle(
                   fontSize: 14,
                   color: primaryColor,
