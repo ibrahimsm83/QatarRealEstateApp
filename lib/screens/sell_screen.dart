@@ -112,7 +112,7 @@ class _SellPgState extends State<SellPg> {
                           fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      "Save More",
+                      "See More",
                       style: TextStyle(
                         color: primaryColor,
                       ),

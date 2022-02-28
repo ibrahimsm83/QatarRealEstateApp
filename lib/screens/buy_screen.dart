@@ -4,7 +4,6 @@ import 'package:bonyanaldoha/services/api_data.dart';
 import 'package:bonyanaldoha/utils/app_colors.dart';
 import 'package:bonyanaldoha/utils/app_strings.dart';
 import 'package:bonyanaldoha/widgets/custome_dialog_box.dart';
-import 'package:bonyanaldoha/widgets/custome_dropdown_button.dart';
 import 'package:bonyanaldoha/widgets/home_components.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -116,7 +115,7 @@ class _BuyPageState extends State<BuyPage> {
                           fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      "Save More",
+                      "See More",
                       style: TextStyle(
                         color: primaryColor,
                       ),
