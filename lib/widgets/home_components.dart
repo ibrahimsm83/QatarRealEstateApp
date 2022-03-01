@@ -3,23 +3,25 @@ import 'package:bonyanaldoha/utils/app_strings.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
+import 'package:like_button/like_button.dart';
+
 class PropertyList extends StatefulWidget {
   final int index;
   final String address;
   final String imagepath;
   final String btntext;
   final Function()? onTapArrow;
-    final Function()? onTapDetaislbtn;
+  final Function()? onTapDetaislbtn;
 
-  const PropertyList({
-    Key? key,
-    this.index = 0,
-    this.address = "",
-    this.imagepath = "",
-    this.btntext = "",
-    this.onTapArrow,
-    this.onTapDetaislbtn
-  }) : super(key: key);
+  const PropertyList(
+      {Key? key,
+      this.index = 0,
+      this.address = "",
+      this.imagepath = "",
+      this.btntext = "",
+      this.onTapArrow,
+      this.onTapDetaislbtn})
+      : super(key: key);
 
   @override
   _PropertyListState createState() => _PropertyListState();
@@ -173,15 +175,28 @@ class _PropertyListState extends State<PropertyList> {
                               SizedBox(
                                 width: 7.0,
                               ),
-                              CircleAvatar(
-                                maxRadius: 10,
-                                backgroundColor: Colors.transparent,
-                                child: Icon(
-                                  Icons.favorite_border_outlined,
-                                  size: 20,
-                                  color: Colors.white,
-                                ),
-                              ),
+                              LikeButton(
+                                  size: 25.0,
+                                  circleColor: const CircleColor(
+                                      start: Color.fromARGB(255, 153, 61, 0),
+                                      end: Color.fromARGB(255, 0, 84, 153)),
+                                  bubblesColor: const BubblesColor(
+                                    dotPrimaryColor:
+                                        Color.fromARGB(255, 153, 48, 0),
+                                    dotSecondaryColor:
+                                        Color.fromARGB(255, 204, 116, 0),
+                                  ),
+                                  likeBuilder: (bool isLiked) {
+                                    return Icon(
+                                      isLiked
+                                          ? Icons.favorite
+                                          : Icons.favorite_border_outlined,
+                                      color:
+                                          isLiked ? Colors.red : Colors.white,
+                                      size: 25.0,
+                                    );
+                                  }),
+                              //),
                               SizedBox(
                                 width: 10.0,
                               ),
@@ -338,7 +353,7 @@ class _PropertyListState extends State<PropertyList> {
                           style: TextStyle(color: Colors.black, fontSize: 13),
                         ),
                         InkWell(
-                          onTap:widget.onTapDetaislbtn,
+                          onTap: widget.onTapDetaislbtn,
                           child: Container(
                             padding: const EdgeInsets.all(4.0),
                             decoration: BoxDecoration(

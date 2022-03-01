@@ -2,7 +2,7 @@ import 'package:bonyanaldoha/screens/login_screen.dart';
 import 'package:bonyanaldoha/utils/app_colors.dart';
 import 'package:bonyanaldoha/utils/app_strings.dart';
 import 'package:bonyanaldoha/widgets/text_form_field.dart';
-import 'package:easy_localization/src/public_ext.dart';
+
 import 'package:flutter/material.dart';
 
 class VerificationScreen extends StatelessWidget {

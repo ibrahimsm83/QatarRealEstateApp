@@ -1,0 +1,23 @@
+Map<String, String> constantArabic = {
+  "welcome": "أهلا بك",
+  "pleaselogintocountinue": "الرجاء تسجيل الدخول للمتابعة",
+  "forgotpassword": "هل نسيت كلمة السر",
+  "Rememberme": "تذكرنى",
+  "loginNow": "تسجيل الدخول الآن",
+  "Email_Address": "عنوان البريد الإلكتروني",
+  "or": "أو",
+  "continue_w_g": "تواصل مع جوجل",
+  "continue_W_F": "تواصل مع الفيسبوك",
+  "dont_have_an_account": "ليس لديك حساب",
+  "Sign_Up": "اشتراك",
+  "createAccount": "إنشاء حساب",
+  "pleaseCreateAnAccount": "الرجاء إنشاء حساب للمتابعة",
+  "phoneNumber": "رقم الهاتف",
+  "fullName": "الاسم بالكامل",
+  "Password": "كلمه السر",
+  "re-type_Password": "اعد ادخال كلمة المرور",
+  "select-your-Account-Type": "حدد نوع حسابك",
+  "registerNow": "سجل الان",
+  "already_have_an_account": "هل لديك حساب",
+  "login": "تسجيل الدخول"
+};

@@ -1,8 +1,8 @@
 import 'package:bonyanaldoha/widgets/custome_dropdown_button.dart';
 import 'package:bonyanaldoha/widgets/text_form_field.dart';
-import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/gestures.dart';
 import 'package:bonyanaldoha/utils/app_colors.dart';
+import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 import 'package:bonyanaldoha/utils/app_strings.dart';
 import 'package:flutter/material.dart';
@@ -67,24 +67,24 @@ class _SignupScreenState extends State<SignupScreen> {
                       alignment: Alignment.center,
                       padding: EdgeInsets.all(10),
                       child: Text(
-                        'createAccount',
+                        'createAccount'.tr,
                         style: TextStyle(
                             fontSize: 18.sp, fontWeight: FontWeight.bold),
-                      ).tr(),
+                      ),
                     ),
                     Container(
                       alignment: Alignment.center,
                       padding: EdgeInsets.fromLTRB(10, 0, 10, 17),
                       child: Text(
-                        'pleaseCreateAnAccount',
+                        'pleaseCreateAnAccount'.tr,
                         style: TextStyle(
                           fontSize: 12.sp,
                           color: Colors.black.withOpacity(0.6),
                         ),
-                      ).tr(),
+                      ),
                     ),
                     CustomeTextFormField(
-                      hintText: "First Name", //'fullName'.tr(),
+                      hintText: "First Name".tr, //'fullName',
                       validator: (String? val) {
                         if (val == null || val.isEmpty) {
                           return '';
@@ -94,7 +94,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     ),
                     SizedBox(height: 10.0),
                     CustomeTextFormField(
-                      hintText: "Last Name", //'fullName'.tr(),
+                      hintText: "Last Name".tr, //'fullName',
                       validator: (String? val) {
                         if (val == null || val.isEmpty) {
                           return '';
@@ -104,19 +104,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     ),
                     SizedBox(height: 10.0),
                     CustomeTextFormField(
-                      hintText: "Username", //'fullName'.tr(),
-                      validator: (String? val) {
-                        if (val == null || val.isEmpty) {
-                          return '';
-                        }
-                        return null;
-                      },
-                    ),
-
-                    SizedBox(height: 10.0),
-                    //Email name
-                    CustomeTextFormField(
-                      hintText: 'Email_Address'.tr(),
+                      hintText: "Username".tr, //'fullName',
                       validator: (String? val) {
                         if (val == null || val.isEmpty) {
                           return '';
@@ -128,7 +116,19 @@ class _SignupScreenState extends State<SignupScreen> {
                     SizedBox(height: 10.0),
                     //Email name
                     CustomeTextFormField(
-                      hintText: 'phoneNumber'.tr(),
+                      hintText: 'Email_Address'.tr,
+                      validator: (String? val) {
+                        if (val == null || val.isEmpty) {
+                          return '';
+                        }
+                        return null;
+                      },
+                    ),
+
+                    SizedBox(height: 10.0),
+                    //Email name
+                    CustomeTextFormField(
+                      hintText: 'phoneNumber'.tr,
                       validator: (String? val) {
                         if (val == null || val.isEmpty) {
                           return '';
@@ -142,7 +142,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     ),
                     CustomeTextFormField(
                       obscureText: true,
-                      hintText: 'Password'.tr(),
+                      hintText: 'Password'.tr,
                       validator: (String? val) {
                         if (val == null || val.isEmpty) {
                           return '';
@@ -153,7 +153,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     SizedBox(height: 10.0),
                     CustomeTextFormField(
                       obscureText: true,
-                      hintText: 're-type_Password'.tr(),
+                      hintText: 're-type_Password'.tr,
                       validator: (String? val) {
                         if (val == null || val.isEmpty) {
                           return '';
@@ -178,7 +178,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     //             BorderRadius.all(Radius.circular(10.0)),
                     //       ),
                     //       child: Center(
-                    //         child: Text('select-your-Account-Type').tr(),
+                    //         child: Text('select-your-Account-Type'),
                     //       ),
                     //     ),
                     //   ),
@@ -254,9 +254,9 @@ class _SignupScreenState extends State<SignupScreen> {
                       ),
                       child: ElevatedButton(
                         child: Text(
-                          'registerNow',
+                          'registerNow'.tr,
                           style: TextStyle(color: Colors.black),
-                        ).tr(),
+                        ),
                         onPressed: () {
                           if (formKey1.currentState!.validate()) {
                             ScaffoldMessenger.of(context).showSnackBar(
@@ -285,11 +285,11 @@ class _SignupScreenState extends State<SignupScreen> {
                       alignment: Alignment.center,
                       child: RichText(
                         text: TextSpan(
-                          text: 'already_have_an_account'.tr(),
+                          text: 'already_have_an_account'.tr,
                           style: TextStyle(color: Colors.black, fontSize: 14),
                           children: <TextSpan>[
                             TextSpan(
-                              text: ('login').tr(),
+                              text: ('login'.tr),
                               style: TextStyle(
                                   decoration: TextDecoration.underline,
                                   color: Colors.black,
@@ -339,9 +339,9 @@ class _SignupScreenState extends State<SignupScreen> {
                                 ),
                                 Container(
                                   child: Text(
-                                    'continue_w_g',
+                                    'continue_w_g'.tr,
                                     style: TextStyle(color: Colors.grey[700]),
-                                  ).tr(),
+                                  ),
                                 ),
                               ],
                             ),
@@ -367,22 +367,18 @@ class _SignupScreenState extends State<SignupScreen> {
                             height: 25,
                             child: Row(
                               children: [
-                                SizedBox(
-                                  width: 2.0.w,
-                                ),
+                                SizedBox(width: 2.0.w),
                                 Image.asset(
                                   'assets/icons/facebook.png',
                                   height: 8.h,
                                   width: 8.w,
                                 ),
-                                SizedBox(
-                                  width: 10.w,
-                                ),
+                                SizedBox(width: 10.w),
                                 Container(
                                   child: Text(
-                                    'continue_W_F',
+                                    'continue_W_F'.tr,
                                     style: TextStyle(color: Colors.grey[700]),
-                                  ).tr(),
+                                  ),
                                 ),
                               ],
                             ),

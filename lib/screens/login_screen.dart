@@ -1,13 +1,14 @@
 import 'dart:async';
 
+import 'package:bonyanaldoha/controller/language_controller.dart';
 import 'package:bonyanaldoha/screens/forgot_password.dart';
 import 'package:bonyanaldoha/screens/home_screen.dart';
 
 import 'package:bonyanaldoha/widgets/text_form_field.dart';
-import 'package:easy_localization/easy_localization.dart';
-import 'package:easy_localization/src/public_ext.dart';
+
 import 'package:flutter/gestures.dart';
 import 'package:bonyanaldoha/utils/app_colors.dart';
+import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 import 'package:bonyanaldoha/utils/app_strings.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
   bool _loading = false;
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passController = TextEditingController();
-
+  MyController myController = Get.put(MyController());
   bool rememberMe = false;
 
   bool _pwShow = true;
@@ -56,32 +57,29 @@ class _LoginScreenState extends State<LoginScreen> {
                 padding: const EdgeInsets.symmetric(horizontal: 4.0),
                 child: Column(
                   children: [
-                    // SizedBox(
-                    //   height: 5.h,
-                    // ),
-                    // Container(
-                    //   padding: EdgeInsets.all(10.0),
-                    //   alignment: Alignment.centerLeft,
-                    //   child: TextButton(
-                    //       onPressed: () {
-                    //         // setState(() {
-                    //         //   flag = !flag;
-                    //         // });
-                    //         // flag
-                    //         //     ? context.locale = Locale('en', 'US')
-                    //         //     : context.locale = Locale('ar', 'DZ');
+                    // SizedBox(height: 2.h),
+                    Container(
+                      padding: EdgeInsets.all(10.0),
+                      alignment: Alignment.centerLeft,
+                      child: TextButton(
+                          onPressed: () {
+                            setState(() {
+                              flag = !flag;
+                            });
 
-                    //         // // print(context.locale.toString());
-                    //         // print("language changer");
-                    //         // // context.locale = Locale('Us', 'ar');
-                    //       },
-                    //       child: Text(
-                    //         flag ? "عربي" : "English",
-                    //         style: TextStyle(color: Colors.black),
-                    //       )),
-                    // ),
+                            flag
+                                ? myController.changeLanguages('en', 'US')
+                                : myController.changeLanguages('ar', 'SA');
 
-                    SizedBox(height: 5.h),
+                            print("language changer");
+                          },
+                          child: Text(
+                            flag ? "عربي" : "English",
+                            style: TextStyle(color: Colors.black),
+                          )),
+                    ),
+
+                    SizedBox(height: 3.h),
                     Padding(
                       padding: EdgeInsets.symmetric(
                           horizontal: sizeWidth(context) * 0.2),
@@ -96,25 +94,25 @@ class _LoginScreenState extends State<LoginScreen> {
                       alignment: Alignment.center,
                       padding: EdgeInsets.all(10),
                       child: Text(
-                        'welcome',
+                        'welcome'.tr,
                         style: TextStyle(
                             fontSize: 18.sp, fontWeight: FontWeight.bold),
-                      ).tr(),
+                      ),
                     ),
                     Container(
                       alignment: Alignment.center,
                       padding: EdgeInsets.fromLTRB(10, 0, 10, 17),
                       child: Text(
-                        'pleaselogintocountinue',
+                        'pleaselogintocountinue'.tr,
                         style: TextStyle(
                           fontSize: 12.sp,
                           color: Colors.black.withOpacity(0.6),
                         ),
-                      ).tr(),
+                      ),
                     ),
 
                     CustomeTextFormField(
-                      hintText: 'Email_Address'.tr(),
+                      hintText: 'Email_Address'.tr,
                       validator: (String? val) {
                         if (val == null || val.isEmpty) {
                           return '';
@@ -136,9 +134,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                         ForgetPassword()));
                           },
                           child: Text(
-                            'forgotpassword',
+                            'forgotpassword'.tr,
                             style: TextStyle(fontSize: 15, color: primaryColor),
-                          ).tr(),
+                          ),
                         ),
                       ),
                     ),
@@ -148,7 +146,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     CustomeTextFormField(
                       obscureText: true,
-                      hintText: 'Password',
+                      hintText: 'Password'.tr,
                       validator: (String? val) {
                         if (val == null || val.isEmpty) {
                           return '';
@@ -176,9 +174,9 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                           ),
                           Text(
-                            'Rememberme',
+                            'Rememberme'.tr,
                             style: TextStyle(color: Colors.grey[700]),
-                          ).tr(),
+                          ),
                         ],
                       ),
                     ),
@@ -195,9 +193,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       child: ElevatedButton(
                         child: Text(
-                          'loginNow',
+                          'loginNow'.tr,
                           style: TextStyle(color: Colors.black),
-                        ).tr(),
+                        ),
                         onPressed: () {
                           if (formKey.currentState!.validate()) {
                             showLoaderDialog(context);
@@ -271,7 +269,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             width: 30.0.w,
                             color: Colors.grey,
                           ),
-                          Text('or').tr(),
+                          Text('or'.tr),
                           Container(
                             height: 1.0,
                             width: 30.0.w,
@@ -313,9 +311,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                 ),
                                 Container(
                                   child: Text(
-                                    'continue_w_g',
+                                    'continue_w_g'.tr,
                                     style: TextStyle(color: Colors.grey[700]),
-                                  ).tr(),
+                                  ),
                                 ),
                               ],
                             ),
@@ -355,9 +353,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                 ),
                                 Container(
                                   child: Text(
-                                    'continue_W_F',
+                                    'continue_W_F'.tr,
                                     style: TextStyle(color: Colors.grey[700]),
-                                  ).tr(),
+                                  ),
                                 ),
                               ],
                             ),
@@ -370,11 +368,11 @@ class _LoginScreenState extends State<LoginScreen> {
                       alignment: Alignment.center,
                       child: RichText(
                         text: TextSpan(
-                          text: 'dont_have_an_account'.tr(),
+                          text: 'dont_have_an_account'.tr,
                           style: TextStyle(color: Colors.black, fontSize: 14),
                           children: <TextSpan>[
                             TextSpan(
-                              text: ('Sign_Up').tr(),
+                              text: 'Sign_Up'.tr,
                               style: TextStyle(
                                   decoration: TextDecoration.underline,
                                   color: Colors.black,
