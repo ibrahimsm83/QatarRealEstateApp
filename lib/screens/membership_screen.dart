@@ -27,7 +27,7 @@ class _MemberShipPageState extends State<MemberShipPage> {
                       builder: (BuildContext context) => NotificationPg())),
             ),
             body: Padding(
-              padding: const EdgeInsets.all(15.0),
+              padding: const EdgeInsets.all(15),
               child: Column(
                 children: [
                   Padding(
